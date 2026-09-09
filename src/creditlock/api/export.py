@@ -87,6 +87,14 @@ class UninitializedProductionStore(ProductionStore):
     def get_authorizations(self, production_id: str) -> list[Authorization]:
         self._fail()
 
+    def save_export_result(
+        self,
+        production_id: str,
+        release_digest: str,
+        delivery_package_path: str,
+    ) -> None:
+        self._fail()
+
 
 # ── Store & Audit Log abstractions ───────────────────────────────────────────
 _production_store: ProductionStore = UninitializedProductionStore()
@@ -554,6 +562,18 @@ async def export_production(
                 status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
                 detail=f"GCS delivery package persistence failed: {ex}",
             ) from ex
+
+    try:
+        _production_store.save_export_result(
+            production_id=production_id,
+            release_digest=pkg_res.release_evidence_digest,
+            delivery_package_path=final_delivery_path,
+        )
+    except Exception as ex:
+        raise HTTPException(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail="Durable export metadata persistence failed.",
+        ) from ex
 
     prod["delivery_package_path"] = final_delivery_path
     prod["release_digest"] = pkg_res.release_evidence_digest

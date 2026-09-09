@@ -16,8 +16,10 @@ Limitation:
     establish generic enterprise deployment readiness.
 
 Confluent note:
-    Confluent Cloud transport is separately RECORDED_LIVE through commit cba7227
-    and is not a runtime dependency of this hosted judge journey.
+    Confluent Cloud is a runtime dependency of the authorized export path.
+    Step 12 validates SYNCHRONIZED, CONFLUENT_CLOUD, resolution.recorded,
+    FIRESTORE and the event ID. Offline replay is local verification of the
+    package downloaded from the hosted journey.
 
 Never prints: access tokens, JWTs, credentials, secrets, complete Authorization
 headers, or ADC contents.
@@ -709,13 +711,10 @@ class JourneyVerifier:
         )
         print()
         print(
-            "  Confluent: Confluent Cloud transport is separately RECORDED_LIVE"
+            "  Confluent: Confluent Cloud is a runtime dependency of the"
         )
         print(
-            "  through commit cba7227 and is not a runtime dependency of this"
-        )
-        print(
-            "  hosted judge journey."
+            "  authorized export path (validated in Step 12)."
         )
         print("=" * 72)
         print()

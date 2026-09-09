@@ -1,13 +1,12 @@
 # CreditLock Runtime File SHA-256 Manifest
-# Generated from private source SHA: 95535e6f3d4aba18b5c8b5d9d67c9efc9a3eadb5
-# Each entry is a product/runtime file copied unchanged from the source SHA.
-# Verification: shasum -a 256 <file> must match,
-#   and: git show 95535e6f3d4aba18b5c8b5d9d67c9efc9a3eadb5:<relpath> | shasum -a 256 must also match.
+# Generated from private source SHA: 1108bbe8717bc1c63c14f5455f6c4bc50045181d
+# Each entry is a product/runtime file present in the public working tree.
+# Verification: sha256sum <file> must match,
+#   and for runtime files that match private source: git show 1108bbe8717bc1c63c14f5455f6c4bc50045181d:<relpath> | sha256sum must also match.
 #
-# Intentionally updated public docs excluded from this manifest (URL corrections and
-# live-truth doc updates): README.md, BOB.md, docs/claim-to-evidence.md,
-# docs/impact-evidence.md, docs/RUNTIME-FILE-SHA256.txt (this file),
-# scripts/verify_judge_journey.py (default URL updated to live URL).
+# Intentionally updated public docs (may differ from private source):
+#   README.md, BOB.md, docs/claim-to-evidence.md, docs/bob-development-log.md,
+#   docs/SHA-PROVENANCE.md, docs/RUNTIME-FILE-SHA256.txt (this file)
 #
 # Format: SHA256  relative/path
 
@@ -84,6 +83,12 @@ bfba9ae904eee1092cec93d611a78c456f570328ee2e2019e1ddfbada674c6b5  fixtures/bench
 1dd069ff516f331840c04318e3e7250f860c61f7453376fc5225eea261849293  fixtures/benchmark/sealed/sealed_004_visual_mismatch.json
 a2fdbf4765cb3e2fc903923cc7438a8d07737f7f97a8b1a63dd197963c2a40b4  fixtures/demo/demo_production.json
 66c3a77cf0d4aba309b92565c5fba5ad4406640318876ec307d877bf81d9fcd0  pyproject.toml
+cc097e8a342c737e185b21f38c9d010890b68b8b0dede5d39329a1ab116440d0  scripts/confluent_smoke.py
+fd1104edecdfea9879ddeba71056b6581f1241bef305f5ab5773ee4c97973ae6  scripts/replay.py
+fc340703ed0551964d420cfa3b0fedc689bb96682dbe672165022b46e7c3cf2d  scripts/run_evaluation.py
+b8a43c626947c7d7376884f242c1c29704a22d92e5fb21996c5501c0a3a843f6  scripts/run_live_frozen_challenge.py
+0871a76aea8e26f776b7b673334b584191aaba421074075572664909e7211d43  scripts/run_live_frozen_challenge_v2.py
+e884f39bf1147e7b354ff28453f201b3a11ffbd3b876b45af6ced6d2ece4c865  scripts/verify_judge_journey.py
 e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855  src/creditlock/__init__.py
 e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855  src/creditlock/agents/__init__.py
 f7f52e2990b54af41295385d258a3531e0737eab3a305a549dcd4629b7f4f579  src/creditlock/agents/app.py
@@ -96,7 +101,7 @@ e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855  src/creditlock
 fed520d6b7f637af75fa9dab93ceca73cca135374171b116fbd72a37c729d073  src/creditlock/api/app.py
 8fb824de7c81f735e97228c5e9fc5c27718125652e0f834dfbc89ef5cd0fbbf7  src/creditlock/api/auth.py
 2ef15bdc7dca59a43de606ac80dd952d164a3682c5b843bc1fbed71daa74dd57  src/creditlock/api/demo.py
-02949f58548361fc3cdfb60045a0b151f94347ed75c1d352e78b5d06554c741e  src/creditlock/api/export.py
+b5c5ebba94a611ec84f819700e791e421e7c1fac0cca1203dd7d2a4751e0012a  src/creditlock/api/export.py
 66aec9dd7ba42e8f5d37079735c7e51619a07c0c516ab77c95a242e560bffa63  src/creditlock/api/resolutions.py
 e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855  src/creditlock/domain/__init__.py
 d2f1a1a1ccf47a437c908749acc982d8b5c3da3f5f2ed679cdd36fe3e5ebf7ae  src/creditlock/domain/canonical.py
@@ -104,7 +109,7 @@ d2f1a1a1ccf47a437c908749acc982d8b5c3da3f5f2ed679cdd36fe3e5ebf7ae  src/creditlock
 1484c665a455ea3ea8d703d95f0c9d31c3b7304a195d5d86391aa697729530dc  src/creditlock/domain/gate.py
 fb0551396371fb7a39f1930c78c62dc2cf516ea40ffdb94229cc2678451167ae  src/creditlock/domain/models.py
 f5adc116e551db4758a79c9c39f1f2e22f1ace2bbfae157d50a1385320ad9e55  src/creditlock/domain/patches.py
-80ab974df3ebd1b8e38a570572f633b52e455b3d3454889a772f48eb4291aa98  src/creditlock/domain/store.py
+41e793583afe20822b9fafb6a884fac0a5c1acc455712a6c3593c213b9a188cd  src/creditlock/domain/store.py
 127e135ce8a430bea46c5768143adfbba7e96319e39f9886c86cbe7b3c2797e5  src/creditlock/eval/agent_runner.py
 8b5dec1ea85177c092b8aecd4301850e871b1621ca93b8165bcc2ffeb9ea0c4e  src/creditlock/eval/deterministic_runner.py
 b5230a00fea3b76229f6463df30d6f422bc1820b30316395aaec78d26f352592  src/creditlock/eval/models.py
@@ -173,6 +178,7 @@ d4939cfa22aa185ef511d9bd0890c9ec6826eae77846611c95d36811968ecf8d  tests/unit/tes
 ff31aabb76dd01be3913c30ce4052f7c44db1931354d58bf466d7e6686c7eb2a  tests/unit/test_event_worker_app.py
 f6e73964655c619af060472c715d07c3b4498f6641787de1eab15702b8fcd6a5  tests/unit/test_events.py
 f57d6dfc49f302ce2a0aad2e0cccb5f75cffd701937a752bda30467765f85e7c  tests/unit/test_evidence_storage.py
+cee10cc8908b47e60b5bb22123b6e79002ec96ca3db13160277a42804c498062  tests/unit/test_export_persistence_defect.py
 ed2a0249703355f74ae6eefca93ceaf3e4b21d503c649e4d058f3cdbe6917b45  tests/unit/test_extractor_span_rules.py
 5c2e222e310a8355baed2ec21306479b0e57c7408aee5bc80bc77f42647d8bba  tests/unit/test_firestore_production_store.py
 8a4c211033faab447ddec4fe2b58df37efa2263505f7e85a9e7f1927ccbc3b43  tests/unit/test_firestore_store.py
@@ -191,8 +197,3 @@ f799a2741e842a3dfeda68eff2b8f50d15b9f0a3317a68b4689d5be032f87532  tests/unit/tes
 5f2adf7a9b5e5d77cdfbed9012af1ea2f32609772a91badf45883fc426df246f  tests/unit/test_v2_commit_f_red.py
 b86a9090a1e9327df01dbc3fe5f69045571f556759415d580751068a29b44a4c  tests/unit/test_v2_measurement_red.py
 91003c3ecb1531123c6bbdcd53ebbed8a96649ea367774c3983f55c232b89ca4  tests/unit/test_verify_judge_journey.py
-cc097e8a342c737e185b21f38c9d010890b68b8b0dede5d39329a1ab116440d0  scripts/confluent_smoke.py
-fd1104edecdfea9879ddeba71056b6581f1241bef305f5ab5773ee4c97973ae6  scripts/replay.py
-fc340703ed0551964d420cfa3b0fedc689bb96682dbe672165022b46e7c3cf2d  scripts/run_evaluation.py
-b8a43c626947c7d7376884f242c1c29704a22d92e5fb21996c5501c0a3a843f6  scripts/run_live_frozen_challenge.py
-0871a76aea8e26f776b7b673334b584191aaba421074075572664909e7211d43  scripts/run_live_frozen_challenge_v2.py

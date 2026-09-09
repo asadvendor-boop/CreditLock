@@ -7,17 +7,22 @@ This document records the authoritative provenance chain for the published Credi
 ## Private Source SHA
 
 ```
-95535e6f3d4aba18b5c8b5d9d67c9efc9a3eadb5
+1108bbe8717bc1c63c14f5455f6c4bc50045181d
 ```
 
-The published runtime files are exported from this exact commit in the private source repository. No working-tree copy was used.
+The published runtime files are exported from this exact commit in the private source repository.
+No working-tree copy was used.
+
+This commit is in a **private development repository** and intentionally does not resolve in the
+sanitized public repository. For released-file equality verification, see
+[`docs/RUNTIME-FILE-SHA256.txt`](RUNTIME-FILE-SHA256.txt).
 
 ---
 
 ## Production Image (Immutable Digest)
 
 ```
-us-central1-docker.pkg.dev/pak-uni-scraper/cloud-run-source-deploy/creditlock-c2@sha256:ae19b5350bc8bbc83f593454b8bcf6f2e6608ac75b2e5504ea33e3fceaf6f745
+us-central1-docker.pkg.dev/pak-uni-scraper/cloud-run-source-deploy/creditlock-c2@sha256:1ee93048ff8ab02d3dcf58f334756cefce23e1cfb83c3237b179d9ddd1521199
 ```
 
 ---
@@ -25,7 +30,7 @@ us-central1-docker.pkg.dev/pak-uni-scraper/cloud-run-source-deploy/creditlock-c2
 ## Live Cloud Run Revision
 
 ```
-creditlock-00024-4h2
+creditlock-00027-jeh
 ```
 
 This revision serves 100% of traffic at the live URL.
@@ -40,77 +45,92 @@ https://creditlock-fvyx7hpwvq-uc.a.run.app
 
 ---
 
+## Public Repository History
+
+The original two public commits remain in history:
+
+```
+5f8b1d3  docs: add SHA provenance record
+96de017  Release CreditLock production build
+```
+
+This document is part of a **normal follow-up commit** that synchronizes the accepted production
+repair (private source SHA `1108bbe8717bc1c63c14f5455f6c4bc50045181d`) and current evidence into
+the public repository. It does not rewrite, amend, force-push, or rebase either existing public
+commit.
+
+The commit creating the current public `main` cannot embed its own SHA (doing so would create a
+circular dependency). The canonical value is the remote `main` HEAD after push, verifiable with:
+
+```bash
+git ls-remote https://github.com/asadvendor-boop/CreditLock.git refs/heads/main
+```
+
+---
+
 ## PUBLIC_CONTENT_SHA
 
 ```
 96de0175dd73d7dad84b5f5cadceec15bea35de4
 ```
 
-This is the root content commit of the public repository — the first commit, containing all product source, tests, fixtures, scripts, and updated public documentation. It is the parent of the current `main` HEAD.
-
----
-
-## PUBLIC_HEAD_SHA
-
-The current `main` HEAD is the docs-only child of `PUBLIC_CONTENT_SHA`. It adds this `docs/SHA-PROVENANCE.md` file only.
-
-PUBLIC_HEAD_SHA is the SHA of the tip of `main` on the published GitHub repository. It can be verified with:
-
-```bash
-git ls-remote https://github.com/asadvendor-boop/CreditLock.git refs/heads/main
-```
-
-`git log --oneline` on the published repository will show exactly two commits:
-```
-<PUBLIC_HEAD_SHA>  docs: add SHA provenance record
-96de017            Release CreditLock production build
-```
-
-Note: Because this document (`docs/SHA-PROVENANCE.md`) is part of the commit whose SHA it would describe, the PUBLIC_HEAD_SHA cannot be embedded here without creating a circular dependency. The canonical value is the remote `main` HEAD after push, verifiable via the command above.
+First public commit containing all product source, tests, fixtures, scripts, and initial public
+documentation.
 
 ---
 
 ## Runtime File Hash Manifest
 
-**Manifest file:** `docs/RUNTIME-FILE-SHA256.txt`
+**Manifest file:** [`docs/RUNTIME-FILE-SHA256.txt`](RUNTIME-FILE-SHA256.txt)
 
-This manifest records SHA-256 hashes for 185 runtime and product files (Dockerfile, pyproject.toml, src/, scripts/ excluding verify_judge_journey.py, tests/, fixtures/) copied unchanged from private source SHA `95535e6f3d4aba18b5c8b5d9d67c9efc9a3eadb5`.
+This manifest records SHA-256 hashes for runtime and product files (Dockerfile, pyproject.toml,
+src/, scripts/, tests/, fixtures/) present in the current public working tree.
 
-**Verification method:** For each entry in the manifest, the candidate file was compared byte-for-byte with:
+**Verification method:** For each entry, the candidate file is compared byte-for-byte with the
+corresponding object at private source SHA `1108bbe8717bc1c63c14f5455f6c4bc50045181d`:
 
 ```bash
-git show 95535e6f3d4aba18b5c8b5d9d67c9efc9a3eadb5:<relative-path> | shasum -a 256
+git show 1108bbe8717bc1c63c14f5455f6c4bc50045181d:<relative-path> | shasum -a 256
 ```
 
-Zero mismatches were found across all 185 runtime files.
+Zero mismatches across all runtime files.
 
-**Intentionally updated public docs (excluded from manifest):**
-- `README.md` — Live URL correction (`creditlock-851586299411...` → `creditlock-fvyx7hpwvq-uc.a.run.app`), Cloud Run revision, Firestore and Confluent runtime status
-- `BOB.md` — Confluent runtime scope correction, removal of `memory_demo` claim
-- `docs/claim-to-evidence.md` — Updated live URL, Firestore and Confluent classifications
-- `docs/impact-evidence.md` — Live URL correction
-- `scripts/verify_judge_journey.py` — Default base URL updated to current live URL
-- `docs/RUNTIME-FILE-SHA256.txt` — This manifest itself (generated during publication)
+**Intentionally updated public docs (may differ from private source):**
+- `README.md` — revision, image digest, source SHA updated to current
+- `BOB.md` — Confluent runtime scope correction, revision and SHA updated
+- `docs/claim-to-evidence.md` — revision, image digest, source SHA updated
+- `docs/bob-development-log.md` — new session entry added
+- `docs/SHA-PROVENANCE.md` — this file
+- `docs/RUNTIME-FILE-SHA256.txt` — regenerated from current public working tree
 
 ---
 
 ## Why Public Git SHA Differs from Private Source Git SHA
 
-The public repository was initialized as a brand-new Git repository (`git init`). It contains no import of the private repository's commit graph, refs, tags, remotes, or reflogs.
+The public repository was initialized as a brand-new Git repository. It contains no import of the
+private repository's commit graph, refs, tags, remotes, or reflogs.
 
-The public history starts from a fresh root commit (`PUBLIC_CONTENT_SHA`) containing the exported file tree. The private source SHA (`95535e6f3d4aba18b5c8b5d9d67c9efc9a3eadb5`) refers to a commit in a different, private Git object store whose history is not present here.
+The private source SHAs (`96de017…`, `95535e6…`, `1108bbe…`, etc.) refer to commits in a
+**private development repository** whose history is not present here. They are preserved as
+evidence of development provenance. They intentionally do not resolve in this sanitized public
+repository.
 
-Additionally, the public tree differs from the private source tree in exactly the intentionally updated public docs listed above. Even if the public repository had been created by `git clone`, the SHA would differ because the file contents differ.
+File-level equality between the public tree and the private source SHA can be verified via
+[`docs/RUNTIME-FILE-SHA256.txt`](RUNTIME-FILE-SHA256.txt). Note that file equality alone does not
+prove authorship.
 
 ---
 
-## Relationship: PUBLIC_CONTENT_SHA → PUBLIC_HEAD_SHA
+## Commit Graph (Public Repository)
 
 ```
-PUBLIC_HEAD_SHA  (this docs-only commit: docs/SHA-PROVENANCE.md)
+<NEW_FOLLOW_UP_SHA>  release: sync durable export proof and current judge evidence
       │
-      └── parent: PUBLIC_CONTENT_SHA  96de0175dd73d7dad84b5f5cadceec15bea35de4
-                  (all product code, tests, fixtures, scripts, docs)
+5f8b1d3             docs: add SHA provenance record
+      │
+96de017             Release CreditLock production build  (root)
 ```
 
-`main` HEAD is the docs-only provenance commit. All product runtime files live in `PUBLIC_CONTENT_SHA`. The two-commit structure allows a judge to inspect product code and runtime evidence separately from this provenance record.
+`main` HEAD is the follow-up synchronization commit. All original product runtime files remain
+accessible at `96de017`. The SHA of the new follow-up commit is the remote `main` HEAD after push
+(verifiable via `git ls-remote` above).

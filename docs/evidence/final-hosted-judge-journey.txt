@@ -1,12 +1,11 @@
-
 ========================================================================
 CreditLock Hosted Judge Journey Verifier — Transcript
 ========================================================================
-  Timestamp          : 2026-09-05T23:35:01.881451+00:00
-  Tested URL         : https://creditlock-851586299411.us-central1.run.app
-  Verifier commit    : edf0f69c7b88a943f011645d0f7f209dfa413c62  (local verifier source)
-  App commit (server): edf0f69c7b88a943f011645d0f7f209dfa413c62  (APP_COMMIT env in container)
-  K_REVISION (server): creditlock-00020-lqm  (Cloud Run revision)
+  Timestamp          : 2026-09-09T05:59:51.371612+00:00
+  Tested URL         : https://creditlock-fvyx7hpwvq-uc.a.run.app
+  Verifier commit    : 1108bbe8717bc1c63c14f5455f6c4bc50045181d  (local verifier source)
+  App commit (server): 1108bbe8717bc1c63c14f5455f6c4bc50045181d  (APP_COMMIT env in container)
+  K_REVISION (server): creditlock-00027-jeh  (Cloud Run revision)
   Server candidates  : ['contrib_d_park_unresolved', 'contrib_david_park']
   Status             : PASS
 
@@ -47,7 +46,7 @@ CreditLock Hosted Judge Journey Verifier — Transcript
   Step 08: [PASS] REVIEWER creates proposal (HTTP 201)
            observed: HTTP 201
   Step 08: [PASS] Proposal ID returned
-           observed: proposal_id='prop-d025607edec3'
+           observed: proposal_id='prop-e29b589cee3e'
   Step 09: [PASS] REVIEWER cannot self-confirm proposal (HTTP 403)
            observed: HTTP 403
            detail:   Role separation: REVIEWER must not confirm own proposal
@@ -57,28 +56,29 @@ CreditLock Hosted Judge Journey Verifier — Transcript
            observed: HTTP 201
   Step 12: [PASS] Authorized production exports successfully (HTTP 200)
            observed: HTTP 200
+  Step 12: [PASS] Confluent-to-Firestore release checkpoint synchronization verified
+           observed: SYNCHRONIZED (transport=CONFLUENT_CLOUD, backend=FIRESTORE, event_id=c570ef98...7409)
+           detail:   event_sync must contain valid SYNCHRONIZED, CONFLUENT_CLOUD, resolution.recorded, FIRESTORE, and UUID event_id
   Step 13: [PASS] Export response provides real release digest (64-char hex)
-           observed: release_digest=fd13d56e...598e
+           observed: release_digest=b149c86d...dc5c
   Step 13: [PASS] Export response provides GCS delivery-package URI (gs://...)
            observed: delivery_package_path starts with gs://: True
-           detail:   gs://creditlock-evidence-pak-uni-scraper-4157a70c/deliveries/prod_demo_a77ca268cba0/fd13d56efe3811949563657c07de05eda282719795b3bc736ab173e10f59598e.zip
+           detail:   gs://creditlock-c2-evidence-pak-uni-scraper/deliveries/prod_demo_9cefd4b619c0/b149c86dedd90186bee256c7a0abf7d81aead31f61907a44ccd7e5f476bcdc5c.zip
   Step 14: [PASS] Authenticated package download succeeds (HTTP 200)
            observed: HTTP 200
   Step 14: [PASS] Downloaded content is a valid ZIP archive
-           observed: valid zip: True, size: 42451 bytes
+           observed: valid zip: True, size: 42460 bytes
   Step 15: [PASS] Offline replay of downloaded package returns MATCH
            observed: MATCH
 
   Gemini model       : gemini-3.6-flash
-  GCS URI            : gs://creditlock-evidence-pak-uni-scraper-4157a70c/deliveries/prod_demo_a77ca268cba0/fd13d56efe3811949563657c07de05eda282719795b3bc736ab173e10f59598e.zip
-  Release digest     : fd13d56efe3811949563657c07de05eda282719795b3bc736ab173e10f59598e
+  GCS URI            : gs://creditlock-c2-evidence-pak-uni-scraper/deliveries/prod_demo_9cefd4b619c0/b149c86dedd90186bee256c7a0abf7d81aead31f61907a44ccd7e5f476bcdc5c.zip
+  Release digest     : b149c86dedd90186bee256c7a0abf7d81aead31f61907a44ccd7e5f476bcdc5c
   Replay result      : MATCH
 
   Limitation: This verifies the current hosted CreditLock judge journey.
   It does not establish generic enterprise deployment readiness.
 
-  Confluent: Confluent Cloud transport is separately RECORDED_LIVE
-  through commit cba7227 and is not a runtime dependency of this
-  hosted judge journey.
+  Confluent: Confluent Cloud is a runtime dependency of the
+  authorized export path (validated in Step 12).
 ========================================================================
-

@@ -12,6 +12,7 @@ from typing import TYPE_CHECKING, Any
 if TYPE_CHECKING:
     from creditlock.evidence.storage import EvidenceStorage
 
+from creditlock.domain.gate import ProjectionStatus
 from creditlock.domain.models import (
     Authorization,
     CreditManifest,
@@ -70,6 +71,15 @@ class ProductionStore(ABC):
     @abstractmethod
     def get_authorizations(self, production_id: str) -> list[Authorization]:
         """Return all authorizations for a production."""
+
+    @abstractmethod
+    def save_export_result(
+        self,
+        production_id: str,
+        release_digest: str,
+        delivery_package_path: str,
+    ) -> None:
+        """Durably record the export result for a production."""
 
 
 class InMemoryProductionStore(ProductionStore):
@@ -244,13 +254,42 @@ class InMemoryProductionStore(ProductionStore):
                 return []
             return list(prod.get("authorizations", []))
 
+    def save_export_result(
+        self,
+        production_id: str,
+        release_digest: str,
+        delivery_package_path: str,
+    ) -> None:
+        if (
+            not isinstance(release_digest, str)
+            or len(release_digest) != 64
+            or not all(c in "0123456789abcdef" for c in release_digest)
+        ):
+            raise ValueError("release_digest must be a 64-character lowercase hex SHA-256 digest.")
+        if not isinstance(delivery_package_path, str) or not delivery_package_path.strip():
+            raise ValueError("delivery_package_path must be a non-empty string.")
+
+        with self._lock:
+            prod = self._store.get(production_id)
+            if prod is None:
+                raise KeyError(f"Production '{production_id}' not found.")
+            existing_digest = prod.get("release_digest")
+            existing_path = prod.get("delivery_package_path")
+            if existing_digest is not None or existing_path is not None:
+                if existing_digest == release_digest and existing_path == delivery_package_path:
+                    return
+                raise ValueError(
+                    f"Production '{production_id}' already has conflicting export metadata: "
+                    f"existing=({existing_digest!r}, {existing_path!r}), "
+                    f"new=({release_digest!r}, {delivery_package_path!r})"
+                )
+            prod["release_digest"] = release_digest
+            prod["delivery_package_path"] = delivery_package_path
+
     @property
     def audit_log(self) -> list[dict[str, Any]]:
         with self._lock:
             return list(self._audit_log)
-
-
-from creditlock.domain.gate import ProjectionStatus
 
 
 def _validate_and_normalize_projection(projection: Any) -> ProjectionStatus:
@@ -795,7 +834,29 @@ class FirestoreProductionStore(ProductionStore):
                             )
                         )
 
-            return {
+            # 11 & 12. release_digest and delivery_package_path (optional before export)
+            raw_release_digest = data.get("release_digest")
+            raw_delivery_path = data.get("delivery_package_path")
+            validated_release_digest: str | None = None
+            validated_delivery_path: str | None = None
+
+            if (raw_release_digest is None) != (raw_delivery_path is None):
+                raise ValueError(
+                    "release_digest and delivery_package_path must both be present or both absent."
+                )
+            if raw_release_digest is not None:
+                if (
+                    not isinstance(raw_release_digest, str)
+                    or len(raw_release_digest) != 64
+                    or not all(c in "0123456789abcdef" for c in raw_release_digest)
+                ):
+                    raise ValueError("release_digest must be a 64-character lowercase hex string")
+                if not isinstance(raw_delivery_path, str) or not raw_delivery_path.strip():
+                    raise ValueError("delivery_package_path must be a non-empty string")
+                validated_release_digest = raw_release_digest
+                validated_delivery_path = raw_delivery_path
+
+            result_dict: dict[str, Any] = {
                 "obligations": obligations,
                 "manifest": manifest,
                 "layout_evidence": layout_evidence,
@@ -809,6 +870,12 @@ class FirestoreProductionStore(ProductionStore):
                 "artifact_index_digest": artifact_index_digest,
                 "render_profile_version": render_profile_version,
             }
+            if validated_release_digest is not None:
+                result_dict["release_digest"] = validated_release_digest
+            if validated_delivery_path is not None:
+                result_dict["delivery_package_path"] = validated_delivery_path
+
+            return result_dict
         except Exception as e:
             raise ValueError(
                 f"Malformed production state in Firestore for production '{production_id}': {e}"
@@ -962,3 +1029,48 @@ class FirestoreProductionStore(ProductionStore):
                 raw_auths.append(d)
         raw_auths.sort(key=lambda x: (x.get("authorized_at", ""), x.get("authorization_id", "")))
         return [Authorization.model_validate(a) for a in raw_auths]
+
+    def save_export_result(
+        self,
+        production_id: str,
+        release_digest: str,
+        delivery_package_path: str,
+    ) -> None:
+        if (
+            not isinstance(release_digest, str)
+            or len(release_digest) != 64
+            or not all(c in "0123456789abcdef" for c in release_digest)
+        ):
+            raise ValueError("release_digest must be a 64-character lowercase hex SHA-256 digest.")
+        if not isinstance(delivery_package_path, str) or not delivery_package_path.strip():
+            raise ValueError("delivery_package_path must be a non-empty string.")
+
+        prod_ref = self.client.collection("production_states").document(production_id)
+
+        def _txn_save_export(txn: Any) -> None:
+            prod_snap = prod_ref.get(transaction=txn)
+            if not prod_snap.exists:
+                raise KeyError(f"Production '{production_id}' not found in Firestore.")
+
+            data = prod_snap.to_dict() or {}
+            existing_digest = data.get("release_digest")
+            existing_path = data.get("delivery_package_path")
+
+            if existing_digest is not None or existing_path is not None:
+                if existing_digest == release_digest and existing_path == delivery_package_path:
+                    return
+                raise ValueError(
+                    f"Production '{production_id}' already has conflicting export metadata: "
+                    f"existing=({existing_digest!r}, {existing_path!r}), "
+                    f"new=({release_digest!r}, {delivery_package_path!r})"
+                )
+
+            txn.update(
+                prod_ref,
+                {
+                    "release_digest": release_digest,
+                    "delivery_package_path": delivery_package_path,
+                },
+            )
+
+        self._transaction_runner(self.client, _txn_save_export)

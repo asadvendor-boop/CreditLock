@@ -248,4 +248,41 @@ This verifies the current hosted CreditLock judge journey. It does not establish
 
 ---
 
-_(Continue adding entries as development progresses)_
+## 2026-09-09 — Durable export persistence repair and public synchronization (private source SHA 1108bbe)
+
+**IBM Bob task:** Durably persist export metadata in production store and correct the hosted verifier; synchronize the accepted production repair and current judge evidence to the public repository.
+
+**Private-development-repository commit:** `1108bbe8717bc1c63c14f5455f6c4bc50045181d`
+(This SHA is in the private development repository and intentionally does not resolve in the sanitized public repository.)
+
+**Files modified at private source SHA:**
+- `src/creditlock/domain/store.py` — Durable persistence of `release_digest` and `delivery_package_path` in Firestore production store
+- `src/creditlock/api/export.py` — Export path corrections for durable metadata write
+- `scripts/verify_judge_journey.py` — Verifier corrections for current production behavior
+- `tests/unit/test_export_persistence_defect.py` — New failing-first tests for export persistence defect
+
+**Public synchronization in this commit:**
+- Four source files above copied byte-for-byte from private source SHA `1108bbe8717bc1c63c14f5455f6c4bc50045181d`
+- `docs/evidence/final-hosted-judge-journey.txt` replaced with the verified transcript (SHA-256: `47a4048a761d77a461cf2653ae9642add82d41cdf6f1e0262f2b16b44fcddea1`)
+- Documentation updated to reflect current revision `creditlock-00027-jeh`, current image digest `sha256:1ee93048ff8ab02d3dcf58f334756cefce23e1cfb83c3237b179d9ddd1521199`, and current source SHA
+- Confluent description corrected: Confluent Cloud is a runtime dependency of the current authorized export path
+- Private-development-repository SHA references labeled as such throughout public docs
+- `docs/RUNTIME-FILE-SHA256.txt` regenerated from current public working tree
+
+**Current production state verified read-only (no cloud resource modified):**
+- Cloud Run revision: `creditlock-00027-jeh` — Ready, 100% traffic
+- Worker revision: `creditlock-c2-worker-staging-00008-8lv` — Ready
+- Image: `creditlock-c2@sha256:1ee93048ff8ab02d3dcf58f334756cefce23e1cfb83c3237b179d9ddd1521199`
+- APP_COMMIT: `1108bbe8717bc1c63c14f5455f6c4bc50045181d`
+
+**Current test suite:** 693 passed, 8 skipped
+
+**Hosted verifier:** All 15 stages passed (transcript SHA-256: `47a4048a761d77a461cf2653ae9642add82d41cdf6f1e0262f2b16b44fcddea1`)
+
+**Authorized export:** HTTP 200
+
+**Confluent-to-Firestore checkpoint:** SYNCHRONIZED
+
+**Offline replay:** MATCH (VERIFIED_LOCAL against package downloaded from HOSTED_VERIFIED journey)
+
+**Note:** Bob did not author the export persistence repair itself. Bob performed the public synchronization task: verified checksums, copied accepted files, updated documentation, and committed to the public repository. The repair was contributed by the operator by other permitted means.

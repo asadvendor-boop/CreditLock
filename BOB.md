@@ -14,16 +14,16 @@ IBM Bob assisted with the following specific parts of CreditLock:
 2. **NFC-normalized canonical hashing** — `sha256_digest()` in `src/creditlock/domain/canonical.py`; the NFC-normalization and deterministic key-sorting logic that content-addresses all structured state.
 3. **Identity classifier/binding implementation** — `_resolve_obligee_text()`, `evaluate_findings()`, and `_build_identity_bindings()` implementing the three identity-resolution rules and the `CONFIRM_IDENTITY` authorization path. Commits `b689b2a` (classifier rules and issue-id discriminator), `7b4e122` (registry-filter fix, `selected_contributor_id`, identity bindings), and `0be2428` (scoping to current `AMBIGUOUS_IDENTITY` issues).
 4. **Unit test suites** — Focused unit tests added by the commits above: `TestIdentityRules`, `TestBackdoorApiGuard`, `TestIdentityAuthorization`, and related classes in `tests/unit/` covering identity resolution, gate folding, canonical hashing, patch application, and replay adversarial cases.
-5. **Kafka event transport** — `ConfluentTransport` in `src/creditlock/events/transport.py`; the live Confluent Cloud produce/consume transport class, recorded live on partition 0 at commit `cba7227`.
-6. **Hosted judge-journey verifier** — `scripts/verify_judge_journey.py`; a 15-stage hosted verifier with 24 checks that exercises the live Cloud Run judge journey end to end. Implemented at commits `5f968444cb383a14967d99e4375d8782d65a7373` and `5b317032f554af384d79b0cfee4862146a20f5b4`.
-7. **UI contributor-selection fix and server-side candidate derivation** — Replaced the hardcoded readonly contributor input with an explicit two-candidate radio group and moved candidate derivation to the server in `src/creditlock/api/demo.py`, `src/creditlock/api/resolutions.py`, and `src/creditlock/static/index.html`; focused tests at `tests/unit/test_ui_contributor_selection.py`. Deployed at commit `6e4ffa9` to Cloud Run revision `creditlock-00018-xbz`.
-8. **Candidate enrichment and safe DOM rendering** — Enriched `AMBIGUOUS_IDENTITY` candidate objects server-side with `display_name`, `role`, `credit_surface`, and `present_in_manifest` (derived only from the existing obligation, contributor registry, and manifest — no hardcoded names or IDs). Rewrote `_renderCandidates()` and `_clearCandidates()` in `index.html` to use `document.createElement` / `textContent` / `.value` instead of unescaped `innerHTML` template interpolation. 16 new tests in `tests/unit/test_candidate_enrichment.py`. Deployed at commit `fcc5d4a` to Cloud Run revision `creditlock-00019-7bd`.
+5. **Kafka event transport** — `ConfluentTransport` in `src/creditlock/events/transport.py`; the live Confluent Cloud produce/consume transport class, recorded live on partition 0 at private-development-repository commit `cba7227` (intentionally does not resolve in this sanitized public repository).
+6. **Hosted judge-journey verifier** — `scripts/verify_judge_journey.py`; a 15-stage hosted verifier with 24 checks that exercises the live Cloud Run judge journey end to end. Implemented at private-development-repository commits `5f968444cb383a14967d99e4375d8782d65a7373` and `5b317032f554af384d79b0cfee4862146a20f5b4` (these SHAs intentionally do not resolve in the sanitized public repository; see `docs/RUNTIME-FILE-SHA256.txt` for released-file equality).
+7. **UI contributor-selection fix and server-side candidate derivation** — Replaced the hardcoded readonly contributor input with an explicit two-candidate radio group and moved candidate derivation to the server in `src/creditlock/api/demo.py`, `src/creditlock/api/resolutions.py`, and `src/creditlock/static/index.html`; focused tests at `tests/unit/test_ui_contributor_selection.py`. Deployed at private-development-repository commit `6e4ffa9`.
+8. **Candidate enrichment and safe DOM rendering** — Enriched `AMBIGUOUS_IDENTITY` candidate objects server-side with `display_name`, `role`, `credit_surface`, and `present_in_manifest` (derived only from the existing obligation, contributor registry, and manifest — no hardcoded names or IDs). Rewrote `_renderCandidates()` and `_clearCandidates()` in `index.html` to use `document.createElement` / `textContent` / `.value` instead of unescaped `innerHTML` template interpolation. 16 new tests in `tests/unit/test_candidate_enrichment.py`. Deployed at private-development-repository commit `fcc5d4a`.
 
 IBM Bob assisted with all of the above. IBM Bob did not write the whole product. Later persistence, event-sync, delivery-determinism, and CSS work were contributed by other permitted means and must not be misattributed to Bob.
 
 Prompt summaries for each session exist in [`docs/bob-development-log.md`](docs/bob-development-log.md). Only raw task exports, secrets, and private recording transcripts are excluded from public documentation.
 
-Git history commits with direct Bob contribution: `e978bbc`, `b689b2a`, `7b4e122`, `0be2428`, `cba7227`, `5f96844`, `5b31703`, `73b5acf`, `6e4ffa9`, `fcc5d4a`.
+Private-development-repository commits with direct Bob contribution: `e978bbc`, `b689b2a`, `7b4e122`, `0be2428`, `cba7227`, `5f96844`, `5b31703`, `73b5acf`, `6e4ffa9`, `fcc5d4a`. These SHAs are in the private development repository and intentionally do not resolve in this sanitized public repository. For released-file equality, see [`docs/RUNTIME-FILE-SHA256.txt`](docs/RUNTIME-FILE-SHA256.txt). Note: file equality alone does not prove authorship.
 
 ---
 
@@ -52,7 +52,7 @@ The verifier exercises and asserts:
 17. Authenticated download succeeds and ZIP is valid
 18. Offline replay of downloaded bundle returns MATCH
 
-**Verification result at revision `creditlock-00019-7bd` (commit `fcc5d4a`):** All 15 stages (24 checks) passed. Offline replay returned MATCH (VERIFIED_LOCAL against the package produced by the hosted verified journey — not independently HOSTED_VERIFIED).
+**Verification result (current revision `creditlock-00027-jeh`, private-development-repository commit `fcc5d4a`):** All 15 stages (24 checks) passed. Offline replay returned MATCH (VERIFIED_LOCAL against the package produced by the hosted verified journey — not independently HOSTED_VERIFIED). The current final hosted transcript reflects this result.
 
 Full transcript: [`docs/evidence/final-hosted-judge-journey.txt`](docs/evidence/final-hosted-judge-journey.txt)
 
@@ -60,9 +60,9 @@ Full transcript: [`docs/evidence/final-hosted-judge-journey.txt`](docs/evidence/
 
 ## Confluent Cloud Contribution — Accurate Scope
 
-IBM Bob built `ConfluentTransport` and `scripts/confluent_smoke.py`. A live raw-JSON produce/consume round trip was recorded on partition 0 of Confluent Cloud Kafka cluster (topic: `creditlock.production.events`) at commit `cba7227`.
+IBM Bob built `ConfluentTransport` and `scripts/confluent_smoke.py`. A live raw-JSON produce/consume round trip was recorded on partition 0 of Confluent Cloud Kafka cluster (topic: `creditlock.production.events`) at private-development-repository commit `cba7227`.
 
-The hosted export flow emits the `resolution.recorded` event type through Confluent Cloud Kafka. A warm worker subscribes to the topic and projects the event into Firestore; the UI displays `Confluent Cloud`, event type `resolution.recorded`, and `Firestore projection: SYNCHRONIZED` after a successful authorized export.
+**Confluent Cloud is a runtime dependency of the current authorized export path.** The hosted export flow emits the `resolution.recorded` event type through Confluent Cloud Kafka. A warm worker subscribes to the topic and projects the event into Firestore; the UI displays `Confluent Cloud`, event type `resolution.recorded`, and `Firestore projection: SYNCHRONIZED` after a successful authorized export. Step 12 of the hosted verifier confirms this synchronization.
 
 Bob built the transport layer and smoke script. The end-to-end event-sync integration connecting Confluent to Firestore projection was contributed by other permitted means and must not be misattributed to Bob.
 

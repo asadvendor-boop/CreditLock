@@ -130,7 +130,7 @@ flowchart TD
 ## Google Cloud Technologies
 
 - **Gemini Enterprise Configuration:** Live `gemini-3.6-flash` model via official `google.genai` SDK with strict Pydantic structured output validation (`extra="forbid"`).
-- **Cloud Run:** Hosted serverless production container execution (revision `creditlock-00024-4h2` at image `creditlock-c2@sha256:ae19b5350bc8bbc83f593454b8bcf6f2e6608ac75b2e5504ea33e3fceaf6f745`).
+- **Cloud Run:** Hosted serverless production container execution (revision `creditlock-00027-jeh` at image `creditlock-c2@sha256:1ee93048ff8ab02d3dcf58f334756cefce23e1cfb83c3237b179d9ddd1521199`).
 - **Google Cloud Storage (GCS):** Application-enforced create-only/write-once delivery objects store generated release delivery packages and frame/package artifacts.
 - **Firestore:** Production transactional state store. The hosted Cloud Run instance uses the Firestore production store for persistent production state.
 - **Secret Manager:** Runtime retrieval of JWT signing secret keys.
@@ -140,15 +140,17 @@ flowchart TD
 
 ## IBM Track & IBM Bob Usage
 
-IBM Bob was used meaningfully during CreditLock development. Bob assisted with scaffolding Pydantic v2 domain models, building NFC-normalized canonical hashing logic, implementing identity classification rules, writing unit test suites, and constructing Kafka event transport logic. Bob implemented the final hosted judge-journey verifier (`scripts/verify_judge_journey.py`), confirmed at commits `5f968444cb383a14967d99e4375d8782d65a7373` and `5b317032f554af384d79b0cfee4862146a20f5b4`. The verifier confirmed 15/15 mandatory hosted steps passed with offline replay returning MATCH. Bob's development contributions are `VERIFIED_LOCAL`; the verifier itself exercised a `HOSTED_VERIFIED` journey. Bob's work is preserved in the development log and commits.
+IBM Bob was used meaningfully during CreditLock development. Bob assisted with scaffolding Pydantic v2 domain models, building NFC-normalized canonical hashing logic, implementing identity classification rules, writing unit test suites, and constructing Kafka event transport logic. Bob implemented the final hosted judge-journey verifier (`scripts/verify_judge_journey.py`), confirmed at private-development-repository commits `5f968444cb383a14967d99e4375d8782d65a7373` and `5b317032f554af384d79b0cfee4862146a20f5b4` (these SHAs are in the private development repository and intentionally do not resolve in the sanitized public repository; see `docs/RUNTIME-FILE-SHA256.txt` for released-file equality). The verifier confirmed all 15 mandatory hosted stages passed with offline replay returning MATCH. Bob's development contributions are `VERIFIED_LOCAL`; the verifier itself exercised a `HOSTED_VERIFIED` journey. Bob's work is preserved in the development log and commits.
 
 Bob did not write every component of CreditLock. Later persistence, event-sync, delivery-determinism, and CSS work were contributed by other permitted means and must not be misattributed to Bob.
+
+Current test suite: **693 passed, 8 skipped**.
 
 Full development log: [`docs/bob-development-log.md`](docs/bob-development-log.md)
 
 Final hosted transcript: [`docs/evidence/final-hosted-judge-journey.txt`](docs/evidence/final-hosted-judge-journey.txt)
 
-**Confluent:** CreditLock integrates Confluent Cloud event transport, developed with IBM Bob and verified through a recorded live produce/consume round trip on partition 0 of Confluent Cloud Kafka cluster (`topic: creditlock.production.events`). The hosted export flow emits the `resolution.recorded` event through Confluent Cloud; a warm worker projects it into Firestore.
+**Confluent:** Confluent Cloud is a runtime dependency of the current authorized export path. The hosted export flow emits the `resolution.recorded` event type through Confluent Cloud Kafka; a warm worker subscribes and projects it into Firestore. Step 12 of the hosted verifier confirms `Firestore projection: SYNCHRONIZED`. The underlying `ConfluentTransport` was developed with IBM Bob and a live raw-JSON produce/consume round trip was recorded on partition 0 (topic: `creditlock.production.events`).
 
 ---
 

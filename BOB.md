@@ -15,7 +15,7 @@ IBM Bob assisted with the following specific parts of CreditLock:
 3. **Identity classifier/binding implementation** — `_resolve_obligee_text()`, `evaluate_findings()`, and `_build_identity_bindings()` implementing the three identity-resolution rules and the `CONFIRM_IDENTITY` authorization path. Commits `b689b2a` (classifier rules and issue-id discriminator), `7b4e122` (registry-filter fix, `selected_contributor_id`, identity bindings), and `0be2428` (scoping to current `AMBIGUOUS_IDENTITY` issues).
 4. **Unit test suites** — Focused unit tests added by the commits above: `TestIdentityRules`, `TestBackdoorApiGuard`, `TestIdentityAuthorization`, and related classes in `tests/unit/` covering identity resolution, gate folding, canonical hashing, patch application, and replay adversarial cases.
 5. **Kafka event transport** — `ConfluentTransport` in `src/creditlock/events/transport.py`; the live Confluent Cloud produce/consume transport class, recorded live on partition 0 at private-development-repository commit `cba7227` (intentionally does not resolve in this sanitized public repository).
-6. **Hosted judge-journey verifier** — `scripts/verify_judge_journey.py`; a 15-stage hosted verifier with 24 checks that exercises the live Cloud Run judge journey end to end. Implemented at private-development-repository commits `5f968444cb383a14967d99e4375d8782d65a7373` and `5b317032f554af384d79b0cfee4862146a20f5b4` (these SHAs intentionally do not resolve in the sanitized public repository; see `docs/RUNTIME-FILE-SHA256.txt` for released-file equality).
+6. **Hosted judge-journey verifier** — `scripts/verify_judge_journey.py`; a 15-stage hosted verifier with 25 checks that exercises the live Cloud Run judge journey end to end. Implemented at private-development-repository commits `5f968444cb383a14967d99e4375d8782d65a7373` and `5b317032f554af384d79b0cfee4862146a20f5b4` (these SHAs intentionally do not resolve in the sanitized public repository; see `docs/RUNTIME-FILE-SHA256.txt` for released-file equality).
 7. **UI contributor-selection fix and server-side candidate derivation** — Replaced the hardcoded readonly contributor input with an explicit two-candidate radio group and moved candidate derivation to the server in `src/creditlock/api/demo.py`, `src/creditlock/api/resolutions.py`, and `src/creditlock/static/index.html`; focused tests at `tests/unit/test_ui_contributor_selection.py`. Deployed at private-development-repository commit `6e4ffa9`.
 8. **Candidate enrichment and safe DOM rendering** — Enriched `AMBIGUOUS_IDENTITY` candidate objects server-side with `display_name`, `role`, `credit_surface`, and `present_in_manifest` (derived only from the existing obligation, contributor registry, and manifest — no hardcoded names or IDs). Rewrote `_renderCandidates()` and `_clearCandidates()` in `index.html` to use `document.createElement` / `textContent` / `.value` instead of unescaped `innerHTML` template interpolation. 16 new tests in `tests/unit/test_candidate_enrichment.py`. Deployed at private-development-repository commit `fcc5d4a`.
 
@@ -29,7 +29,7 @@ Private-development-repository commits with direct Bob contribution: `e978bbc`, 
 
 ## The Final Verifier Bob Implemented
 
-IBM Bob implemented `scripts/verify_judge_journey.py`, a 15-stage hosted verifier with 24 checks that exercises the live hosted judge journey at `https://creditlock-fvyx7hpwvq-uc.a.run.app`.
+IBM Bob implemented `scripts/verify_judge_journey.py`, a 15-stage hosted verifier with 25 checks that exercises the live hosted judge journey at `https://creditlock-fvyx7hpwvq-uc.a.run.app`.
 
 The verifier exercises and asserts:
 
@@ -52,7 +52,7 @@ The verifier exercises and asserts:
 17. Authenticated download succeeds and ZIP is valid
 18. Offline replay of downloaded bundle returns MATCH
 
-**Verification result (current revision `creditlock-00027-jeh`, private-development-repository commit `fcc5d4a`):** All 15 stages (24 checks) passed. Offline replay returned MATCH (VERIFIED_LOCAL against the package produced by the hosted verified journey — not independently HOSTED_VERIFIED). The current final hosted transcript reflects this result.
+**Verification result (current revision `creditlock-00027-jeh`, private-development-repository commit `1108bbe8717bc1c63c14f5455f6c4bc50045181d`):** All 15 stages (25 checks) passed. Offline replay returned MATCH (VERIFIED_LOCAL against the package produced by the hosted verified journey — not independently HOSTED_VERIFIED). The current final hosted transcript reflects this result.
 
 Full transcript: [`docs/evidence/final-hosted-judge-journey.txt`](docs/evidence/final-hosted-judge-journey.txt)
 

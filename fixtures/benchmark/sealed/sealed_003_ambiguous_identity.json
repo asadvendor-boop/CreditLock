@@ -1,0 +1,72 @@
+{
+  "case_id": "sealed_003_ambiguous_identity",
+  "description": "SEALED: obligee_text 'M. Osei' matches two registry contributors — identity is ambiguous, human confirmation required. Gate: NEEDS_HUMAN.",
+  "obligations": [
+    {
+      "obligation_id": "obl_s003_a",
+      "production_id": "prod_sealed",
+      "credited_party_id": null,
+      "obligee_text": "M. Osei",
+      "required_display_text": null,
+      "role_label": "Casting Director",
+      "credit_surface": "END_CARDS",
+      "card_type": "SOLO",
+      "card_position": null,
+      "shared_with": [],
+      "billing_group": null,
+      "minimum_relative_size": null,
+      "size_reference": null,
+      "size_comparison_basis": null,
+      "minimum_visible_duration_ms": null,
+      "territories": [],
+      "media_versions": [],
+      "trigger_condition": null,
+      "governing_authority": null,
+      "source_document_id": "doc_sealed003",
+      "source_document_version": 1,
+      "source_span": {"page": 3, "start_char": 5, "end_char": 30, "quote": "M. Osei, Casting Director"},
+      "source_hash": "s003ccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+      "agent_reported_confidence": 0.61,
+      "extraction_model_id": "synthetic-fixture-v1",
+      "prompt_version": "v1",
+      "status": "ACTIVE"
+    }
+  ],
+  "manifest": {
+    "manifest_id": "mfst_sealed003",
+    "production_id": "prod_sealed",
+    "delivery_version_id": "v1",
+    "entries": [
+      {
+        "rendered_element_id": "elem_s003",
+        "contributor_id": "contrib_miriam_osei",
+        "display_name": "Miriam Osei",
+        "role": "Casting Director",
+        "department": null,
+        "credit_surface": "END_CARDS",
+        "group_id": null,
+        "ordinal_position": 1,
+        "shared_with": [],
+        "production_id": "prod_sealed",
+        "delivery_version_id": "v1"
+      }
+    ]
+  },
+  "contributor_registry": [
+    {
+      "contributor_id": "contrib_s003_unresolved",
+      "canonical_name": "M. Osei",
+      "aliases": []
+    },
+    {
+      "contributor_id": "contrib_miriam_osei",
+      "canonical_name": "M. Osei",
+      "aliases": []
+    }
+  ],
+  "layout_evidence": null,
+  "visual_observations": null,
+  "expected_issues": ["AMBIGUOUS_IDENTITY"],
+  "expected_gate": "NEEDS_HUMAN",
+  "sealed": true
+}

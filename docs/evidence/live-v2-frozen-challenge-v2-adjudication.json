@@ -1,0 +1,43 @@
+{
+  "original_evidence_sha256": "d1939a8a98a286bd179a8a5b6bce2be9a5d24d25ecfe3b3a344ecfd189b3b8be",
+  "original_quality_gate_status": "FAILED_QUALITY_GATE",
+  "adjudication_status": "INVALID_FIXTURE_ANNOTATIONS",
+  "immutable_evidence_statement": "The original result in live-v2-frozen-challenge-v2.json remains immutable and is not modified, replaced, or deleted.",
+  "provenance_statement": "The report proves live Gemini execution and model provenance but is not used as product-quality evidence due to objective benchmark fixture defects.",
+  "defects": [
+    {
+      "defect_id": "EXTRACTOR_GOLD_SPAN_ANNOTATION_MISMATCH",
+      "description": "Extractor production prompt explicitly requires quotes to represent the full supporting credit requirement clause. Multi-person obligations share the clause quote. V2 gold annotations incorrectly contained individual name-only spans.",
+      "affected_component": "extractor",
+      "affected_case_ids": [
+        "fv2_ext_000",
+        "fv2_ext_001",
+        "fv2_ext_002",
+        "fv2_ext_003",
+        "fv2_ext_004",
+        "fv2_ext_005",
+        "fv2_ext_008",
+        "fv2_ext_009"
+      ],
+      "invalid_spans_count": 13
+    },
+    {
+      "defect_id": "STEWARD_ISSUE_CODE_ADMISSIBILITY_MISMATCH",
+      "description": "All four positive Steward fixtures used issue_code=MISSING_CREDIT, but expected SUBSTITUTE_TEXT, REORDER, REGROUP, and REPOSITION patch operations which are not derivable from MISSING_CREDIT under Steward deterministic issue mapping.",
+      "affected_component": "steward",
+      "affected_case_ids": [
+        "fv2_stw_000",
+        "fv2_stw_001",
+        "fv2_stw_002",
+        "fv2_stw_003"
+      ],
+      "invalid_positive_cases_count": 4
+    },
+    {
+      "defect_id": "FIXTURE_SET_DIGEST_AMBIGUITY",
+      "description": "The report stored the complete-corpus digest (full_fixture_corpus_digest) rather than the target split digest (evaluated_fixture_set_digest).",
+      "affected_component": "runner",
+      "affected_case_ids": []
+    }
+  ]
+}

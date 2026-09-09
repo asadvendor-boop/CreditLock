@@ -1,0 +1,41 @@
+{
+  "case_id": "ext_challenge_004_ampersand",
+  "split": "RECORDED_CHALLENGE_V1",
+  "synthetic_document_text": "DEAL MEMO\n\nCo-Producer Credit: Rachel Adams & Liam O'Connor shall receive shared Co-Producer credit on end cards.",
+  "expected_obligations": [
+    {
+      "required_display_text": "Rachel Adams",
+      "role_label": "Co-Producer",
+      "credit_surface": "END_CARDS",
+      "card_type": "SHARED",
+      "card_position_ordinal": 1
+    },
+    {
+      "required_display_text": "Liam O'Connor",
+      "role_label": "Co-Producer",
+      "credit_surface": "END_CARDS",
+      "card_type": "SHARED",
+      "card_position_ordinal": 1
+    }
+  ],
+  "scored_fields": [
+    "required_display_text",
+    "role_label",
+    "credit_surface",
+    "card_type",
+    "card_position_ordinal"
+  ],
+  "exact_gold_source_spans": [
+    {
+      "quote": "Rachel Adams & Liam O'Connor shall receive shared Co-Producer credit on end cards.",
+      "start_char": 31,
+      "end_char": 113
+    },
+    {
+      "quote": "Rachel Adams & Liam O'Connor shall receive shared Co-Producer credit on end cards.",
+      "start_char": 31,
+      "end_char": 113
+    }
+  ],
+  "is_non_binding": false
+}

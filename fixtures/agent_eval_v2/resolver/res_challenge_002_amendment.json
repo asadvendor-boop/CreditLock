@@ -1,0 +1,58 @@
+{
+  "case_id": "res_challenge_002_amendment",
+  "split": "RECORDED_CHALLENGE_V1",
+  "input_candidate_obligations": [
+    {
+      "obligation_id": "obl-res-chal-002-c1",
+      "production_id": "prod-chal-2",
+      "status": "CANDIDATE",
+      "extraction_model_id": "gemini-3.6-flash",
+      "prompt_version": "v1",
+      "credited_party_id": "contrib-prod-samantha",
+      "required_display_text": "Samantha Reed",
+      "role_label": "Producer",
+      "credit_surface": "END_CARDS",
+      "card_type": "SOLO",
+      "card_position": {
+        "kind": "ABSOLUTE",
+        "ordinal": 2
+      },
+      "source_document_id": "initial_contract.txt",
+      "source_document_version": 1,
+      "source_hash": "hash_v1",
+      "agent_reported_confidence": 0.9,
+      "source_span": {
+        "quote": "Producer Credit: Samantha Reed position 2.",
+        "start_char": 0,
+        "end_char": 42
+      }
+    },
+    {
+      "obligation_id": "obl-res-chal-002-c2",
+      "production_id": "prod-chal-2",
+      "status": "CANDIDATE",
+      "extraction_model_id": "gemini-3.6-flash",
+      "prompt_version": "v1",
+      "credited_party_id": "contrib-prod-samantha",
+      "required_display_text": "Samantha Reed",
+      "role_label": "Producer",
+      "credit_surface": "END_CARDS",
+      "card_type": "SOLO",
+      "card_position": {
+        "kind": "ABSOLUTE",
+        "ordinal": 1
+      },
+      "source_document_id": "amendment_1.txt",
+      "source_document_version": 2,
+      "source_hash": "hash_v2",
+      "agent_reported_confidence": 0.95,
+      "source_span": {
+        "quote": "Amendment No. 1: Samantha Reed shall receive Producer credit in position 1, amending all prior schedules.",
+        "start_char": 0,
+        "end_char": 105
+      }
+    }
+  ],
+  "expected_recommendation": "RESOLVE",
+  "expected_controlling_id": "obl-res-chal-002-c2"
+}

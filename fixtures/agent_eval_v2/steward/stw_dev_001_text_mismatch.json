@@ -1,0 +1,55 @@
+{
+  "case_id": "stw_dev_001_text_mismatch",
+  "split": "DEV",
+  "input_issue": {
+    "issue_id": "issue-s1",
+    "code": "ARTIFACT_TEXT_MISMATCH",
+    "manifest_refs": ["elem-1"],
+    "obligation_id": "obl-s1",
+    "detail": "display_name mismatch: required_display_text 'Hans Zimmer' (NFC: 'Hans Zimmer') does not match manifest display_name 'H. Zimmer' (NFC: 'H. Zimmer'). Source: memo.txt §Hans Zimmer"
+  },
+  "input_obligation": {
+    "obligation_id": "obl-s1",
+    "production_id": "prod-v2",
+    "status": "ACTIVE",
+    "extraction_model_id": "gemini-3.6-flash",
+    "prompt_version": "v1",
+    "required_display_text": "Hans Zimmer",
+    "role_label": "Composer",
+    "credit_surface": "END_CARDS",
+    "card_type": "SOLO",
+    "card_position": {
+      "kind": "ABSOLUTE",
+      "ordinal": 1
+    },
+    "source_document_id": "memo.txt",
+    "source_document_version": 1,
+    "source_hash": "hash1",
+    "agent_reported_confidence": 0.95,
+    "source_span": {
+      "quote": "Hans Zimmer",
+      "start_char": 0,
+      "end_char": 11
+    }
+  },
+  "input_manifest": {
+    "manifest_id": "man-s1",
+    "production_id": "prod-v2",
+    "delivery_version_id": "v1",
+    "entries": [
+      {
+        "rendered_element_id": "elem-1",
+        "contributor_id": "c1",
+        "display_name": "H. Zimmer",
+        "role": "Composer",
+        "credit_surface": "END_CARDS",
+        "ordinal_position": 1,
+        "production_id": "prod-v2",
+        "delivery_version_id": "v1"
+      }
+    ]
+  },
+  "expected_action": "PROPOSE_PATCH",
+  "expected_patch_operation": "SUBSTITUTE_TEXT",
+  "expected_patch_value": "Hans Zimmer"
+}

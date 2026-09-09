@@ -1,0 +1,60 @@
+{
+  "agent_code_commit_sha": "cc8701239eaf723afdb737033acce6d3cd730647",
+  "frozen_prompt_template_hashes": {
+    "extractor": "eeec7cd61d0a2e028b59fb37f38884aeb6965924c0b500ecb3c9e95950e8e8a9",
+    "resolver": "ae6b5396fa8a237ef4393c67c47e335f47ad067a07e45fbd7325a4ed9148c8f0",
+    "steward": "6105801a63e0711c4140bdbead2564638da15710292e71ae4cb37895519a31f8"
+  },
+  "configured_primary_models": {
+    "extractor": "gemini-3.6-flash",
+    "resolver": "gemini-3.1-pro-preview",
+    "steward": "gemini-3.5-flash-lite"
+  },
+  "configured_fallback_models": {
+    "extractor": "gemini-3.5-flash-lite",
+    "resolver": "gemini-3.6-flash",
+    "steward": "gemini-3.6-flash"
+  },
+  "fixture_counts": {
+    "extractor": 10,
+    "resolver": 6,
+    "steward": 7
+  },
+  "semantic_uniqueness_counts": {
+    "extractor": 10,
+    "resolver": 6,
+    "steward": 7
+  },
+  "coverage_categories": {
+    "extractor": [
+      "single-person positive",
+      "two-person 'and' positive",
+      "ampersand positive",
+      "three-person list positive",
+      "heading-separated binding clause positive",
+      "repeated clause positive with exact unambiguous spans",
+      "draft/non-binding negative",
+      "conditional/future negative",
+      "unfamiliar formatting positive",
+      "unfamiliar role/names positive"
+    ],
+    "resolver": [
+      "explicit supersession",
+      "explicit amendment",
+      "date/version-only difference with no supersession language",
+      "substantive incompatible obligations",
+      "genuinely unrelated grouping identities",
+      "same party with no controlling proof and no substantive incompatibility"
+    ],
+    "steward": [
+      "SUBSTITUTE_TEXT",
+      "REORDER",
+      "REGROUP",
+      "REPOSITION",
+      "deterministic abstention 1",
+      "deterministic abstention 2",
+      "deterministic abstention 3"
+    ]
+  },
+  "fixture_set_digest": "a04099e386311c56383bdf09b9cd5b69a02226fd2ab7bae97b73472afb2cc580"
+}

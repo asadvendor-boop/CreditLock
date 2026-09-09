@@ -1,0 +1,57 @@
+{
+  "case_id": "fv2_stw_005",
+  "split": "FROZEN_CHALLENGE_V2",
+  "scenario_category": "deterministic abstention 2",
+  "input_issue": {
+    "issue_id": "issue1",
+    "code": "MISSING_CREDIT",
+    "obligation_id": "obl1",
+    "manifest_refs": [],
+    "detail": "Missing credit for Sam"
+  },
+  "input_obligation": {
+    "obligation_id": "obl1",
+    "production_id": "prod1",
+    "status": "ACTIVE",
+    "extraction_model_id": "model",
+    "prompt_version": "v1",
+    "credited_party_id": "party1",
+    "required_display_text": "Sam",
+    "role_label": "Cinematographer",
+    "credit_surface": "END_CARDS",
+    "card_type": "SOLO",
+    "card_position": {
+      "kind": "ABSOLUTE",
+      "ordinal": 1
+    },
+    "source_document_id": "doc1.txt",
+    "source_document_version": 1,
+    "source_hash": "h1",
+    "source_span": {
+      "quote": "Director: Sam",
+      "start_char": 0,
+      "end_char": 13
+    },
+    "agent_reported_confidence": 0.9
+  },
+  "input_manifest": {
+    "manifest_id": "man1",
+    "production_id": "prod1",
+    "delivery_version_id": "v1",
+    "entries": [
+      {
+        "rendered_element_id": "target_element_1",
+        "contributor_id": "party1",
+        "display_name": "Sam",
+        "role": "Director",
+        "credit_surface": "END_CARDS",
+        "ordinal_position": 1,
+        "production_id": "prod1",
+        "delivery_version_id": "v1"
+      }
+    ]
+  },
+  "expected_action": "DETERMINISTIC_ABSTAIN",
+  "expected_patch_operation": null,
+  "expected_patch_value": null
+}

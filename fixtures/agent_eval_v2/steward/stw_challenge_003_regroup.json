@@ -1,0 +1,58 @@
+{
+  "case_id": "stw_challenge_003_regroup",
+  "split": "RECORDED_CHALLENGE_V1",
+  "input_issue": {
+    "issue_id": "issue-stw-chal-003",
+    "code": "ARTIFACT_GROUPING_MISMATCH",
+    "manifest_refs": [
+      "elem-chal-3"
+    ],
+    "obligation_id": "obl-stw-chal-3",
+    "detail": "Card type mismatch SHARED vs SOLO — obligation requires SOLO card"
+  },
+  "input_obligation": {
+    "obligation_id": "obl-stw-chal-3",
+    "production_id": "prod-stw-chal-3",
+    "status": "ACTIVE",
+    "extraction_model_id": "gemini-3.6-flash",
+    "prompt_version": "v1",
+    "required_display_text": "Felix Mercer",
+    "role_label": "Director",
+    "credit_surface": "END_CARDS",
+    "card_type": "SOLO",
+    "card_position": {
+      "kind": "ABSOLUTE",
+      "ordinal": 1
+    },
+    "source_document_id": "memo.txt",
+    "source_document_version": 1,
+    "source_hash": "h1",
+    "agent_reported_confidence": 0.95,
+    "source_span": {
+      "quote": "Felix Mercer",
+      "start_char": 0,
+      "end_char": 12
+    }
+  },
+  "input_manifest": {
+    "manifest_id": "man-stw-chal-3",
+    "production_id": "prod-stw-chal-3",
+    "delivery_version_id": "v1",
+    "entries": [
+      {
+        "rendered_element_id": "elem-chal-3",
+        "contributor_id": "c3",
+        "display_name": "Felix Mercer",
+        "role": "Director",
+        "credit_surface": "END_CARDS",
+        "ordinal_position": 1,
+        "production_id": "prod-stw-chal-3",
+        "delivery_version_id": "v1"
+      }
+    ]
+  },
+  "expected_action": "PROPOSE_PATCH",
+  "expected_patch_operation": "REGROUP",
+  "expected_patch_value": "SOLO",
+  "fixture_contract_correction": "Grouping mismatch now concerns SOLO/SHARED card_type, not credit_surface. Operation corrected from REGROUP_SURFACE to REGROUP with controlling card_type value."
+}

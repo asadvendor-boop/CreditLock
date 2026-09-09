@@ -1,0 +1,71 @@
+{
+  "case_id": "dev_004_ambiguous_identity",
+  "description": "obligee_text 'D. Park' matches two registry contributors — identity is ambiguous, human confirmation required.",
+  "obligations": [
+    {
+      "obligation_id": "obl_dev004",
+      "production_id": "prod_dev",
+      "credited_party_id": null,
+      "obligee_text": "D. Park",
+      "required_display_text": null,
+      "role_label": "Associate Producer",
+      "credit_surface": "END_CARDS",
+      "card_type": "SOLO",
+      "card_position": null,
+      "shared_with": [],
+      "billing_group": null,
+      "minimum_relative_size": null,
+      "size_reference": null,
+      "size_comparison_basis": null,
+      "minimum_visible_duration_ms": null,
+      "territories": [],
+      "media_versions": [],
+      "trigger_condition": null,
+      "governing_authority": null,
+      "source_document_id": "doc_dev004",
+      "source_document_version": 1,
+      "source_span": {"page": 3, "start_char": 0, "end_char": 18, "quote": "D. Park, Assoc. Producer"},
+      "source_hash": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
+      "agent_reported_confidence": 0.60,
+      "extraction_model_id": "synthetic-fixture-v1",
+      "prompt_version": "v1",
+      "status": "ACTIVE"
+    }
+  ],
+  "manifest": {
+    "manifest_id": "mfst_dev004",
+    "production_id": "prod_dev",
+    "delivery_version_id": "v1",
+    "entries": [
+      {
+        "rendered_element_id": "elem_004",
+        "contributor_id": "contrib_david_park",
+        "display_name": "David Park",
+        "role": "Associate Producer",
+        "department": null,
+        "credit_surface": "END_CARDS",
+        "group_id": null,
+        "ordinal_position": 1,
+        "shared_with": [],
+        "production_id": "prod_dev",
+        "delivery_version_id": "v1"
+      }
+    ]
+  },
+  "contributor_registry": [
+    {
+      "contributor_id": "contrib_park_unresolved",
+      "canonical_name": "D. Park",
+      "aliases": []
+    },
+    {
+      "contributor_id": "contrib_david_park",
+      "canonical_name": "D. Park",
+      "aliases": []
+    }
+  ],
+  "layout_evidence": null,
+  "visual_observations": null,
+  "expected_issues": ["AMBIGUOUS_IDENTITY"],
+  "expected_gate": "NEEDS_HUMAN"
+}

@@ -1,0 +1,41 @@
+{
+  "case_id": "ext_challenge_006_repeated_clause",
+  "split": "RECORDED_CHALLENGE_V1",
+  "synthetic_document_text": "AGREEMENT PARAGRAPH 1\nLine Producer Credit: Claire Bennett shall receive solo Line Producer credit on end cards.\n\nAGREEMENT PARAGRAPH 2\nLine Producer Credit: Claire Bennett shall receive solo Line Producer credit on end cards.",
+  "expected_obligations": [
+    {
+      "required_display_text": "Claire Bennett",
+      "role_label": "Line Producer",
+      "credit_surface": "END_CARDS",
+      "card_type": "SOLO",
+      "card_position_ordinal": 1
+    },
+    {
+      "required_display_text": "Claire Bennett",
+      "role_label": "Line Producer",
+      "credit_surface": "END_CARDS",
+      "card_type": "SOLO",
+      "card_position_ordinal": 1
+    }
+  ],
+  "scored_fields": [
+    "required_display_text",
+    "role_label",
+    "credit_surface",
+    "card_type",
+    "card_position_ordinal"
+  ],
+  "exact_gold_source_spans": [
+    {
+      "quote": "Claire Bennett shall receive solo Line Producer credit on end cards.",
+      "start_char": 44,
+      "end_char": 112
+    },
+    {
+      "quote": "Claire Bennett shall receive solo Line Producer credit on end cards.",
+      "start_char": 158,
+      "end_char": 226
+    }
+  ],
+  "is_non_binding": false
+}

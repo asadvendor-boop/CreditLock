@@ -1,0 +1,59 @@
+{
+  "case_id": "fv2_res_004",
+  "split": "FROZEN_CHALLENGE_V2",
+  "scenario_category": "genuinely unrelated grouping identities",
+  "input_candidate_obligations": [
+    {
+      "obligation_id": "o1",
+      "production_id": "prod1",
+      "status": "CANDIDATE",
+      "extraction_model_id": "model",
+      "prompt_version": "v1",
+      "credited_party_id": "party1",
+      "required_display_text": "Sam",
+      "role_label": "Director",
+      "agent_reported_confidence": 0.9,
+      "credit_surface": "END_CARDS",
+      "card_type": "SOLO",
+      "card_position": {
+        "kind": "ABSOLUTE",
+        "ordinal": 1
+      },
+      "source_document_id": "doc1.txt",
+      "source_document_version": 1,
+      "source_hash": "h1",
+      "source_span": {
+        "quote": "Director: Sam1",
+        "start_char": 0,
+        "end_char": 14
+      }
+    },
+    {
+      "obligation_id": "o2",
+      "production_id": "prod1",
+      "status": "CANDIDATE",
+      "extraction_model_id": "model",
+      "prompt_version": "v1",
+      "credited_party_id": "party2",
+      "required_display_text": "Sam",
+      "role_label": "Editor",
+      "agent_reported_confidence": 0.9,
+      "credit_surface": "END_CARDS",
+      "card_type": "SOLO",
+      "card_position": {
+        "kind": "ABSOLUTE",
+        "ordinal": 1
+      },
+      "source_document_id": "doc1.txt",
+      "source_document_version": 1,
+      "source_hash": "h1",
+      "source_span": {
+        "quote": "Editor: Sam2",
+        "start_char": 0,
+        "end_char": 12
+      }
+    }
+  ],
+  "expected_recommendation": "ABSTAIN",
+  "expected_controlling_id": null
+}

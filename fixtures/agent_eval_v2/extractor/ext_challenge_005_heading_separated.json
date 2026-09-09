@@ -1,0 +1,29 @@
+{
+  "case_id": "ext_challenge_005_heading_separated",
+  "split": "RECORDED_CHALLENGE_V1",
+  "synthetic_document_text": "CREDIT MEMORANDUM\n\nCREDIT REQUIREMENT:\n\nComposer Credit: Maya Lin shall receive solo Composer credit on end cards.",
+  "expected_obligations": [
+    {
+      "required_display_text": "Maya Lin",
+      "role_label": "Composer",
+      "credit_surface": "END_CARDS",
+      "card_type": "SOLO",
+      "card_position_ordinal": 1
+    }
+  ],
+  "scored_fields": [
+    "required_display_text",
+    "role_label",
+    "credit_surface",
+    "card_type",
+    "card_position_ordinal"
+  ],
+  "exact_gold_source_spans": [
+    {
+      "quote": "Maya Lin shall receive solo Composer credit on end cards.",
+      "start_char": 57,
+      "end_char": 114
+    }
+  ],
+  "is_non_binding": false
+}

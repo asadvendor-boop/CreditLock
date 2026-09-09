@@ -1,0 +1,10 @@
+{
+  "case_id": "ext_holdout_002_future_contract_nonbinding",
+  "split": "RECORDED_REGRESSION",
+  "synthetic_document_text": "TERM SHEET - NON-BINDING PRELIMINARY DISCUSSION\nSubject to formal contract execution: Composer credit to be discussed.",
+  "expected_obligations": [],
+  "scored_fields": ["required_display_text", "role_label"],
+  "supported_unscored_fields": ["credit_surface", "card_type", "card_position_ordinal", "confidence"],
+  "exact_gold_source_spans": [],
+  "is_non_binding": true
+}

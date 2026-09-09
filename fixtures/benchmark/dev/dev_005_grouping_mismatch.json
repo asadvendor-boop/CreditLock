@@ -1,0 +1,58 @@
+{
+  "case_id": "dev_005_grouping_mismatch",
+  "description": "Obligation requires SOLO card; manifest places the entry in a shared group.",
+  "obligations": [
+    {
+      "obligation_id": "obl_dev005",
+      "production_id": "prod_dev",
+      "credited_party_id": "contrib_005",
+      "required_display_text": null,
+      "role_label": "Director of Photography",
+      "credit_surface": "MAIN_TITLES",
+      "card_type": "SOLO",
+      "card_position": null,
+      "shared_with": [],
+      "billing_group": null,
+      "minimum_relative_size": null,
+      "size_reference": null,
+      "size_comparison_basis": null,
+      "minimum_visible_duration_ms": null,
+      "territories": [],
+      "media_versions": [],
+      "trigger_condition": null,
+      "governing_authority": null,
+      "source_document_id": "doc_dev005",
+      "source_document_version": 1,
+      "source_span": {"page": 1, "start_char": 0, "end_char": 20, "quote": "solo card, DP credit"},
+      "source_hash": "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
+      "agent_reported_confidence": 0.98,
+      "extraction_model_id": "synthetic-fixture-v1",
+      "prompt_version": "v1",
+      "status": "ACTIVE"
+    }
+  ],
+  "manifest": {
+    "manifest_id": "mfst_dev005",
+    "production_id": "prod_dev",
+    "delivery_version_id": "v1",
+    "entries": [
+      {
+        "rendered_element_id": "elem_005",
+        "contributor_id": "contrib_005",
+        "display_name": "Anika Osei",
+        "role": "Director of Photography",
+        "department": null,
+        "credit_surface": "MAIN_TITLES",
+        "group_id": "shared_group_01",
+        "ordinal_position": 1,
+        "shared_with": ["contrib_006"],
+        "production_id": "prod_dev",
+        "delivery_version_id": "v1"
+      }
+    ]
+  },
+  "layout_evidence": null,
+  "visual_observations": null,
+  "expected_issues": ["ARTIFACT_GROUPING_MISMATCH"],
+  "expected_gate": "BLOCKED"
+}

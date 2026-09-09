@@ -1,0 +1,1435 @@
+{
+  "execution_status": "COMPLETED_LIVE_GEMINI",
+  "completeness_status": "COMPLETE_ALL_CASES",
+  "quality_gate_status": "FAILED_QUALITY_GATE",
+  "summary_status": "FAILED_QUALITY_GATE",
+  "evidence_class": "FROZEN_CHALLENGE",
+  "command_mode": "LIVE_GEMINI",
+  "generated_at_utc": "2026-08-06T17:03:35.391846+00:00",
+  "git_commit_sha": "051df57de9c8136ce52797df43b10188552e1fa9",
+  "fixture_set_digest": "5be668b9305b2fe47db12e1bc6320b988e232cf149334537655f6d151887453a",
+  "agent_prompt_template_hashes": {
+    "extractor": "3bfc269594ef649228e9a74bab00f042efc91d5acc6fbee31a382e80d42388fe",
+    "resolver": "3bfc269594ef649228e9a74bab00f042efc91d5acc6fbee31a382e80d42388fe",
+    "steward": "3bfc269594ef649228e9a74bab00f042efc91d5acc6fbee31a382e80d42388fe"
+  },
+  "configured_primary_models": {
+    "extractor": "gemini-3.6-flash",
+    "resolver": "gemini-3.1-pro-preview",
+    "steward": "gemini-3.5-flash-lite"
+  },
+  "configured_fallback_models": {
+    "extractor": "gemini-3.5-flash-lite",
+    "resolver": "gemini-3.6-flash",
+    "steward": "gemini-3.6-flash"
+  },
+  "split_disclaimer": "FROZEN_CHALLENGE results recorded from a single frozen live evaluation run.",
+  "dev_metrics": {
+    "extractor": {
+      "total_cases": 2,
+      "field_precision": 1.0,
+      "field_recall": 1.0,
+      "field_f1": 1.0,
+      "source_span_validity_rate": 1.0,
+      "span_validity_denominator": 1,
+      "exact_gold_source_span_accuracy": 1.0,
+      "exact_gold_span_denominator": 1,
+      "non_binding_false_positive_count": 0,
+      "unsupported_invented_field_count": 0
+    },
+    "resolver": {
+      "total_cases": 2,
+      "system_recommendation_accuracy": 1.0,
+      "system_rec_denominator": 2,
+      "model_backed_recommendation_accuracy": 1.0,
+      "model_backed_rec_denominator": 2,
+      "deterministic_short_circuit_accuracy": null,
+      "deterministic_short_circuit_denominator": 0,
+      "model_backed_controlling_id_accuracy": 1.0,
+      "model_backed_ctrl_id_denominator": 1,
+      "model_backed_abstention_accuracy": 1.0,
+      "model_backed_abstention_denominator": 1,
+      "model_backed_conflict_accuracy": null,
+      "model_backed_conflict_denominator": 0
+    },
+    "steward": {
+      "total_cases": 2,
+      "expected_action_accuracy": 1.0,
+      "action_denominator": 2,
+      "validate_patch_pass_rate": 1.0,
+      "patch_validation_denominator": 1
+    }
+  },
+  "recorded_regression_metrics": {
+    "extractor": {
+      "total_cases": 2,
+      "field_precision": 1.0,
+      "field_recall": 1.0,
+      "field_f1": 1.0,
+      "source_span_validity_rate": 1.0,
+      "span_validity_denominator": 2,
+      "exact_gold_source_span_accuracy": 0.0,
+      "exact_gold_span_denominator": 2,
+      "non_binding_false_positive_count": 0,
+      "unsupported_invented_field_count": 0
+    },
+    "resolver": {
+      "total_cases": 1,
+      "system_recommendation_accuracy": 1.0,
+      "system_rec_denominator": 1,
+      "model_backed_recommendation_accuracy": 1.0,
+      "model_backed_rec_denominator": 1,
+      "deterministic_short_circuit_accuracy": null,
+      "deterministic_short_circuit_denominator": 0,
+      "model_backed_controlling_id_accuracy": null,
+      "model_backed_ctrl_id_denominator": 0,
+      "model_backed_abstention_accuracy": null,
+      "model_backed_abstention_denominator": 0,
+      "model_backed_conflict_accuracy": 1.0,
+      "model_backed_conflict_denominator": 1
+    },
+    "steward": {
+      "total_cases": 1,
+      "expected_action_accuracy": 1.0,
+      "action_denominator": 1,
+      "validate_patch_pass_rate": 1.0,
+      "patch_validation_denominator": 1
+    }
+  },
+  "frozen_challenge_metrics": {
+    "extractor": {
+      "total_cases": 8,
+      "field_precision": 0.0,
+      "field_recall": 0.0,
+      "field_f1": null,
+      "source_span_validity_rate": 1.0,
+      "span_validity_denominator": 6,
+      "exact_gold_source_span_accuracy": 0.3333333333333333,
+      "exact_gold_span_denominator": 6,
+      "non_binding_false_positive_count": 0,
+      "unsupported_invented_field_count": 0
+    },
+    "resolver": {
+      "total_cases": 5,
+      "system_recommendation_accuracy": 0.8,
+      "system_rec_denominator": 5,
+      "model_backed_recommendation_accuracy": 0.75,
+      "model_backed_rec_denominator": 4,
+      "deterministic_short_circuit_accuracy": 1.0,
+      "deterministic_short_circuit_denominator": 1,
+      "model_backed_controlling_id_accuracy": 1.0,
+      "model_backed_ctrl_id_denominator": 2,
+      "model_backed_abstention_accuracy": 0.0,
+      "model_backed_abstention_denominator": 1,
+      "model_backed_conflict_accuracy": 1.0,
+      "model_backed_conflict_denominator": 1
+    },
+    "steward": {
+      "total_cases": 6,
+      "expected_action_accuracy": 0.8333333333333334,
+      "action_denominator": 6,
+      "validate_patch_pass_rate": 1.0,
+      "patch_validation_denominator": 3
+    }
+  },
+  "combined_metrics": {
+    "extractor": {
+      "total_cases": 12,
+      "field_precision": 0.3333333333333333,
+      "field_recall": 0.21428571428571427,
+      "field_f1": 0.2608695652173913,
+      "source_span_validity_rate": 1.0,
+      "span_validity_denominator": 9,
+      "exact_gold_source_span_accuracy": 0.3333333333333333,
+      "exact_gold_span_denominator": 9,
+      "non_binding_false_positive_count": 0,
+      "unsupported_invented_field_count": 0
+    },
+    "resolver": {
+      "total_cases": 8,
+      "system_recommendation_accuracy": 0.875,
+      "system_rec_denominator": 8,
+      "model_backed_recommendation_accuracy": 0.8571428571428571,
+      "model_backed_rec_denominator": 7,
+      "deterministic_short_circuit_accuracy": 1.0,
+      "deterministic_short_circuit_denominator": 1,
+      "model_backed_controlling_id_accuracy": 1.0,
+      "model_backed_ctrl_id_denominator": 3,
+      "model_backed_abstention_accuracy": 0.5,
+      "model_backed_abstention_denominator": 2,
+      "model_backed_conflict_accuracy": 1.0,
+      "model_backed_conflict_denominator": 2
+    },
+    "steward": {
+      "total_cases": 9,
+      "expected_action_accuracy": 0.8888888888888888,
+      "action_denominator": 9,
+      "validate_patch_pass_rate": 1.0,
+      "patch_validation_denominator": 5
+    }
+  },
+  "agent_execution_counts": {
+    "extractor": 12,
+    "resolver": 8,
+    "steward": 9
+  },
+  "model_backed_invocation_counts": {
+    "extractor": 12,
+    "resolver": 7,
+    "steward": 7
+  },
+  "fallback_counts_by_agent": {},
+  "attempted_model_calls_by_model": {
+    "gemini-3.6-flash": 12,
+    "gemini-3.1-pro-preview": 7,
+    "gemini-3.5-flash-lite": 7
+  },
+  "successful_model_calls_by_model": {
+    "gemini-3.6-flash": 12,
+    "gemini-3.1-pro-preview": 7,
+    "gemini-3.5-flash-lite": 7
+  },
+  "per_case_results": [
+    {
+      "case_id": "ext_challenge_001_single",
+      "component": "extractor",
+      "split": "FROZEN_CHALLENGE",
+      "expected_scored_fields": [
+        {
+          "required_display_text": "Marcus Vance",
+          "role_label": "Producer",
+          "credit_surface": "MAIN_TITLES",
+          "card_type": "SOLO",
+          "card_position_ordinal": 1
+        }
+      ],
+      "predicted_scored_fields": [
+        {
+          "required_display_text": "Marcus Vance",
+          "role_label": "Producer",
+          "credit_surface": "MAIN_TITLES",
+          "card_type": "SOLO",
+          "card_position_ordinal": null
+        }
+      ],
+      "matched_status": "MATCHED",
+      "expected_gold_spans": [
+        {
+          "quote": "Marcus Vance shall receive a solo Producer credit on the main titles.",
+          "start_char": 66,
+          "end_char": 135
+        }
+      ],
+      "predicted_spans": [
+        {
+          "quote": "Marcus Vance shall receive a solo Producer credit on the main titles.",
+          "start_char": 66,
+          "end_char": 135
+        }
+      ],
+      "span_validity_passed": true,
+      "exact_gold_matched": true,
+      "sanitized_candidate_rejection_reasons": []
+    },
+    {
+      "case_id": "ext_challenge_002_two_conjunction",
+      "component": "extractor",
+      "split": "FROZEN_CHALLENGE",
+      "expected_scored_fields": [
+        {
+          "required_display_text": "Elena Rostova",
+          "role_label": "Executive Producer",
+          "credit_surface": "END_CARDS",
+          "card_type": "SHARED",
+          "card_position_ordinal": 1
+        },
+        {
+          "required_display_text": "David Kim",
+          "role_label": "Executive Producer",
+          "credit_surface": "END_CARDS",
+          "card_type": "SHARED",
+          "card_position_ordinal": 1
+        }
+      ],
+      "predicted_scored_fields": [],
+      "matched_status": "UNMATCHED",
+      "expected_gold_spans": [
+        {
+          "quote": "Elena Rostova and David Kim shall receive shared Executive Producer credit on end cards.",
+          "start_char": 44,
+          "end_char": 132
+        },
+        {
+          "quote": "Elena Rostova and David Kim shall receive shared Executive Producer credit on end cards.",
+          "start_char": 44,
+          "end_char": 132
+        }
+      ],
+      "predicted_spans": [],
+      "span_validity_passed": true,
+      "exact_gold_matched": true,
+      "sanitized_candidate_rejection_reasons": []
+    },
+    {
+      "case_id": "ext_challenge_003_three_list",
+      "component": "extractor",
+      "split": "FROZEN_CHALLENGE",
+      "expected_scored_fields": [
+        {
+          "required_display_text": "Sarah Jenkins",
+          "role_label": "Associate Producer",
+          "credit_surface": "MAIN_TITLES",
+          "card_type": "SHARED",
+          "card_position_ordinal": 1
+        },
+        {
+          "required_display_text": "Thomas Wright",
+          "role_label": "Associate Producer",
+          "credit_surface": "MAIN_TITLES",
+          "card_type": "SHARED",
+          "card_position_ordinal": 1
+        },
+        {
+          "required_display_text": "Carlos Mendez",
+          "role_label": "Associate Producer",
+          "credit_surface": "MAIN_TITLES",
+          "card_type": "SHARED",
+          "card_position_ordinal": 1
+        }
+      ],
+      "predicted_scored_fields": [],
+      "matched_status": "UNMATCHED",
+      "expected_gold_spans": [
+        {
+          "quote": "Sarah Jenkins, Thomas Wright, and Carlos Mendez shall receive shared Associate Producer credit on main titles.",
+          "start_char": 56,
+          "end_char": 166
+        },
+        {
+          "quote": "Sarah Jenkins, Thomas Wright, and Carlos Mendez shall receive shared Associate Producer credit on main titles.",
+          "start_char": 56,
+          "end_char": 166
+        },
+        {
+          "quote": "Sarah Jenkins, Thomas Wright, and Carlos Mendez shall receive shared Associate Producer credit on main titles.",
+          "start_char": 56,
+          "end_char": 166
+        }
+      ],
+      "predicted_spans": [],
+      "span_validity_passed": true,
+      "exact_gold_matched": true,
+      "sanitized_candidate_rejection_reasons": []
+    },
+    {
+      "case_id": "ext_challenge_004_ampersand",
+      "component": "extractor",
+      "split": "FROZEN_CHALLENGE",
+      "expected_scored_fields": [
+        {
+          "required_display_text": "Rachel Adams",
+          "role_label": "Co-Producer",
+          "credit_surface": "END_CARDS",
+          "card_type": "SHARED",
+          "card_position_ordinal": 1
+        },
+        {
+          "required_display_text": "Liam O'Connor",
+          "role_label": "Co-Producer",
+          "credit_surface": "END_CARDS",
+          "card_type": "SHARED",
+          "card_position_ordinal": 1
+        }
+      ],
+      "predicted_scored_fields": [
+        {
+          "required_display_text": "Rachel Adams",
+          "role_label": "Co-Producer",
+          "credit_surface": "END_CARDS",
+          "card_type": "SHARED",
+          "card_position_ordinal": null
+        },
+        {
+          "required_display_text": "Liam O'Connor",
+          "role_label": "Co-Producer",
+          "credit_surface": "END_CARDS",
+          "card_type": "SHARED",
+          "card_position_ordinal": null
+        }
+      ],
+      "matched_status": "MATCHED",
+      "expected_gold_spans": [
+        {
+          "quote": "Rachel Adams & Liam O'Connor shall receive shared Co-Producer credit on end cards.",
+          "start_char": 31,
+          "end_char": 113
+        },
+        {
+          "quote": "Rachel Adams & Liam O'Connor shall receive shared Co-Producer credit on end cards.",
+          "start_char": 31,
+          "end_char": 113
+        }
+      ],
+      "predicted_spans": [
+        {
+          "quote": "Co-Producer Credit: Rachel Adams & Liam O'Connor shall receive shared Co-Producer credit on end cards.",
+          "start_char": 11,
+          "end_char": 113
+        },
+        {
+          "quote": "Co-Producer Credit: Rachel Adams & Liam O'Connor shall receive shared Co-Producer credit on end cards.",
+          "start_char": 11,
+          "end_char": 113
+        }
+      ],
+      "span_validity_passed": true,
+      "exact_gold_matched": false,
+      "sanitized_candidate_rejection_reasons": []
+    },
+    {
+      "case_id": "ext_challenge_005_heading_separated",
+      "component": "extractor",
+      "split": "FROZEN_CHALLENGE",
+      "expected_scored_fields": [
+        {
+          "required_display_text": "Maya Lin",
+          "role_label": "Composer",
+          "credit_surface": "END_CARDS",
+          "card_type": "SOLO",
+          "card_position_ordinal": 1
+        }
+      ],
+      "predicted_scored_fields": [
+        {
+          "required_display_text": "Maya Lin",
+          "role_label": "Composer",
+          "credit_surface": "END_CARDS",
+          "card_type": "SOLO",
+          "card_position_ordinal": null
+        }
+      ],
+      "matched_status": "MATCHED",
+      "expected_gold_spans": [
+        {
+          "quote": "Maya Lin shall receive solo Composer credit on end cards.",
+          "start_char": 57,
+          "end_char": 114
+        }
+      ],
+      "predicted_spans": [
+        {
+          "quote": "Maya Lin shall receive solo Composer credit on end cards.",
+          "start_char": 57,
+          "end_char": 114
+        }
+      ],
+      "span_validity_passed": true,
+      "exact_gold_matched": true,
+      "sanitized_candidate_rejection_reasons": []
+    },
+    {
+      "case_id": "ext_challenge_006_repeated_clause",
+      "component": "extractor",
+      "split": "FROZEN_CHALLENGE",
+      "expected_scored_fields": [
+        {
+          "required_display_text": "Claire Bennett",
+          "role_label": "Line Producer",
+          "credit_surface": "END_CARDS",
+          "card_type": "SOLO",
+          "card_position_ordinal": 1
+        },
+        {
+          "required_display_text": "Claire Bennett",
+          "role_label": "Line Producer",
+          "credit_surface": "END_CARDS",
+          "card_type": "SOLO",
+          "card_position_ordinal": 1
+        }
+      ],
+      "predicted_scored_fields": [
+        {
+          "required_display_text": "Claire Bennett",
+          "role_label": "Line Producer",
+          "credit_surface": "END_CARDS",
+          "card_type": "SOLO",
+          "card_position_ordinal": null
+        },
+        {
+          "required_display_text": "Claire Bennett",
+          "role_label": "Line Producer",
+          "credit_surface": "END_CARDS",
+          "card_type": "SOLO",
+          "card_position_ordinal": null
+        }
+      ],
+      "matched_status": "MATCHED",
+      "expected_gold_spans": [
+        {
+          "quote": "Claire Bennett shall receive solo Line Producer credit on end cards.",
+          "start_char": 44,
+          "end_char": 112
+        },
+        {
+          "quote": "Claire Bennett shall receive solo Line Producer credit on end cards.",
+          "start_char": 158,
+          "end_char": 226
+        }
+      ],
+      "predicted_spans": [
+        {
+          "quote": "Line Producer Credit: Claire Bennett shall receive solo Line Producer credit on end cards.",
+          "start_char": 22,
+          "end_char": 112
+        },
+        {
+          "quote": "Line Producer Credit: Claire Bennett shall receive solo Line Producer credit on end cards.",
+          "start_char": 136,
+          "end_char": 226
+        }
+      ],
+      "span_validity_passed": true,
+      "exact_gold_matched": false,
+      "sanitized_candidate_rejection_reasons": []
+    },
+    {
+      "case_id": "ext_challenge_007_draft_nonbinding",
+      "component": "extractor",
+      "split": "FROZEN_CHALLENGE",
+      "expected_scored_fields": [],
+      "predicted_scored_fields": [],
+      "matched_status": "UNMATCHED",
+      "expected_gold_spans": [],
+      "predicted_spans": [],
+      "span_validity_passed": true,
+      "exact_gold_matched": true,
+      "sanitized_candidate_rejection_reasons": []
+    },
+    {
+      "case_id": "ext_challenge_008_future_contract",
+      "component": "extractor",
+      "split": "FROZEN_CHALLENGE",
+      "expected_scored_fields": [],
+      "predicted_scored_fields": [],
+      "matched_status": "UNMATCHED",
+      "expected_gold_spans": [],
+      "predicted_spans": [],
+      "span_validity_passed": true,
+      "exact_gold_matched": true,
+      "sanitized_candidate_rejection_reasons": []
+    },
+    {
+      "case_id": "ext_dev_001_single_memo",
+      "component": "extractor",
+      "split": "DEV",
+      "expected_scored_fields": [
+        {
+          "required_display_text": "John Williams",
+          "role_label": "Composer",
+          "credit_surface": "END_CARDS",
+          "card_type": "SOLO"
+        }
+      ],
+      "predicted_scored_fields": [
+        {
+          "required_display_text": "John Williams",
+          "role_label": "Composer",
+          "credit_surface": "END_CARDS"
+        }
+      ],
+      "matched_status": "MATCHED",
+      "expected_gold_spans": [
+        {
+          "quote": "CREDIT: John Williams",
+          "start_char": 18,
+          "end_char": 39
+        }
+      ],
+      "predicted_spans": [
+        {
+          "quote": "CREDIT: John Williams",
+          "start_char": 18,
+          "end_char": 39
+        }
+      ],
+      "span_validity_passed": true,
+      "exact_gold_matched": true,
+      "sanitized_candidate_rejection_reasons": []
+    },
+    {
+      "case_id": "ext_dev_002_negotiation_draft",
+      "component": "extractor",
+      "split": "DEV",
+      "expected_scored_fields": [],
+      "predicted_scored_fields": [],
+      "matched_status": "UNMATCHED",
+      "expected_gold_spans": [],
+      "predicted_spans": [],
+      "span_validity_passed": true,
+      "exact_gold_matched": true,
+      "sanitized_candidate_rejection_reasons": []
+    },
+    {
+      "case_id": "ext_holdout_001_billing_block",
+      "component": "extractor",
+      "split": "RECORDED_REGRESSION",
+      "expected_scored_fields": [
+        {
+          "required_display_text": "Emma Thomas",
+          "role_label": "Producer",
+          "credit_surface": "BILLING_BLOCK"
+        },
+        {
+          "required_display_text": "Christopher Nolan",
+          "role_label": "Producer",
+          "credit_surface": "BILLING_BLOCK"
+        }
+      ],
+      "predicted_scored_fields": [
+        {
+          "required_display_text": "Emma Thomas",
+          "role_label": "Producer",
+          "credit_surface": "BILLING_BLOCK"
+        },
+        {
+          "required_display_text": "Christopher Nolan",
+          "role_label": "Producer",
+          "credit_surface": "BILLING_BLOCK"
+        }
+      ],
+      "matched_status": "MATCHED",
+      "expected_gold_spans": [
+        {
+          "quote": "Produced by Emma Thomas and Christopher Nolan.",
+          "start_char": 69,
+          "end_char": 115
+        }
+      ],
+      "predicted_spans": [
+        {
+          "quote": "Billing Block Credit Required: Produced by Emma Thomas and Christopher Nolan.",
+          "start_char": 38,
+          "end_char": 115
+        },
+        {
+          "quote": "Billing Block Credit Required: Produced by Emma Thomas and Christopher Nolan.",
+          "start_char": 38,
+          "end_char": 115
+        }
+      ],
+      "span_validity_passed": true,
+      "exact_gold_matched": false,
+      "sanitized_candidate_rejection_reasons": []
+    },
+    {
+      "case_id": "ext_holdout_002_future_contract_nonbinding",
+      "component": "extractor",
+      "split": "RECORDED_REGRESSION",
+      "expected_scored_fields": [],
+      "predicted_scored_fields": [],
+      "matched_status": "UNMATCHED",
+      "expected_gold_spans": [],
+      "predicted_spans": [],
+      "span_validity_passed": true,
+      "exact_gold_matched": true,
+      "sanitized_candidate_rejection_reasons": []
+    },
+    {
+      "case_id": "res_challenge_001_supersession",
+      "component": "resolver",
+      "split": "FROZEN_CHALLENGE",
+      "expected_recommendation": "RESOLVE",
+      "actual_recommendation": "RESOLVE",
+      "expected_controlling_id": "obl-res-chal-001-c2",
+      "actual_controlling_id": "obl-res-chal-001-c2",
+      "execution_path": "MODEL_BACKED",
+      "recommendation_matched": true,
+      "controlling_id_matched": true
+    },
+    {
+      "case_id": "res_challenge_002_amendment",
+      "component": "resolver",
+      "split": "FROZEN_CHALLENGE",
+      "expected_recommendation": "RESOLVE",
+      "actual_recommendation": "RESOLVE",
+      "expected_controlling_id": "obl-res-chal-002-c2",
+      "actual_controlling_id": "obl-res-chal-002-c2",
+      "execution_path": "MODEL_BACKED",
+      "recommendation_matched": true,
+      "controlling_id_matched": true
+    },
+    {
+      "case_id": "res_challenge_003_date_ambiguity",
+      "component": "resolver",
+      "split": "FROZEN_CHALLENGE",
+      "expected_recommendation": "ABSTAIN",
+      "actual_recommendation": "CONFLICT",
+      "expected_controlling_id": null,
+      "actual_controlling_id": null,
+      "execution_path": "MODEL_BACKED",
+      "recommendation_matched": false,
+      "controlling_id_matched": true
+    },
+    {
+      "case_id": "res_challenge_004_mutually_exclusive",
+      "component": "resolver",
+      "split": "FROZEN_CHALLENGE",
+      "expected_recommendation": "CONFLICT",
+      "actual_recommendation": "CONFLICT",
+      "expected_controlling_id": null,
+      "actual_controlling_id": null,
+      "execution_path": "MODEL_BACKED",
+      "recommendation_matched": true,
+      "controlling_id_matched": true
+    },
+    {
+      "case_id": "res_challenge_005_unrelated_parties",
+      "component": "resolver",
+      "split": "FROZEN_CHALLENGE",
+      "expected_recommendation": "ABSTAIN",
+      "actual_recommendation": "ABSTAIN",
+      "expected_controlling_id": null,
+      "actual_controlling_id": null,
+      "execution_path": "DETERMINISTIC_SHORT_CIRCUIT",
+      "recommendation_matched": true,
+      "controlling_id_matched": true
+    },
+    {
+      "case_id": "res_dev_001_explicit_supersession",
+      "component": "resolver",
+      "split": "DEV",
+      "expected_recommendation": "RESOLVE",
+      "actual_recommendation": "RESOLVE",
+      "expected_controlling_id": "obl-r1-v2",
+      "actual_controlling_id": "obl-r1-v2",
+      "execution_path": "MODEL_BACKED",
+      "recommendation_matched": true,
+      "controlling_id_matched": true
+    },
+    {
+      "case_id": "res_dev_002_date_only_no_supersession",
+      "component": "resolver",
+      "split": "DEV",
+      "expected_recommendation": "ABSTAIN",
+      "actual_recommendation": "ABSTAIN",
+      "expected_controlling_id": null,
+      "actual_controlling_id": null,
+      "execution_path": "MODEL_BACKED",
+      "recommendation_matched": true,
+      "controlling_id_matched": true
+    },
+    {
+      "case_id": "res_holdout_001_conflict",
+      "component": "resolver",
+      "split": "RECORDED_REGRESSION",
+      "expected_recommendation": "CONFLICT",
+      "actual_recommendation": "CONFLICT",
+      "expected_controlling_id": null,
+      "actual_controlling_id": null,
+      "execution_path": "MODEL_BACKED",
+      "recommendation_matched": true,
+      "controlling_id_matched": true
+    },
+    {
+      "case_id": "stw_challenge_001_text_sub",
+      "component": "steward",
+      "split": "FROZEN_CHALLENGE",
+      "expected_action": "PROPOSE_PATCH",
+      "actual_action": "PROPOSE_PATCH",
+      "expected_operation": "SUBSTITUTE_TEXT",
+      "expected_value": "Julian Vance",
+      "actual_operation": "SUBSTITUTE_TEXT",
+      "actual_value": "Julian Vance",
+      "execution_path": "MODEL_BACKED",
+      "validate_patch_passed": true,
+      "rejection_reason": null
+    },
+    {
+      "case_id": "stw_challenge_002_reorder",
+      "component": "steward",
+      "split": "FROZEN_CHALLENGE",
+      "expected_action": "PROPOSE_PATCH",
+      "actual_action": "PROPOSE_PATCH",
+      "expected_operation": "REORDER_ELEMENT",
+      "expected_value": "1",
+      "actual_operation": "REORDER",
+      "actual_value": "1",
+      "execution_path": "MODEL_BACKED",
+      "validate_patch_passed": true,
+      "rejection_reason": null
+    },
+    {
+      "case_id": "stw_challenge_003_regroup",
+      "component": "steward",
+      "split": "FROZEN_CHALLENGE",
+      "expected_action": "PROPOSE_PATCH",
+      "actual_action": "DETERMINISTIC_ABSTAIN",
+      "expected_operation": "REGROUP_SURFACE",
+      "expected_value": "MAIN_TITLES",
+      "actual_operation": null,
+      "actual_value": null,
+      "execution_path": "MODEL_BACKED",
+      "validate_patch_passed": null,
+      "rejection_reason": "Steward deterministic abstain: The finding code is ARTIFACT_GROUPING_MISMATCH with a credit surface mismatch. According to the instructions, proposed_operation must be 'REGROUP' and proposed_value must correspond to the credit surface 'MAIN_TITLES'."
+    },
+    {
+      "case_id": "stw_challenge_004_reposition",
+      "component": "steward",
+      "split": "FROZEN_CHALLENGE",
+      "expected_action": "PROPOSE_PATCH",
+      "actual_action": "PROPOSE_PATCH",
+      "expected_operation": "REPOSITION_ELEMENT",
+      "expected_value": "1",
+      "actual_operation": "REORDER",
+      "actual_value": "1",
+      "execution_path": "MODEL_BACKED",
+      "validate_patch_passed": true,
+      "rejection_reason": null
+    },
+    {
+      "case_id": "stw_challenge_005_inactive",
+      "component": "steward",
+      "split": "FROZEN_CHALLENGE",
+      "expected_action": "DETERMINISTIC_ABSTAIN",
+      "actual_action": "DETERMINISTIC_ABSTAIN",
+      "expected_operation": null,
+      "expected_value": null,
+      "actual_operation": null,
+      "actual_value": null,
+      "execution_path": "DETERMINISTIC_SHORT_CIRCUIT",
+      "validate_patch_passed": null,
+      "rejection_reason": "Obligation status 'ObligationStatus.SUPERSEDED' is not ACTIVE; steward deterministic abstain."
+    },
+    {
+      "case_id": "stw_challenge_006_non_derivable",
+      "component": "steward",
+      "split": "FROZEN_CHALLENGE",
+      "expected_action": "DETERMINISTIC_ABSTAIN",
+      "actual_action": "DETERMINISTIC_ABSTAIN",
+      "expected_operation": null,
+      "expected_value": null,
+      "actual_operation": null,
+      "actual_value": null,
+      "execution_path": "MODEL_BACKED",
+      "validate_patch_passed": null,
+      "rejection_reason": "Steward deterministic abstain: The credit for Isla Montgomery as Line Producer is completely missing from the manifest and cannot be derived."
+    },
+    {
+      "case_id": "stw_dev_001_text_mismatch",
+      "component": "steward",
+      "split": "DEV",
+      "expected_action": "PROPOSE_PATCH",
+      "actual_action": "PROPOSE_PATCH",
+      "expected_operation": "SUBSTITUTE_TEXT",
+      "expected_value": "Hans Zimmer",
+      "actual_operation": "SUBSTITUTE_TEXT",
+      "actual_value": "Hans Zimmer",
+      "execution_path": "MODEL_BACKED",
+      "validate_patch_passed": true,
+      "rejection_reason": null
+    },
+    {
+      "case_id": "stw_dev_002_non_active_abstain",
+      "component": "steward",
+      "split": "DEV",
+      "expected_action": "DETERMINISTIC_ABSTAIN",
+      "actual_action": "DETERMINISTIC_ABSTAIN",
+      "expected_operation": null,
+      "expected_value": null,
+      "actual_operation": null,
+      "actual_value": null,
+      "execution_path": "DETERMINISTIC_SHORT_CIRCUIT",
+      "validate_patch_passed": null,
+      "rejection_reason": "Obligation status 'ObligationStatus.CANDIDATE' is not ACTIVE; steward deterministic abstain."
+    },
+    {
+      "case_id": "stw_holdout_001_position_mismatch",
+      "component": "steward",
+      "split": "RECORDED_REGRESSION",
+      "expected_action": "PROPOSE_PATCH",
+      "actual_action": "PROPOSE_PATCH",
+      "expected_operation": "REORDER",
+      "expected_value": "1",
+      "actual_operation": "REORDER",
+      "actual_value": "1",
+      "execution_path": "MODEL_BACKED",
+      "validate_patch_passed": true,
+      "rejection_reason": null
+    }
+  ],
+  "per_case_sanitized_provenance": [
+    {
+      "case_id": "ext_challenge_001_single",
+      "agent_role": "extractor",
+      "execution_path": "MODEL_BACKED",
+      "expected_outcome": "1 candidate obligations",
+      "actual_outcome": "1 candidate obligations",
+      "prompt_version": "1.0",
+      "provenance": {
+        "actual_model_used": "gemini-3.6-flash",
+        "fallback_occurred": false,
+        "total_latency_ms": 11398.056875012117,
+        "attempts": [
+          {
+            "model_id": "gemini-3.6-flash",
+            "outcome": "SUCCESS",
+            "latency_ms": 11398.056875012117,
+            "sanitized_error_code": null
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "ext_challenge_002_two_conjunction",
+      "agent_role": "extractor",
+      "execution_path": "MODEL_BACKED",
+      "expected_outcome": "2 candidate obligations",
+      "actual_outcome": "0 candidate obligations",
+      "prompt_version": "1.0",
+      "provenance": {
+        "actual_model_used": "gemini-3.6-flash",
+        "fallback_occurred": false,
+        "total_latency_ms": 8450.667790981242,
+        "attempts": [
+          {
+            "model_id": "gemini-3.6-flash",
+            "outcome": "SUCCESS",
+            "latency_ms": 8450.667790981242,
+            "sanitized_error_code": null
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "ext_challenge_003_three_list",
+      "agent_role": "extractor",
+      "execution_path": "MODEL_BACKED",
+      "expected_outcome": "3 candidate obligations",
+      "actual_outcome": "0 candidate obligations",
+      "prompt_version": "1.0",
+      "provenance": {
+        "actual_model_used": "gemini-3.6-flash",
+        "fallback_occurred": false,
+        "total_latency_ms": 14658.384082984412,
+        "attempts": [
+          {
+            "model_id": "gemini-3.6-flash",
+            "outcome": "SUCCESS",
+            "latency_ms": 14658.384082984412,
+            "sanitized_error_code": null
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "ext_challenge_004_ampersand",
+      "agent_role": "extractor",
+      "execution_path": "MODEL_BACKED",
+      "expected_outcome": "2 candidate obligations",
+      "actual_outcome": "2 candidate obligations",
+      "prompt_version": "1.0",
+      "provenance": {
+        "actual_model_used": "gemini-3.6-flash",
+        "fallback_occurred": false,
+        "total_latency_ms": 9054.212749993894,
+        "attempts": [
+          {
+            "model_id": "gemini-3.6-flash",
+            "outcome": "SUCCESS",
+            "latency_ms": 9054.212749993894,
+            "sanitized_error_code": null
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "ext_challenge_005_heading_separated",
+      "agent_role": "extractor",
+      "execution_path": "MODEL_BACKED",
+      "expected_outcome": "1 candidate obligations",
+      "actual_outcome": "1 candidate obligations",
+      "prompt_version": "1.0",
+      "provenance": {
+        "actual_model_used": "gemini-3.6-flash",
+        "fallback_occurred": false,
+        "total_latency_ms": 10152.770250017056,
+        "attempts": [
+          {
+            "model_id": "gemini-3.6-flash",
+            "outcome": "SUCCESS",
+            "latency_ms": 10152.770250017056,
+            "sanitized_error_code": null
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "ext_challenge_006_repeated_clause",
+      "agent_role": "extractor",
+      "execution_path": "MODEL_BACKED",
+      "expected_outcome": "2 candidate obligations",
+      "actual_outcome": "2 candidate obligations",
+      "prompt_version": "1.0",
+      "provenance": {
+        "actual_model_used": "gemini-3.6-flash",
+        "fallback_occurred": false,
+        "total_latency_ms": 7072.974917013198,
+        "attempts": [
+          {
+            "model_id": "gemini-3.6-flash",
+            "outcome": "SUCCESS",
+            "latency_ms": 7072.974917013198,
+            "sanitized_error_code": null
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "ext_challenge_007_draft_nonbinding",
+      "agent_role": "extractor",
+      "execution_path": "MODEL_BACKED",
+      "expected_outcome": "0 candidate obligations",
+      "actual_outcome": "0 candidate obligations",
+      "prompt_version": "1.0",
+      "provenance": {
+        "actual_model_used": "gemini-3.6-flash",
+        "fallback_occurred": false,
+        "total_latency_ms": 1805.531041987706,
+        "attempts": [
+          {
+            "model_id": "gemini-3.6-flash",
+            "outcome": "SUCCESS",
+            "latency_ms": 1805.531041987706,
+            "sanitized_error_code": null
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "ext_challenge_008_future_contract",
+      "agent_role": "extractor",
+      "execution_path": "MODEL_BACKED",
+      "expected_outcome": "0 candidate obligations",
+      "actual_outcome": "0 candidate obligations",
+      "prompt_version": "1.0",
+      "provenance": {
+        "actual_model_used": "gemini-3.6-flash",
+        "fallback_occurred": false,
+        "total_latency_ms": 1868.0519170011394,
+        "attempts": [
+          {
+            "model_id": "gemini-3.6-flash",
+            "outcome": "SUCCESS",
+            "latency_ms": 1868.0519170011394,
+            "sanitized_error_code": null
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "ext_dev_001_single_memo",
+      "agent_role": "extractor",
+      "execution_path": "MODEL_BACKED",
+      "expected_outcome": "1 candidate obligations",
+      "actual_outcome": "1 candidate obligations",
+      "prompt_version": "1.0",
+      "provenance": {
+        "actual_model_used": "gemini-3.6-flash",
+        "fallback_occurred": false,
+        "total_latency_ms": 7026.186541974312,
+        "attempts": [
+          {
+            "model_id": "gemini-3.6-flash",
+            "outcome": "SUCCESS",
+            "latency_ms": 7026.186541974312,
+            "sanitized_error_code": null
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "ext_dev_002_negotiation_draft",
+      "agent_role": "extractor",
+      "execution_path": "MODEL_BACKED",
+      "expected_outcome": "0 candidate obligations",
+      "actual_outcome": "0 candidate obligations",
+      "prompt_version": "1.0",
+      "provenance": {
+        "actual_model_used": "gemini-3.6-flash",
+        "fallback_occurred": false,
+        "total_latency_ms": 1736.2411249778233,
+        "attempts": [
+          {
+            "model_id": "gemini-3.6-flash",
+            "outcome": "SUCCESS",
+            "latency_ms": 1736.2411249778233,
+            "sanitized_error_code": null
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "ext_holdout_001_billing_block",
+      "agent_role": "extractor",
+      "execution_path": "MODEL_BACKED",
+      "expected_outcome": "2 candidate obligations",
+      "actual_outcome": "2 candidate obligations",
+      "prompt_version": "1.0",
+      "provenance": {
+        "actual_model_used": "gemini-3.6-flash",
+        "fallback_occurred": false,
+        "total_latency_ms": 12397.575000009965,
+        "attempts": [
+          {
+            "model_id": "gemini-3.6-flash",
+            "outcome": "SUCCESS",
+            "latency_ms": 12397.575000009965,
+            "sanitized_error_code": null
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "ext_holdout_002_future_contract_nonbinding",
+      "agent_role": "extractor",
+      "execution_path": "MODEL_BACKED",
+      "expected_outcome": "0 candidate obligations",
+      "actual_outcome": "0 candidate obligations",
+      "prompt_version": "1.0",
+      "provenance": {
+        "actual_model_used": "gemini-3.6-flash",
+        "fallback_occurred": false,
+        "total_latency_ms": 2276.7322910076473,
+        "attempts": [
+          {
+            "model_id": "gemini-3.6-flash",
+            "outcome": "SUCCESS",
+            "latency_ms": 2276.7322910076473,
+            "sanitized_error_code": null
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "res_challenge_001_supersession",
+      "agent_role": "resolver",
+      "execution_path": "MODEL_BACKED",
+      "expected_outcome": "rec=RESOLVE, ctrl=obl-res-chal-001-c2",
+      "actual_outcome": "rec=RESOLVE, ctrl=obl-res-chal-001-c2",
+      "prompt_version": "v1",
+      "provenance": {
+        "actual_model_used": "gemini-3.1-pro-preview",
+        "fallback_occurred": false,
+        "total_latency_ms": 8207.807333994424,
+        "attempts": [
+          {
+            "model_id": "gemini-3.1-pro-preview",
+            "outcome": "SUCCESS",
+            "latency_ms": 8207.807333994424,
+            "sanitized_error_code": null
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "res_challenge_002_amendment",
+      "agent_role": "resolver",
+      "execution_path": "MODEL_BACKED",
+      "expected_outcome": "rec=RESOLVE, ctrl=obl-res-chal-002-c2",
+      "actual_outcome": "rec=RESOLVE, ctrl=obl-res-chal-002-c2",
+      "prompt_version": "v1",
+      "provenance": {
+        "actual_model_used": "gemini-3.1-pro-preview",
+        "fallback_occurred": false,
+        "total_latency_ms": 6183.735500002513,
+        "attempts": [
+          {
+            "model_id": "gemini-3.1-pro-preview",
+            "outcome": "SUCCESS",
+            "latency_ms": 6183.735500002513,
+            "sanitized_error_code": null
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "res_challenge_003_date_ambiguity",
+      "agent_role": "resolver",
+      "execution_path": "MODEL_BACKED",
+      "expected_outcome": "rec=ABSTAIN, ctrl=None",
+      "actual_outcome": "rec=CONFLICT, ctrl=None",
+      "prompt_version": "v1",
+      "provenance": {
+        "actual_model_used": "gemini-3.1-pro-preview",
+        "fallback_occurred": false,
+        "total_latency_ms": 8672.080167016247,
+        "attempts": [
+          {
+            "model_id": "gemini-3.1-pro-preview",
+            "outcome": "SUCCESS",
+            "latency_ms": 8672.080167016247,
+            "sanitized_error_code": null
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "res_challenge_004_mutually_exclusive",
+      "agent_role": "resolver",
+      "execution_path": "MODEL_BACKED",
+      "expected_outcome": "rec=CONFLICT, ctrl=None",
+      "actual_outcome": "rec=CONFLICT, ctrl=None",
+      "prompt_version": "v1",
+      "provenance": {
+        "actual_model_used": "gemini-3.1-pro-preview",
+        "fallback_occurred": false,
+        "total_latency_ms": 5347.09604101954,
+        "attempts": [
+          {
+            "model_id": "gemini-3.1-pro-preview",
+            "outcome": "SUCCESS",
+            "latency_ms": 5347.09604101954,
+            "sanitized_error_code": null
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "res_challenge_005_unrelated_parties",
+      "agent_role": "resolver",
+      "execution_path": "DETERMINISTIC_SHORT_CIRCUIT",
+      "expected_outcome": "rec=ABSTAIN, ctrl=None",
+      "actual_outcome": "rec=ABSTAIN, ctrl=None",
+      "prompt_version": "v1",
+      "provenance": null
+    },
+    {
+      "case_id": "res_dev_001_explicit_supersession",
+      "agent_role": "resolver",
+      "execution_path": "MODEL_BACKED",
+      "expected_outcome": "rec=RESOLVE, ctrl=obl-r1-v2",
+      "actual_outcome": "rec=RESOLVE, ctrl=obl-r1-v2",
+      "prompt_version": "v1",
+      "provenance": {
+        "actual_model_used": "gemini-3.1-pro-preview",
+        "fallback_occurred": false,
+        "total_latency_ms": 3622.7648750063963,
+        "attempts": [
+          {
+            "model_id": "gemini-3.1-pro-preview",
+            "outcome": "SUCCESS",
+            "latency_ms": 3622.7648750063963,
+            "sanitized_error_code": null
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "res_dev_002_date_only_no_supersession",
+      "agent_role": "resolver",
+      "execution_path": "MODEL_BACKED",
+      "expected_outcome": "rec=ABSTAIN, ctrl=None",
+      "actual_outcome": "rec=ABSTAIN, ctrl=None",
+      "prompt_version": "v1",
+      "provenance": {
+        "actual_model_used": "gemini-3.1-pro-preview",
+        "fallback_occurred": false,
+        "total_latency_ms": 3870.0191250245553,
+        "attempts": [
+          {
+            "model_id": "gemini-3.1-pro-preview",
+            "outcome": "SUCCESS",
+            "latency_ms": 3870.0191250245553,
+            "sanitized_error_code": null
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "res_holdout_001_conflict",
+      "agent_role": "resolver",
+      "execution_path": "MODEL_BACKED",
+      "expected_outcome": "rec=CONFLICT, ctrl=None",
+      "actual_outcome": "rec=CONFLICT, ctrl=None",
+      "prompt_version": "v1",
+      "provenance": {
+        "actual_model_used": "gemini-3.1-pro-preview",
+        "fallback_occurred": false,
+        "total_latency_ms": 5703.824958996847,
+        "attempts": [
+          {
+            "model_id": "gemini-3.1-pro-preview",
+            "outcome": "SUCCESS",
+            "latency_ms": 5703.824958996847,
+            "sanitized_error_code": null
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "stw_challenge_001_text_sub",
+      "agent_role": "steward",
+      "execution_path": "MODEL_BACKED",
+      "expected_outcome": "action=PROPOSE_PATCH, op=SUBSTITUTE_TEXT, val=Julian Vance",
+      "actual_outcome": "action=PROPOSE_PATCH, op=SUBSTITUTE_TEXT",
+      "prompt_version": "v1",
+      "provenance": {
+        "actual_model_used": "gemini-3.5-flash-lite",
+        "fallback_occurred": false,
+        "total_latency_ms": 3683.0537500209175,
+        "attempts": [
+          {
+            "model_id": "gemini-3.5-flash-lite",
+            "outcome": "SUCCESS",
+            "latency_ms": 3683.0537500209175,
+            "sanitized_error_code": null
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "stw_challenge_002_reorder",
+      "agent_role": "steward",
+      "execution_path": "MODEL_BACKED",
+      "expected_outcome": "action=PROPOSE_PATCH, op=REORDER_ELEMENT, val=1",
+      "actual_outcome": "action=PROPOSE_PATCH, op=REORDER",
+      "prompt_version": "v1",
+      "provenance": {
+        "actual_model_used": "gemini-3.5-flash-lite",
+        "fallback_occurred": false,
+        "total_latency_ms": 1426.7077080148738,
+        "attempts": [
+          {
+            "model_id": "gemini-3.5-flash-lite",
+            "outcome": "SUCCESS",
+            "latency_ms": 1426.7077080148738,
+            "sanitized_error_code": null
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "stw_challenge_003_regroup",
+      "agent_role": "steward",
+      "execution_path": "MODEL_BACKED",
+      "expected_outcome": "action=PROPOSE_PATCH, op=REGROUP_SURFACE, val=MAIN_TITLES",
+      "actual_outcome": "action=DETERMINISTIC_ABSTAIN, op=None",
+      "prompt_version": "v1",
+      "provenance": {
+        "actual_model_used": "gemini-3.5-flash-lite",
+        "fallback_occurred": false,
+        "total_latency_ms": 1145.6152919854503,
+        "attempts": [
+          {
+            "model_id": "gemini-3.5-flash-lite",
+            "outcome": "SUCCESS",
+            "latency_ms": 1145.6152919854503,
+            "sanitized_error_code": null
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "stw_challenge_004_reposition",
+      "agent_role": "steward",
+      "execution_path": "MODEL_BACKED",
+      "expected_outcome": "action=PROPOSE_PATCH, op=REPOSITION_ELEMENT, val=1",
+      "actual_outcome": "action=PROPOSE_PATCH, op=REORDER",
+      "prompt_version": "v1",
+      "provenance": {
+        "actual_model_used": "gemini-3.5-flash-lite",
+        "fallback_occurred": false,
+        "total_latency_ms": 1274.2377919785213,
+        "attempts": [
+          {
+            "model_id": "gemini-3.5-flash-lite",
+            "outcome": "SUCCESS",
+            "latency_ms": 1274.2377919785213,
+            "sanitized_error_code": null
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "stw_challenge_005_inactive",
+      "agent_role": "steward",
+      "execution_path": "DETERMINISTIC_SHORT_CIRCUIT",
+      "expected_outcome": "action=DETERMINISTIC_ABSTAIN, op=None, val=None",
+      "actual_outcome": "action=DETERMINISTIC_ABSTAIN, op=None",
+      "prompt_version": "v1",
+      "provenance": null
+    },
+    {
+      "case_id": "stw_challenge_006_non_derivable",
+      "agent_role": "steward",
+      "execution_path": "MODEL_BACKED",
+      "expected_outcome": "action=DETERMINISTIC_ABSTAIN, op=None, val=None",
+      "actual_outcome": "action=DETERMINISTIC_ABSTAIN, op=None",
+      "prompt_version": "v1",
+      "provenance": {
+        "actual_model_used": "gemini-3.5-flash-lite",
+        "fallback_occurred": false,
+        "total_latency_ms": 2296.962957974756,
+        "attempts": [
+          {
+            "model_id": "gemini-3.5-flash-lite",
+            "outcome": "SUCCESS",
+            "latency_ms": 2296.962957974756,
+            "sanitized_error_code": null
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "stw_dev_001_text_mismatch",
+      "agent_role": "steward",
+      "execution_path": "MODEL_BACKED",
+      "expected_outcome": "action=PROPOSE_PATCH, op=SUBSTITUTE_TEXT, val=Hans Zimmer",
+      "actual_outcome": "action=PROPOSE_PATCH, op=SUBSTITUTE_TEXT",
+      "prompt_version": "v1",
+      "provenance": {
+        "actual_model_used": "gemini-3.5-flash-lite",
+        "fallback_occurred": false,
+        "total_latency_ms": 1282.767041993793,
+        "attempts": [
+          {
+            "model_id": "gemini-3.5-flash-lite",
+            "outcome": "SUCCESS",
+            "latency_ms": 1282.767041993793,
+            "sanitized_error_code": null
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "stw_dev_002_non_active_abstain",
+      "agent_role": "steward",
+      "execution_path": "DETERMINISTIC_SHORT_CIRCUIT",
+      "expected_outcome": "action=DETERMINISTIC_ABSTAIN, op=None, val=None",
+      "actual_outcome": "action=DETERMINISTIC_ABSTAIN, op=None",
+      "prompt_version": "v1",
+      "provenance": null
+    },
+    {
+      "case_id": "stw_holdout_001_position_mismatch",
+      "agent_role": "steward",
+      "execution_path": "MODEL_BACKED",
+      "expected_outcome": "action=PROPOSE_PATCH, op=REORDER, val=1",
+      "actual_outcome": "action=PROPOSE_PATCH, op=REORDER",
+      "prompt_version": "v1",
+      "provenance": {
+        "actual_model_used": "gemini-3.5-flash-lite",
+        "fallback_occurred": false,
+        "total_latency_ms": 747.2834580112249,
+        "attempts": [
+          {
+            "model_id": "gemini-3.5-flash-lite",
+            "outcome": "SUCCESS",
+            "latency_ms": 747.2834580112249,
+            "sanitized_error_code": null
+          }
+        ]
+      }
+    }
+  ]
+}

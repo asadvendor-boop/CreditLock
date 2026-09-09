@@ -1,0 +1,45 @@
+{
+  "case_id": "sealed_002_missing_credit",
+  "description": "SEALED: ACTIVE obligation for Line Producer is absent from manifest entirely.",
+  "obligations": [
+    {
+      "obligation_id": "obl_s002_a",
+      "production_id": "prod_sealed",
+      "credited_party_id": "contrib_s002",
+      "required_display_text": "Tariq Olatunji",
+      "role_label": "Line Producer",
+      "credit_surface": "END_CARDS",
+      "card_type": "SOLO",
+      "card_position": null,
+      "shared_with": [],
+      "billing_group": null,
+      "minimum_relative_size": null,
+      "size_reference": null,
+      "size_comparison_basis": null,
+      "minimum_visible_duration_ms": null,
+      "territories": [],
+      "media_versions": [],
+      "trigger_condition": null,
+      "governing_authority": null,
+      "source_document_id": "doc_sealed002",
+      "source_document_version": 1,
+      "source_span": {"page": 2, "start_char": 10, "end_char": 40, "quote": "Tariq Olatunji, Line Producer"},
+      "source_hash": "s002bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+      "agent_reported_confidence": 0.98,
+      "extraction_model_id": "synthetic-fixture-v1",
+      "prompt_version": "v1",
+      "status": "ACTIVE"
+    }
+  ],
+  "manifest": {
+    "manifest_id": "mfst_sealed002",
+    "production_id": "prod_sealed",
+    "delivery_version_id": "v1",
+    "entries": []
+  },
+  "layout_evidence": null,
+  "visual_observations": null,
+  "expected_issues": ["MISSING_CREDIT"],
+  "expected_gate": "BLOCKED",
+  "sealed": true
+}

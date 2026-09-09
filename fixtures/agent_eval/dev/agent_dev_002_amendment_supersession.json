@@ -1,0 +1,35 @@
+{
+  "case_id": "agent_dev_002_amendment_supersession",
+  "description": "Explicit amendment v2 superseding deal memo v1.",
+  "synthetic_document_text": "AMENDMENT NO. 1 TO DEAL MEMORANDUM\nProduction: Project Starfall\nThis Amendment v2 explicitly supersedes the original deal memo v1 for Executive Producer credit.\nCREDIT: John Doe\nROLE: Executive Producer",
+  "expected_obligation_fields": [
+    {
+      "required_display_text": "John Doe",
+      "role_label": "Executive Producer",
+      "credit_surface": "END_CARDS",
+      "card_type": "SOLO"
+    },
+    {
+      "required_display_text": "John Doe",
+      "role_label": "Executive Producer",
+      "credit_surface": "END_CARDS",
+      "card_type": "SOLO"
+    }
+  ],
+  "exact_gold_source_spans": [
+    {
+      "quote": "CREDIT: John Doe",
+      "start_char": 154,
+      "end_char": 170
+    }
+  ],
+  "expected_ambiguity_result": false,
+  "precedence_cases": [
+    {
+      "candidate_ids": ["obl-memo-v1", "obl-amend-v2"],
+      "expected_recommendation": "RESOLVE",
+      "expected_controlling_id": "obl-amend-v2"
+    }
+  ],
+  "sealed": false
+}

@@ -1,0 +1,29 @@
+{
+  "case_id": "ext_challenge_001_single",
+  "split": "RECORDED_CHALLENGE_V1",
+  "synthetic_document_text": "PRODUCTION AGREEMENT\n\nSection 4. Credit\nProducer Credit Required: Marcus Vance shall receive a solo Producer credit on the main titles.",
+  "expected_obligations": [
+    {
+      "required_display_text": "Marcus Vance",
+      "role_label": "Producer",
+      "credit_surface": "MAIN_TITLES",
+      "card_type": "SOLO",
+      "card_position_ordinal": 1
+    }
+  ],
+  "scored_fields": [
+    "required_display_text",
+    "role_label",
+    "credit_surface",
+    "card_type",
+    "card_position_ordinal"
+  ],
+  "exact_gold_source_spans": [
+    {
+      "quote": "Marcus Vance shall receive a solo Producer credit on the main titles.",
+      "start_char": 66,
+      "end_char": 135
+    }
+  ],
+  "is_non_binding": false
+}

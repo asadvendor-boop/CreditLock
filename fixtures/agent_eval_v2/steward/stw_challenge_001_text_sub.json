@@ -1,0 +1,57 @@
+{
+  "case_id": "stw_challenge_001_text_sub",
+  "split": "RECORDED_CHALLENGE_V1",
+  "input_issue": {
+    "issue_id": "issue-stw-chal-001",
+    "code": "ARTIFACT_TEXT_MISMATCH",
+    "manifest_refs": [
+      "elem-chal-1"
+    ],
+    "obligation_id": "obl-stw-chal-1",
+    "detail": "display_name mismatch: required_display_text 'Julian Vance' (NFC: 'Julian Vance') does not match manifest display_name 'Julian Frost' (NFC: 'Julian Frost'). Source: memo.txt §Julian Vance"
+  },
+  "input_obligation": {
+    "obligation_id": "obl-stw-chal-1",
+    "production_id": "prod-stw-chal-1",
+    "status": "ACTIVE",
+    "extraction_model_id": "gemini-3.6-flash",
+    "prompt_version": "v1",
+    "required_display_text": "Julian Vance",
+    "role_label": "Executive Producer",
+    "credit_surface": "END_CARDS",
+    "card_type": "SOLO",
+    "card_position": {
+      "kind": "ABSOLUTE",
+      "ordinal": 1
+    },
+    "source_document_id": "memo.txt",
+    "source_document_version": 1,
+    "source_hash": "h1",
+    "agent_reported_confidence": 0.95,
+    "source_span": {
+      "quote": "Julian Vance",
+      "start_char": 0,
+      "end_char": 12
+    }
+  },
+  "input_manifest": {
+    "manifest_id": "man-stw-chal-1",
+    "production_id": "prod-stw-chal-1",
+    "delivery_version_id": "v1",
+    "entries": [
+      {
+        "rendered_element_id": "elem-chal-1",
+        "contributor_id": "c1",
+        "display_name": "Julian Frost",
+        "role": "Executive Producer",
+        "credit_surface": "END_CARDS",
+        "ordinal_position": 1,
+        "production_id": "prod-stw-chal-1",
+        "delivery_version_id": "v1"
+      }
+    ]
+  },
+  "expected_action": "PROPOSE_PATCH",
+  "expected_patch_operation": "SUBSTITUTE_TEXT",
+  "expected_patch_value": "Julian Vance"
+}

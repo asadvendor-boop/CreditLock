@@ -1,0 +1,12 @@
+{
+  "case_id": "ext_challenge_007_draft_nonbinding",
+  "split": "RECORDED_CHALLENGE_V1",
+  "synthetic_document_text": "CONFIDENTIAL DISCUSSION DRAFT - SUBJECT TO NEGOTIATION AND APPROVAL\n\nExecutive Producer Credit: Victor Thorne shall receive solo Executive Producer credit on main titles.",
+  "expected_obligations": [],
+  "scored_fields": [
+    "required_display_text",
+    "role_label"
+  ],
+  "exact_gold_source_spans": [],
+  "is_non_binding": true
+}

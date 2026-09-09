@@ -1,0 +1,12 @@
+{
+  "evidence_class": "RECORDED_CHALLENGE_V1_FAILED",
+  "agent_code_commit_sha": "051df57de9c8136ce52797df43b10188552e1fa9",
+  "fixture_definition_commit_sha": "01a0d72",
+  "original_fixture_set_digest": "5be668b9305b2fe47db12e1bc6320b988e232cf149334537655f6d151887453a",
+  "metadata_status": "RETROSPECTIVE_SIDECAR: The original report was generated before reproducibility metadata was fully implemented. The agent_prompt_template_hashes in the original report are defective — all three agents hash the literal string 'v1' rather than actual prompt template content, producing identical hashes. The agent_code_commit_sha and fixture_definition_commit_sha were not recorded at generation time and are reconstructed from git history. The original report file is preserved byte-for-byte.",
+  "defective_fields_in_original_report": [
+    "agent_prompt_template_hashes: all three are identical, hashing literal 'v1' not actual templates",
+    "agent_code_commit_sha: absent from original report schema",
+    "fixture_definition_commit_sha: absent from original report schema"
+  ]
+}

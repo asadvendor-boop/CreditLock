@@ -1,0 +1,58 @@
+{
+  "case_id": "res_challenge_005_unrelated_parties",
+  "split": "RECORDED_CHALLENGE_V1",
+  "input_candidate_obligations": [
+    {
+      "obligation_id": "obl-res-chal-005-c1",
+      "production_id": "prod-chal-5",
+      "status": "CANDIDATE",
+      "extraction_model_id": "gemini-3.6-flash",
+      "prompt_version": "v1",
+      "credited_party_id": "contrib-dir-a",
+      "required_display_text": "Person A",
+      "role_label": "Director",
+      "credit_surface": "END_CARDS",
+      "card_type": "SOLO",
+      "card_position": {
+        "kind": "ABSOLUTE",
+        "ordinal": 1
+      },
+      "source_document_id": "memo_a.txt",
+      "source_document_version": 1,
+      "source_hash": "hash_a",
+      "agent_reported_confidence": 0.9,
+      "source_span": {
+        "quote": "Director Credit: Person A.",
+        "start_char": 0,
+        "end_char": 26
+      }
+    },
+    {
+      "obligation_id": "obl-res-chal-005-c2",
+      "production_id": "prod-chal-5",
+      "status": "CANDIDATE",
+      "extraction_model_id": "gemini-3.6-flash",
+      "prompt_version": "v1",
+      "credited_party_id": "contrib-comp-b",
+      "required_display_text": "Person B",
+      "role_label": "Composer",
+      "credit_surface": "END_CARDS",
+      "card_type": "SOLO",
+      "card_position": {
+        "kind": "ABSOLUTE",
+        "ordinal": 1
+      },
+      "source_document_id": "memo_b.txt",
+      "source_document_version": 1,
+      "source_hash": "hash_b",
+      "agent_reported_confidence": 0.9,
+      "source_span": {
+        "quote": "Composer Credit: Person B.",
+        "start_char": 0,
+        "end_char": 26
+      }
+    }
+  ],
+  "expected_recommendation": "ABSTAIN",
+  "expected_controlling_id": null
+}

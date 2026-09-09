@@ -1,0 +1,19 @@
+{
+  "case_id": "fv2_ext_000",
+  "split": "FROZEN_CHALLENGE_V2",
+  "scenario_category": "single-person positive",
+  "synthetic_document_text": "The director of the film is Hans Zimmer.",
+  "expected_obligations": [
+    {
+      "required_display_text": "Hans Zimmer",
+      "role_label": "Director"
+    }
+  ],
+  "exact_gold_source_spans": [
+    {
+      "quote": "Hans Zimmer",
+      "start_char": 28,
+      "end_char": 39
+    }
+  ]
+}

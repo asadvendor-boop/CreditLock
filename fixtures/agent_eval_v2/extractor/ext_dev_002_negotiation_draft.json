@@ -1,0 +1,10 @@
+{
+  "case_id": "ext_dev_002_negotiation_draft",
+  "split": "DEV",
+  "synthetic_document_text": "DRAFT FOR DISCUSSION ONLY - SUBJECT TO NEGOTIATION\nProposed credit: Hans Zimmer as Music Producer.",
+  "expected_obligations": [],
+  "scored_fields": ["required_display_text", "role_label"],
+  "supported_unscored_fields": ["credit_surface", "card_type", "card_position_ordinal", "confidence"],
+  "exact_gold_source_spans": [],
+  "is_non_binding": true
+}

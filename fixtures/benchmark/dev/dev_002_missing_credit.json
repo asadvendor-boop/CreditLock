@@ -1,0 +1,78 @@
+{
+  "case_id": "dev_002_missing_credit",
+  "description": "ACTIVE obligation for contrib_002 (Marcus Webb). He is registered in the contributor registry and two other credits appear on the same surface — the realistic missing case: simply never added to the roll.",
+  "obligations": [
+    {
+      "obligation_id": "obl_dev002",
+      "production_id": "prod_dev",
+      "credited_party_id": "contrib_002",
+      "required_display_text": "Marcus Webb",
+      "role_label": "Producer",
+      "credit_surface": "MAIN_TITLES",
+      "card_type": "SOLO",
+      "card_position": {"kind": "ABSOLUTE", "ordinal": 2},
+      "shared_with": [],
+      "billing_group": null,
+      "minimum_relative_size": null,
+      "size_reference": null,
+      "size_comparison_basis": null,
+      "minimum_visible_duration_ms": null,
+      "territories": [],
+      "media_versions": [],
+      "trigger_condition": null,
+      "governing_authority": null,
+      "source_document_id": "doc_dev002",
+      "source_document_version": 1,
+      "source_span": {"page": 2, "start_char": 0, "end_char": 22, "quote": "Marcus Webb, Producer"},
+      "source_hash": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+      "agent_reported_confidence": 0.98,
+      "extraction_model_id": "synthetic-fixture-v1",
+      "prompt_version": "v1",
+      "status": "ACTIVE"
+    }
+  ],
+  "manifest": {
+    "manifest_id": "mfst_dev002",
+    "production_id": "prod_dev",
+    "delivery_version_id": "v1",
+    "entries": [
+      {
+        "rendered_element_id": "elem_001",
+        "contributor_id": "contrib_001",
+        "display_name": "Jane Smith",
+        "role": "Director",
+        "department": null,
+        "credit_surface": "MAIN_TITLES",
+        "group_id": null,
+        "ordinal_position": 1,
+        "shared_with": [],
+        "production_id": "prod_dev",
+        "delivery_version_id": "v1"
+      },
+      {
+        "rendered_element_id": "elem_003",
+        "contributor_id": "contrib_003",
+        "display_name": "Priya Sharma",
+        "role": "Executive Producer",
+        "department": null,
+        "credit_surface": "MAIN_TITLES",
+        "group_id": null,
+        "ordinal_position": 3,
+        "shared_with": [],
+        "production_id": "prod_dev",
+        "delivery_version_id": "v1"
+      }
+    ]
+  },
+  "contributor_registry": [
+    {
+      "contributor_id": "contrib_002",
+      "canonical_name": "Marcus Webb",
+      "aliases": []
+    }
+  ],
+  "layout_evidence": null,
+  "visual_observations": null,
+  "expected_issues": ["MISSING_CREDIT"],
+  "expected_gate": "BLOCKED"
+}

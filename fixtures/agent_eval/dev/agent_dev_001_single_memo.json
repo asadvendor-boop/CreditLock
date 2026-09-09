@@ -1,0 +1,23 @@
+{
+  "case_id": "agent_dev_001_single_memo",
+  "description": "Single deal memo with clear solo director credit.",
+  "synthetic_document_text": "DEAL MEMORANDUM\nProduction: Project Starfall\nCREDIT: Jane Smith\nROLE: Director\nSURFACE: MAIN_TITLES\nCARD_TYPE: SOLO",
+  "expected_obligation_fields": [
+    {
+      "required_display_text": "Jane Smith",
+      "role_label": "Director",
+      "credit_surface": "MAIN_TITLES",
+      "card_type": "SOLO"
+    }
+  ],
+  "exact_gold_source_spans": [
+    {
+      "quote": "CREDIT: Jane Smith",
+      "start_char": 44,
+      "end_char": 62
+    }
+  ],
+  "expected_ambiguity_result": false,
+  "precedence_cases": [],
+  "sealed": false
+}

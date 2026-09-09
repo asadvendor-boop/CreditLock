@@ -1,0 +1,28 @@
+{
+  "case_id": "fv2_ext_005",
+  "split": "FROZEN_CHALLENGE_V2",
+  "scenario_category": "repeated clause positive with exact unambiguous spans",
+  "synthetic_document_text": "Director: Sam. Editor: Sam.",
+  "expected_obligations": [
+    {
+      "required_display_text": "Sam",
+      "role_label": "Director"
+    },
+    {
+      "required_display_text": "Sam",
+      "role_label": "Editor"
+    }
+  ],
+  "exact_gold_source_spans": [
+    {
+      "quote": "Sam",
+      "start_char": 10,
+      "end_char": 13
+    },
+    {
+      "quote": "Sam",
+      "start_char": 23,
+      "end_char": 26
+    }
+  ]
+}

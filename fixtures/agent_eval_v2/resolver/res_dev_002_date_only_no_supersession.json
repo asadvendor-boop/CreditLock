@@ -1,0 +1,50 @@
+{
+  "case_id": "res_dev_002_date_only_no_supersession",
+  "split": "DEV",
+  "input_candidate_obligations": [
+    {
+      "obligation_id": "obl-r2-v1",
+      "production_id": "prod-v2",
+      "status": "CANDIDATE",
+      "credited_party_id": "contrib-zimmer",
+      "extraction_model_id": "gemini-3.6-flash",
+      "prompt_version": "v1",
+      "required_display_text": "Hans Zimmer",
+      "role_label": "Composer",
+      "credit_surface": "END_CARDS",
+      "card_type": "SOLO",
+      "source_document_id": "memo_2026-01-01.txt",
+      "source_document_version": 1,
+      "source_hash": "hash1",
+      "agent_reported_confidence": 0.9,
+      "source_span": {
+        "quote": "Hans Zimmer",
+        "start_char": 0,
+        "end_char": 11
+      }
+    },
+    {
+      "obligation_id": "obl-r2-v2",
+      "production_id": "prod-v2",
+      "status": "CANDIDATE",
+      "credited_party_id": "contrib-zimmer",
+      "extraction_model_id": "gemini-3.6-flash",
+      "prompt_version": "v1",
+      "required_display_text": "H. Zimmer",
+      "role_label": "Composer",
+      "credit_surface": "END_CARDS",
+      "card_type": "SOLO",
+      "source_document_id": "memo_2026-02-01.txt",
+      "source_document_version": 2,
+      "source_hash": "hash2",
+      "agent_reported_confidence": 0.95,
+      "source_span": {
+        "quote": "H. Zimmer",
+        "start_char": 0,
+        "end_char": 9
+      }
+    }
+  ],
+  "expected_recommendation": "ABSTAIN",
+  "expected_controlling_id": null
+}

@@ -1,0 +1,19 @@
+{
+  "case_id": "fv2_ext_009",
+  "split": "FROZEN_CHALLENGE_V2",
+  "scenario_category": "unfamiliar role/names positive",
+  "synthetic_document_text": "Xylophonist: XxX_Sniper_XxX.",
+  "expected_obligations": [
+    {
+      "required_display_text": "XxX_Sniper_XxX",
+      "role_label": "Xylophonist"
+    }
+  ],
+  "exact_gold_source_spans": [
+    {
+      "quote": "XxX_Sniper_XxX",
+      "start_char": 13,
+      "end_char": 27
+    }
+  ]
+}

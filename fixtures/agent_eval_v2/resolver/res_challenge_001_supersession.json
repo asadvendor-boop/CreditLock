@@ -1,0 +1,58 @@
+{
+  "case_id": "res_challenge_001_supersession",
+  "split": "RECORDED_CHALLENGE_V1",
+  "input_candidate_obligations": [
+    {
+      "obligation_id": "obl-res-chal-001-c1",
+      "production_id": "prod-chal-1",
+      "status": "CANDIDATE",
+      "extraction_model_id": "gemini-3.6-flash",
+      "prompt_version": "v1",
+      "credited_party_id": "contrib-dir-arthur",
+      "required_display_text": "Arthur Pendelton",
+      "role_label": "Director",
+      "credit_surface": "END_CARDS",
+      "card_type": "SOLO",
+      "card_position": {
+        "kind": "ABSOLUTE",
+        "ordinal": 1
+      },
+      "source_document_id": "deal_memo_v1.txt",
+      "source_document_version": 1,
+      "source_hash": "hash_v1",
+      "agent_reported_confidence": 0.9,
+      "source_span": {
+        "quote": "Director Credit: Arthur Pendelton shall receive solo Director credit.",
+        "start_char": 0,
+        "end_char": 69
+      }
+    },
+    {
+      "obligation_id": "obl-res-chal-001-c2",
+      "production_id": "prod-chal-1",
+      "status": "CANDIDATE",
+      "extraction_model_id": "gemini-3.6-flash",
+      "prompt_version": "v1",
+      "credited_party_id": "contrib-dir-arthur",
+      "required_display_text": "Arthur Pendelton",
+      "role_label": "Director",
+      "credit_surface": "MAIN_TITLES",
+      "card_type": "SOLO",
+      "card_position": {
+        "kind": "ABSOLUTE",
+        "ordinal": 1
+      },
+      "source_document_id": "long_form_v2.txt",
+      "source_document_version": 2,
+      "source_hash": "hash_v2",
+      "agent_reported_confidence": 0.95,
+      "source_span": {
+        "quote": "Director Credit: Arthur Pendelton shall receive solo Director credit on main titles. This agreement supersedes all prior credit terms.",
+        "start_char": 0,
+        "end_char": 134
+      }
+    }
+  ],
+  "expected_recommendation": "RESOLVE",
+  "expected_controlling_id": "obl-res-chal-001-c2"
+}

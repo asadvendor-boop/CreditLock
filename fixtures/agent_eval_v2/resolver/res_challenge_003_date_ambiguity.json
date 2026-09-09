@@ -1,0 +1,58 @@
+{
+  "case_id": "res_challenge_003_date_ambiguity",
+  "split": "RECORDED_CHALLENGE_V1",
+  "input_candidate_obligations": [
+    {
+      "obligation_id": "obl-res-chal-003-c1",
+      "production_id": "prod-chal-3",
+      "status": "CANDIDATE",
+      "extraction_model_id": "gemini-3.6-flash",
+      "prompt_version": "v1",
+      "credited_party_id": "contrib-comp-leon",
+      "required_display_text": "Leon Vance",
+      "role_label": "Composer",
+      "credit_surface": "END_CARDS",
+      "card_type": "SOLO",
+      "card_position": {
+        "kind": "ABSOLUTE",
+        "ordinal": 1
+      },
+      "source_document_id": "side_letter_a.txt",
+      "source_document_version": 1,
+      "source_hash": "hash_a",
+      "agent_reported_confidence": 0.9,
+      "source_span": {
+        "quote": "Composer Credit: Leon Vance position 1.",
+        "start_char": 0,
+        "end_char": 39
+      }
+    },
+    {
+      "obligation_id": "obl-res-chal-003-c2",
+      "production_id": "prod-chal-3",
+      "status": "CANDIDATE",
+      "extraction_model_id": "gemini-3.6-flash",
+      "prompt_version": "v1",
+      "credited_party_id": "contrib-comp-leon",
+      "required_display_text": "Leon Vance",
+      "role_label": "Composer",
+      "credit_surface": "END_CARDS",
+      "card_type": "SOLO",
+      "card_position": {
+        "kind": "ABSOLUTE",
+        "ordinal": 2
+      },
+      "source_document_id": "side_letter_b.txt",
+      "source_document_version": 1,
+      "source_hash": "hash_b",
+      "agent_reported_confidence": 0.9,
+      "source_span": {
+        "quote": "Composer Credit: Leon Vance position 2.",
+        "start_char": 0,
+        "end_char": 39
+      }
+    }
+  ],
+  "expected_recommendation": "ABSTAIN",
+  "expected_controlling_id": null
+}

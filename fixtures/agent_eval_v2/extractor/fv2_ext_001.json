@@ -1,0 +1,28 @@
+{
+  "case_id": "fv2_ext_001",
+  "split": "FROZEN_CHALLENGE_V2",
+  "scenario_category": "two-person 'and' positive",
+  "synthetic_document_text": "Music composed by Alice and Bob.",
+  "expected_obligations": [
+    {
+      "required_display_text": "Alice",
+      "role_label": "Composer"
+    },
+    {
+      "required_display_text": "Bob",
+      "role_label": "Composer"
+    }
+  ],
+  "exact_gold_source_spans": [
+    {
+      "quote": "Alice",
+      "start_char": 18,
+      "end_char": 23
+    },
+    {
+      "quote": "Bob",
+      "start_char": 28,
+      "end_char": 31
+    }
+  ]
+}

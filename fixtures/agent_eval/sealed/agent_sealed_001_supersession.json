@@ -1,0 +1,32 @@
+{
+  "case_id": "agent_sealed_001_supersession",
+  "description": "SEALED: Explicit amendment v2 superseding deal memo v1 for Editor credit.",
+  "synthetic_document_text": "SEALED CONTRACT AMENDMENT V2: Supersedes memo v1. CREDIT: Sandra Bullock, ROLE: Editor.",
+  "expected_obligation_fields": [
+    {
+      "required_display_text": "Sandra Bullock",
+      "role_label": "Editor"
+    },
+    {
+      "required_display_text": "Sandra Bullock",
+      "role_label": "Editor"
+    }
+  ],
+  "exact_gold_source_spans": [
+    {
+      "quote": "CREDIT: Sandra Bullock",
+      "start_char": 50,
+      "end_char": 72
+    }
+  ],
+  "expected_ambiguity_result": false,
+  "precedence_cases": [
+    {
+      "candidate_ids": ["obl-sealed-v1", "obl-sealed-v2"],
+      "expected_recommendation": "RESOLVE",
+      "expected_controlling_id": "obl-sealed-v2"
+    }
+  ],
+  "frozen_manifest_sha256": "s001agenthash111111111111111111111111111111111111111111111111111",
+  "sealed": true
+}

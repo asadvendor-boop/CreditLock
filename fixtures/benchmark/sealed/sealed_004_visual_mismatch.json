@@ -1,0 +1,112 @@
+{
+  "case_id": "sealed_004_visual_artifact_mismatch",
+  "description": "SEALED: Layout evidence shows size passes, but Gemini visual observation flags the credit as obscured. Gate: NEEDS_HUMAN via VISUAL_OBSERVATION_UNCERTAIN. Manifest, obligation, geometric relationship, and expected issue code are frozen here. PNG frames are produced by the renderer during evaluation.",
+  "obligations": [
+    {
+      "obligation_id": "obl_s004_a",
+      "production_id": "prod_sealed",
+      "credited_party_id": "contrib_s004",
+      "required_display_text": null,
+      "role_label": "Composer",
+      "credit_surface": "END_CARDS",
+      "card_type": "SOLO",
+      "card_position": null,
+      "shared_with": [],
+      "billing_group": null,
+      "minimum_relative_size": 0.5,
+      "size_reference": {"rendered_element_id": "elem_s004_title_ref"},
+      "size_comparison_basis": "COMPUTED_FONT_SIZE_PX",
+      "minimum_visible_duration_ms": null,
+      "territories": [],
+      "media_versions": [],
+      "trigger_condition": null,
+      "governing_authority": null,
+      "source_document_id": "doc_sealed004",
+      "source_document_version": 1,
+      "source_span": {"page": 4, "start_char": 0, "end_char": 30, "quote": "Composer credit, no less than 50% of section header"},
+      "source_hash": "s004ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
+      "agent_reported_confidence": 0.94,
+      "extraction_model_id": "synthetic-fixture-v1",
+      "prompt_version": "v1",
+      "status": "ACTIVE"
+    }
+  ],
+  "manifest": {
+    "manifest_id": "mfst_sealed004",
+    "production_id": "prod_sealed",
+    "delivery_version_id": "v1",
+    "entries": [
+      {
+        "rendered_element_id": "elem_s004",
+        "contributor_id": "contrib_s004",
+        "display_name": "Yuki Tanaka",
+        "role": "Composer",
+        "department": null,
+        "credit_surface": "END_CARDS",
+        "group_id": null,
+        "ordinal_position": 1,
+        "shared_with": [],
+        "production_id": "prod_sealed",
+        "delivery_version_id": "v1"
+      },
+      {
+        "rendered_element_id": "elem_s004_title_ref",
+        "contributor_id": "section_header",
+        "display_name": "MUSIC",
+        "role": "_section_header",
+        "department": null,
+        "credit_surface": "END_CARDS",
+        "group_id": null,
+        "ordinal_position": 0,
+        "shared_with": [],
+        "production_id": "prod_sealed",
+        "delivery_version_id": "v1"
+      }
+    ]
+  },
+  "expected_geometric_relationship": {
+    "subject_rendered_element_id": "elem_s004",
+    "reference_rendered_element_id": "elem_s004_title_ref",
+    "minimum_relative_size": 0.5,
+    "size_comparison_basis": "COMPUTED_FONT_SIZE_PX",
+    "_note": "Layout evidence will show size passes (subject_px=22, ref_px=40: 22+0.1>=20.0). Gemini observation flags as visually obscured by overlapping graphic element."
+  },
+  "layout_evidence": {
+    "manifest_id": "mfst_sealed004",
+    "render_profile_version": "v1",
+    "assertions": [
+      {
+        "rendered_element_id": "elem_s004",
+        "visible_text": "Yuki Tanaka",
+        "computed_font_size_px": 22.0,
+        "bounding_box": {"x": 100, "y": 300, "w": 200, "h": 28},
+        "frame_index": 0,
+        "group_id": null
+      },
+      {
+        "rendered_element_id": "elem_s004_title_ref",
+        "visible_text": "MUSIC",
+        "computed_font_size_px": 40.0,
+        "bounding_box": {"x": 100, "y": 250, "w": 300, "h": 45},
+        "frame_index": 0,
+        "group_id": null
+      }
+    ]
+  },
+  "visual_observations": {
+    "manifest_id": "mfst_sealed004",
+    "model_id": "synthetic-fixture-v1",
+    "observations": [
+      {
+        "rendered_element_id": "elem_s004",
+        "observation": "Credit text 'Yuki Tanaka' appears partially obscured by an overlapping graphic element in the rendered frame.",
+        "flagged": true,
+        "flag_reason": "Text legibility compromised by overlapping element; cannot confirm credit is visible to viewer."
+      }
+    ]
+  },
+  "expected_issues": ["VISUAL_OBSERVATION_UNCERTAIN"],
+  "expected_gate": "NEEDS_HUMAN",
+  "sealed": true,
+  "_note": "Size check passes (22.1 >= 20.0). Only visual observation drives the NEEDS_HUMAN gate. Frames not pre-authored; renderer produces them during evaluation."
+}

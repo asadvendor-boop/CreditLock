@@ -1,0 +1,1260 @@
+{
+  "execution_status": "COMPLETED_LIVE_GEMINI",
+  "completeness_status": "COMPLETE_ALL_CASES",
+  "quality_gate_status": "FAILED_QUALITY_GATE",
+  "summary_status": "FAILED_QUALITY_GATE",
+  "evidence_class": "FROZEN_CHALLENGE_V2",
+  "command_mode": "LIVE_GEMINI",
+  "generated_at_utc": "2026-08-07T12:03:12.073359+00:00",
+  "git_commit_sha": "d183fc8554f285d145a1a2507492149859538775",
+  "agent_code_commit_sha": "cc8701239eaf723afdb737033acce6d3cd730647",
+  "fixture_definition_commit_sha": "d183fc8554f285d145a1a2507492149859538775",
+  "fixture_set_digest": "ce32f962a628bca4e61cb7ff4822d08a3d44ba7565778db1001918084ee87776",
+  "agent_prompt_template_hashes": {
+    "extractor": "eeec7cd61d0a2e028b59fb37f38884aeb6965924c0b500ecb3c9e95950e8e8a9",
+    "resolver": "ae6b5396fa8a237ef4393c67c47e335f47ad067a07e45fbd7325a4ed9148c8f0",
+    "steward": "6105801a63e0711c4140bdbead2564638da15710292e71ae4cb37895519a31f8"
+  },
+  "configured_primary_models": {
+    "extractor": "gemini-3.6-flash",
+    "resolver": "gemini-3.1-pro-preview",
+    "steward": "gemini-3.5-flash-lite"
+  },
+  "configured_fallback_models": {
+    "extractor": "gemini-3.5-flash-lite",
+    "resolver": "gemini-3.6-flash",
+    "steward": "gemini-3.6-flash"
+  },
+  "split_disclaimer": "FROZEN_CHALLENGE_V2 results recorded from a single frozen live evaluation run.",
+  "dev_metrics": {
+    "extractor": {
+      "total_cases": 0,
+      "field_precision": null,
+      "field_recall": null,
+      "field_f1": null,
+      "source_span_validity_rate": null,
+      "span_validity_denominator": 0,
+      "exact_gold_source_span_accuracy": null,
+      "exact_gold_span_denominator": 0,
+      "non_binding_false_positive_count": 0,
+      "unsupported_invented_field_count": 0
+    },
+    "resolver": {
+      "total_cases": 0,
+      "system_recommendation_accuracy": null,
+      "system_rec_denominator": 0,
+      "model_backed_recommendation_accuracy": null,
+      "model_backed_rec_denominator": 0,
+      "deterministic_short_circuit_accuracy": null,
+      "deterministic_short_circuit_denominator": 0,
+      "model_backed_controlling_id_accuracy": null,
+      "model_backed_ctrl_id_denominator": 0,
+      "model_backed_abstention_accuracy": null,
+      "model_backed_abstention_denominator": 0,
+      "model_backed_conflict_accuracy": null,
+      "model_backed_conflict_denominator": 0
+    },
+    "steward": {
+      "total_cases": 0,
+      "expected_action_accuracy": null,
+      "action_denominator": 0,
+      "patch_operation_accuracy": null,
+      "patch_operation_denominator": 0,
+      "patch_value_accuracy": null,
+      "patch_value_denominator": 0,
+      "validate_patch_pass_rate": null,
+      "patch_validation_denominator": 0
+    }
+  },
+  "recorded_regression_metrics": {
+    "extractor": {
+      "total_cases": 0,
+      "field_precision": null,
+      "field_recall": null,
+      "field_f1": null,
+      "source_span_validity_rate": null,
+      "span_validity_denominator": 0,
+      "exact_gold_source_span_accuracy": null,
+      "exact_gold_span_denominator": 0,
+      "non_binding_false_positive_count": 0,
+      "unsupported_invented_field_count": 0
+    },
+    "resolver": {
+      "total_cases": 0,
+      "system_recommendation_accuracy": null,
+      "system_rec_denominator": 0,
+      "model_backed_recommendation_accuracy": null,
+      "model_backed_rec_denominator": 0,
+      "deterministic_short_circuit_accuracy": null,
+      "deterministic_short_circuit_denominator": 0,
+      "model_backed_controlling_id_accuracy": null,
+      "model_backed_ctrl_id_denominator": 0,
+      "model_backed_abstention_accuracy": null,
+      "model_backed_abstention_denominator": 0,
+      "model_backed_conflict_accuracy": null,
+      "model_backed_conflict_denominator": 0
+    },
+    "steward": {
+      "total_cases": 0,
+      "expected_action_accuracy": null,
+      "action_denominator": 0,
+      "patch_operation_accuracy": null,
+      "patch_operation_denominator": 0,
+      "patch_value_accuracy": null,
+      "patch_value_denominator": 0,
+      "validate_patch_pass_rate": null,
+      "patch_validation_denominator": 0
+    }
+  },
+  "recorded_challenge_v1_metrics": null,
+  "frozen_challenge_v2_metrics": {
+    "extractor": {
+      "total_cases": 10,
+      "field_precision": 1.0,
+      "field_recall": 1.0,
+      "field_f1": 1.0,
+      "source_span_validity_rate": 1.0,
+      "span_validity_denominator": 13,
+      "exact_gold_source_span_accuracy": 0.0,
+      "exact_gold_span_denominator": 13,
+      "non_binding_false_positive_count": 0,
+      "unsupported_invented_field_count": 0
+    },
+    "resolver": {
+      "total_cases": 6,
+      "system_recommendation_accuracy": 1.0,
+      "system_rec_denominator": 6,
+      "model_backed_recommendation_accuracy": 1.0,
+      "model_backed_rec_denominator": 5,
+      "deterministic_short_circuit_accuracy": 1.0,
+      "deterministic_short_circuit_denominator": 1,
+      "model_backed_controlling_id_accuracy": 1.0,
+      "model_backed_ctrl_id_denominator": 2,
+      "model_backed_abstention_accuracy": 1.0,
+      "model_backed_abstention_denominator": 2,
+      "model_backed_conflict_accuracy": 1.0,
+      "model_backed_conflict_denominator": 1
+    },
+    "steward": {
+      "total_cases": 7,
+      "expected_action_accuracy": 0.42857142857142855,
+      "action_denominator": 7,
+      "patch_operation_accuracy": null,
+      "patch_operation_denominator": 0,
+      "patch_value_accuracy": null,
+      "patch_value_denominator": 0,
+      "validate_patch_pass_rate": null,
+      "patch_validation_denominator": 0
+    }
+  },
+  "combined_metrics": {
+    "extractor": {
+      "total_cases": 0,
+      "field_precision": null,
+      "field_recall": null,
+      "field_f1": null,
+      "source_span_validity_rate": null,
+      "span_validity_denominator": 0,
+      "exact_gold_source_span_accuracy": null,
+      "exact_gold_span_denominator": 0,
+      "non_binding_false_positive_count": 0,
+      "unsupported_invented_field_count": 0
+    },
+    "resolver": {
+      "total_cases": 0,
+      "system_recommendation_accuracy": null,
+      "system_rec_denominator": 0,
+      "model_backed_recommendation_accuracy": null,
+      "model_backed_rec_denominator": 0,
+      "deterministic_short_circuit_accuracy": null,
+      "deterministic_short_circuit_denominator": 0,
+      "model_backed_controlling_id_accuracy": null,
+      "model_backed_ctrl_id_denominator": 0,
+      "model_backed_abstention_accuracy": null,
+      "model_backed_abstention_denominator": 0,
+      "model_backed_conflict_accuracy": null,
+      "model_backed_conflict_denominator": 0
+    },
+    "steward": {
+      "total_cases": 0,
+      "expected_action_accuracy": null,
+      "action_denominator": 0,
+      "patch_operation_accuracy": null,
+      "patch_operation_denominator": 0,
+      "patch_value_accuracy": null,
+      "patch_value_denominator": 0,
+      "validate_patch_pass_rate": null,
+      "patch_validation_denominator": 0
+    }
+  },
+  "agent_execution_counts": {
+    "extractor": 10,
+    "resolver": 6,
+    "steward": 7
+  },
+  "model_backed_invocation_counts": {
+    "extractor": 10,
+    "resolver": 5,
+    "steward": 6
+  },
+  "fallback_counts_by_agent": {},
+  "attempted_model_calls_by_model": {
+    "gemini-3.6-flash": 10,
+    "gemini-3.1-pro-preview": 5,
+    "gemini-3.5-flash-lite": 6
+  },
+  "successful_model_calls_by_model": {
+    "gemini-3.6-flash": 10,
+    "gemini-3.1-pro-preview": 5,
+    "gemini-3.5-flash-lite": 6
+  },
+  "per_case_results": [
+    {
+      "case_id": "fv2_ext_000",
+      "component": "extractor",
+      "split": "FROZEN_CHALLENGE_V2",
+      "expected_scored_fields": [
+        {
+          "required_display_text": "Hans Zimmer",
+          "role_label": "Director"
+        }
+      ],
+      "predicted_scored_fields": [
+        {
+          "required_display_text": "Hans Zimmer",
+          "role_label": "Director"
+        }
+      ],
+      "matched_status": "MATCHED",
+      "expected_gold_spans": [
+        {
+          "quote": "Hans Zimmer",
+          "start_char": 28,
+          "end_char": 39
+        }
+      ],
+      "predicted_spans": [
+        {
+          "quote": "The director of the film is Hans Zimmer.",
+          "start_char": 0,
+          "end_char": 40
+        }
+      ],
+      "span_validity_passed": true,
+      "exact_gold_matched": false,
+      "raw_candidate_count": 1,
+      "accepted_count": 1,
+      "rejection_diagnostics": []
+    },
+    {
+      "case_id": "fv2_ext_001",
+      "component": "extractor",
+      "split": "FROZEN_CHALLENGE_V2",
+      "expected_scored_fields": [
+        {
+          "required_display_text": "Alice",
+          "role_label": "Composer"
+        },
+        {
+          "required_display_text": "Bob",
+          "role_label": "Composer"
+        }
+      ],
+      "predicted_scored_fields": [
+        {
+          "required_display_text": "Alice",
+          "role_label": "Composer"
+        },
+        {
+          "required_display_text": "Bob",
+          "role_label": "Composer"
+        }
+      ],
+      "matched_status": "MATCHED",
+      "expected_gold_spans": [
+        {
+          "quote": "Alice",
+          "start_char": 18,
+          "end_char": 23
+        },
+        {
+          "quote": "Bob",
+          "start_char": 28,
+          "end_char": 31
+        }
+      ],
+      "predicted_spans": [
+        {
+          "quote": "Music composed by Alice and Bob.",
+          "start_char": 0,
+          "end_char": 32
+        },
+        {
+          "quote": "Music composed by Alice and Bob.",
+          "start_char": 0,
+          "end_char": 32
+        }
+      ],
+      "span_validity_passed": true,
+      "exact_gold_matched": false,
+      "raw_candidate_count": 2,
+      "accepted_count": 2,
+      "rejection_diagnostics": []
+    },
+    {
+      "case_id": "fv2_ext_002",
+      "component": "extractor",
+      "split": "FROZEN_CHALLENGE_V2",
+      "expected_scored_fields": [
+        {
+          "required_display_text": "Alice",
+          "role_label": "Composer"
+        },
+        {
+          "required_display_text": "Bob",
+          "role_label": "Composer"
+        }
+      ],
+      "predicted_scored_fields": [
+        {
+          "required_display_text": "Alice",
+          "role_label": "Composer"
+        },
+        {
+          "required_display_text": "Bob",
+          "role_label": "Composer"
+        }
+      ],
+      "matched_status": "MATCHED",
+      "expected_gold_spans": [
+        {
+          "quote": "Alice",
+          "start_char": 18,
+          "end_char": 23
+        },
+        {
+          "quote": "Bob",
+          "start_char": 26,
+          "end_char": 29
+        }
+      ],
+      "predicted_spans": [
+        {
+          "quote": "Music composed by Alice & Bob.",
+          "start_char": 0,
+          "end_char": 30
+        },
+        {
+          "quote": "Music composed by Alice & Bob.",
+          "start_char": 0,
+          "end_char": 30
+        }
+      ],
+      "span_validity_passed": true,
+      "exact_gold_matched": false,
+      "raw_candidate_count": 2,
+      "accepted_count": 2,
+      "rejection_diagnostics": []
+    },
+    {
+      "case_id": "fv2_ext_003",
+      "component": "extractor",
+      "split": "FROZEN_CHALLENGE_V2",
+      "expected_scored_fields": [
+        {
+          "required_display_text": "Alice",
+          "role_label": "Writer"
+        },
+        {
+          "required_display_text": "Bob",
+          "role_label": "Writer"
+        },
+        {
+          "required_display_text": "Charlie",
+          "role_label": "Writer"
+        }
+      ],
+      "predicted_scored_fields": [
+        {
+          "required_display_text": "Alice",
+          "role_label": "Writer"
+        },
+        {
+          "required_display_text": "Bob",
+          "role_label": "Writer"
+        },
+        {
+          "required_display_text": "Charlie",
+          "role_label": "Writer"
+        }
+      ],
+      "matched_status": "MATCHED",
+      "expected_gold_spans": [
+        {
+          "quote": "Alice",
+          "start_char": 9,
+          "end_char": 14
+        },
+        {
+          "quote": "Bob",
+          "start_char": 16,
+          "end_char": 19
+        },
+        {
+          "quote": "Charlie",
+          "start_char": 21,
+          "end_char": 28
+        }
+      ],
+      "predicted_spans": [
+        {
+          "quote": "Writers: Alice, Bob, Charlie.",
+          "start_char": 0,
+          "end_char": 29
+        },
+        {
+          "quote": "Writers: Alice, Bob, Charlie.",
+          "start_char": 0,
+          "end_char": 29
+        },
+        {
+          "quote": "Writers: Alice, Bob, Charlie.",
+          "start_char": 0,
+          "end_char": 29
+        }
+      ],
+      "span_validity_passed": true,
+      "exact_gold_matched": false,
+      "raw_candidate_count": 3,
+      "accepted_count": 3,
+      "rejection_diagnostics": []
+    },
+    {
+      "case_id": "fv2_ext_004",
+      "component": "extractor",
+      "split": "FROZEN_CHALLENGE_V2",
+      "expected_scored_fields": [
+        {
+          "required_display_text": "Chris",
+          "role_label": "Director"
+        }
+      ],
+      "predicted_scored_fields": [
+        {
+          "required_display_text": "Chris",
+          "role_label": "Director"
+        }
+      ],
+      "matched_status": "MATCHED",
+      "expected_gold_spans": [
+        {
+          "quote": "Chris",
+          "start_char": 35,
+          "end_char": 40
+        }
+      ],
+      "predicted_spans": [
+        {
+          "quote": "The film was directed by Chris.",
+          "start_char": 10,
+          "end_char": 41
+        }
+      ],
+      "span_validity_passed": true,
+      "exact_gold_matched": false,
+      "raw_candidate_count": 1,
+      "accepted_count": 1,
+      "rejection_diagnostics": []
+    },
+    {
+      "case_id": "fv2_ext_005",
+      "component": "extractor",
+      "split": "FROZEN_CHALLENGE_V2",
+      "expected_scored_fields": [
+        {
+          "required_display_text": "Sam",
+          "role_label": "Director"
+        },
+        {
+          "required_display_text": "Sam",
+          "role_label": "Editor"
+        }
+      ],
+      "predicted_scored_fields": [
+        {
+          "required_display_text": "Sam",
+          "role_label": "Director"
+        },
+        {
+          "required_display_text": "Sam",
+          "role_label": "Editor"
+        }
+      ],
+      "matched_status": "MATCHED",
+      "expected_gold_spans": [
+        {
+          "quote": "Sam",
+          "start_char": 10,
+          "end_char": 13
+        },
+        {
+          "quote": "Sam",
+          "start_char": 23,
+          "end_char": 26
+        }
+      ],
+      "predicted_spans": [
+        {
+          "quote": "Director: Sam.",
+          "start_char": 0,
+          "end_char": 14
+        },
+        {
+          "quote": "Editor: Sam.",
+          "start_char": 15,
+          "end_char": 27
+        }
+      ],
+      "span_validity_passed": true,
+      "exact_gold_matched": false,
+      "raw_candidate_count": 2,
+      "accepted_count": 2,
+      "rejection_diagnostics": []
+    },
+    {
+      "case_id": "fv2_ext_006",
+      "component": "extractor",
+      "split": "FROZEN_CHALLENGE_V2",
+      "expected_scored_fields": [],
+      "predicted_scored_fields": [],
+      "matched_status": "UNMATCHED",
+      "expected_gold_spans": [],
+      "predicted_spans": [],
+      "span_validity_passed": true,
+      "exact_gold_matched": true,
+      "raw_candidate_count": 0,
+      "accepted_count": 0,
+      "rejection_diagnostics": []
+    },
+    {
+      "case_id": "fv2_ext_007",
+      "component": "extractor",
+      "split": "FROZEN_CHALLENGE_V2",
+      "expected_scored_fields": [],
+      "predicted_scored_fields": [],
+      "matched_status": "UNMATCHED",
+      "expected_gold_spans": [],
+      "predicted_spans": [],
+      "span_validity_passed": true,
+      "exact_gold_matched": true,
+      "raw_candidate_count": 0,
+      "accepted_count": 0,
+      "rejection_diagnostics": []
+    },
+    {
+      "case_id": "fv2_ext_008",
+      "component": "extractor",
+      "split": "FROZEN_CHALLENGE_V2",
+      "expected_scored_fields": [
+        {
+          "required_display_text": "SAM",
+          "role_label": "Director"
+        }
+      ],
+      "predicted_scored_fields": [
+        {
+          "required_display_text": "SAM",
+          "role_label": "Director"
+        }
+      ],
+      "matched_status": "MATCHED",
+      "expected_gold_spans": [
+        {
+          "quote": "SAM",
+          "start_char": 17,
+          "end_char": 20
+        }
+      ],
+      "predicted_spans": [
+        {
+          "quote": "[[[ DIRECTOR ::: SAM ]]]",
+          "start_char": 0,
+          "end_char": 24
+        }
+      ],
+      "span_validity_passed": true,
+      "exact_gold_matched": false,
+      "raw_candidate_count": 1,
+      "accepted_count": 1,
+      "rejection_diagnostics": []
+    },
+    {
+      "case_id": "fv2_ext_009",
+      "component": "extractor",
+      "split": "FROZEN_CHALLENGE_V2",
+      "expected_scored_fields": [
+        {
+          "required_display_text": "XxX_Sniper_XxX",
+          "role_label": "Xylophonist"
+        }
+      ],
+      "predicted_scored_fields": [
+        {
+          "required_display_text": "XxX_Sniper_XxX",
+          "role_label": "Xylophonist"
+        }
+      ],
+      "matched_status": "MATCHED",
+      "expected_gold_spans": [
+        {
+          "quote": "XxX_Sniper_XxX",
+          "start_char": 13,
+          "end_char": 27
+        }
+      ],
+      "predicted_spans": [
+        {
+          "quote": "Xylophonist: XxX_Sniper_XxX.",
+          "start_char": 0,
+          "end_char": 28
+        }
+      ],
+      "span_validity_passed": true,
+      "exact_gold_matched": false,
+      "raw_candidate_count": 1,
+      "accepted_count": 1,
+      "rejection_diagnostics": []
+    },
+    {
+      "case_id": "fv2_res_000",
+      "component": "resolver",
+      "split": "FROZEN_CHALLENGE_V2",
+      "expected_recommendation": "RESOLVE",
+      "actual_recommendation": "RESOLVE",
+      "expected_controlling_id": "new",
+      "actual_controlling_id": "new",
+      "execution_path": "MODEL_BACKED",
+      "recommendation_matched": true,
+      "controlling_id_matched": true
+    },
+    {
+      "case_id": "fv2_res_001",
+      "component": "resolver",
+      "split": "FROZEN_CHALLENGE_V2",
+      "expected_recommendation": "RESOLVE",
+      "actual_recommendation": "RESOLVE",
+      "expected_controlling_id": "new",
+      "actual_controlling_id": "new",
+      "execution_path": "MODEL_BACKED",
+      "recommendation_matched": true,
+      "controlling_id_matched": true
+    },
+    {
+      "case_id": "fv2_res_002",
+      "component": "resolver",
+      "split": "FROZEN_CHALLENGE_V2",
+      "expected_recommendation": "ABSTAIN",
+      "actual_recommendation": "ABSTAIN",
+      "expected_controlling_id": null,
+      "actual_controlling_id": null,
+      "execution_path": "MODEL_BACKED",
+      "recommendation_matched": true,
+      "controlling_id_matched": true
+    },
+    {
+      "case_id": "fv2_res_003",
+      "component": "resolver",
+      "split": "FROZEN_CHALLENGE_V2",
+      "expected_recommendation": "CONFLICT",
+      "actual_recommendation": "CONFLICT",
+      "expected_controlling_id": null,
+      "actual_controlling_id": null,
+      "execution_path": "MODEL_BACKED",
+      "recommendation_matched": true,
+      "controlling_id_matched": true
+    },
+    {
+      "case_id": "fv2_res_004",
+      "component": "resolver",
+      "split": "FROZEN_CHALLENGE_V2",
+      "expected_recommendation": "ABSTAIN",
+      "actual_recommendation": "ABSTAIN",
+      "expected_controlling_id": null,
+      "actual_controlling_id": null,
+      "execution_path": "DETERMINISTIC_SHORT_CIRCUIT",
+      "recommendation_matched": true,
+      "controlling_id_matched": true
+    },
+    {
+      "case_id": "fv2_res_005",
+      "component": "resolver",
+      "split": "FROZEN_CHALLENGE_V2",
+      "expected_recommendation": "ABSTAIN",
+      "actual_recommendation": "ABSTAIN",
+      "expected_controlling_id": null,
+      "actual_controlling_id": null,
+      "execution_path": "MODEL_BACKED",
+      "recommendation_matched": true,
+      "controlling_id_matched": true
+    },
+    {
+      "case_id": "fv2_stw_000",
+      "component": "steward",
+      "split": "FROZEN_CHALLENGE_V2",
+      "expected_action": "PROPOSE_PATCH",
+      "actual_action": "DETERMINISTIC_ABSTAIN",
+      "expected_operation": "SUBSTITUTE_TEXT",
+      "expected_value": "Sam",
+      "actual_operation": null,
+      "actual_value": null,
+      "execution_path": "MODEL_BACKED",
+      "validate_patch_passed": null,
+      "rejection_reason": "LLM proposed operation/value does not match controlling obligation derivation."
+    },
+    {
+      "case_id": "fv2_stw_001",
+      "component": "steward",
+      "split": "FROZEN_CHALLENGE_V2",
+      "expected_action": "PROPOSE_PATCH",
+      "actual_action": "DETERMINISTIC_ABSTAIN",
+      "expected_operation": "REORDER",
+      "expected_value": 2,
+      "actual_operation": null,
+      "actual_value": null,
+      "execution_path": "MODEL_BACKED",
+      "validate_patch_passed": null,
+      "rejection_reason": "LLM proposed operation/value does not match controlling obligation derivation."
+    },
+    {
+      "case_id": "fv2_stw_002",
+      "component": "steward",
+      "split": "FROZEN_CHALLENGE_V2",
+      "expected_action": "PROPOSE_PATCH",
+      "actual_action": "DETERMINISTIC_ABSTAIN",
+      "expected_operation": "REGROUP",
+      "expected_value": "SHARED",
+      "actual_operation": null,
+      "actual_value": null,
+      "execution_path": "MODEL_BACKED",
+      "validate_patch_passed": null,
+      "rejection_reason": "LLM proposed operation/value does not match controlling obligation derivation."
+    },
+    {
+      "case_id": "fv2_stw_003",
+      "component": "steward",
+      "split": "FROZEN_CHALLENGE_V2",
+      "expected_action": "PROPOSE_PATCH",
+      "actual_action": "DETERMINISTIC_ABSTAIN",
+      "expected_operation": "REPOSITION",
+      "expected_value": "MAIN_TITLES",
+      "actual_operation": null,
+      "actual_value": null,
+      "execution_path": "MODEL_BACKED",
+      "validate_patch_passed": null,
+      "rejection_reason": "LLM proposed operation/value does not match controlling obligation derivation."
+    },
+    {
+      "case_id": "fv2_stw_004",
+      "component": "steward",
+      "split": "FROZEN_CHALLENGE_V2",
+      "expected_action": "DETERMINISTIC_ABSTAIN",
+      "actual_action": "DETERMINISTIC_ABSTAIN",
+      "expected_operation": null,
+      "expected_value": null,
+      "actual_operation": null,
+      "actual_value": null,
+      "execution_path": "DETERMINISTIC_SHORT_CIRCUIT",
+      "validate_patch_passed": null,
+      "rejection_reason": "Obligation status 'WAIVED' is not ACTIVE; steward deterministic abstain."
+    },
+    {
+      "case_id": "fv2_stw_005",
+      "component": "steward",
+      "split": "FROZEN_CHALLENGE_V2",
+      "expected_action": "DETERMINISTIC_ABSTAIN",
+      "actual_action": "DETERMINISTIC_ABSTAIN",
+      "expected_operation": null,
+      "expected_value": null,
+      "actual_operation": null,
+      "actual_value": null,
+      "execution_path": "MODEL_BACKED",
+      "validate_patch_passed": null,
+      "rejection_reason": "LLM proposed operation/value does not match controlling obligation derivation."
+    },
+    {
+      "case_id": "fv2_stw_006",
+      "component": "steward",
+      "split": "FROZEN_CHALLENGE_V2",
+      "expected_action": "DETERMINISTIC_ABSTAIN",
+      "actual_action": "DETERMINISTIC_ABSTAIN",
+      "expected_operation": null,
+      "expected_value": null,
+      "actual_operation": null,
+      "actual_value": null,
+      "execution_path": "MODEL_BACKED",
+      "validate_patch_passed": null,
+      "rejection_reason": "LLM proposed operation/value does not match controlling obligation derivation."
+    }
+  ],
+  "per_case_sanitized_provenance": [
+    {
+      "case_id": "fv2_ext_000",
+      "agent_role": "extractor",
+      "execution_path": "MODEL_BACKED",
+      "expected_outcome": "1 candidate obligations",
+      "actual_outcome": "1 candidate obligations",
+      "prompt_version": "extractor-v2",
+      "provenance": {
+        "actual_model_used": "gemini-3.6-flash",
+        "fallback_occurred": false,
+        "total_latency_ms": 12250.8839580114,
+        "attempts": [
+          {
+            "model_id": "gemini-3.6-flash",
+            "outcome": "SUCCESS",
+            "latency_ms": 12250.8839580114,
+            "sanitized_error_code": null
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "fv2_ext_001",
+      "agent_role": "extractor",
+      "execution_path": "MODEL_BACKED",
+      "expected_outcome": "2 candidate obligations",
+      "actual_outcome": "2 candidate obligations",
+      "prompt_version": "extractor-v2",
+      "provenance": {
+        "actual_model_used": "gemini-3.6-flash",
+        "fallback_occurred": false,
+        "total_latency_ms": 8170.731416001217,
+        "attempts": [
+          {
+            "model_id": "gemini-3.6-flash",
+            "outcome": "SUCCESS",
+            "latency_ms": 8170.731416001217,
+            "sanitized_error_code": null
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "fv2_ext_002",
+      "agent_role": "extractor",
+      "execution_path": "MODEL_BACKED",
+      "expected_outcome": "2 candidate obligations",
+      "actual_outcome": "2 candidate obligations",
+      "prompt_version": "extractor-v2",
+      "provenance": {
+        "actual_model_used": "gemini-3.6-flash",
+        "fallback_occurred": false,
+        "total_latency_ms": 9122.972999990452,
+        "attempts": [
+          {
+            "model_id": "gemini-3.6-flash",
+            "outcome": "SUCCESS",
+            "latency_ms": 9122.972999990452,
+            "sanitized_error_code": null
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "fv2_ext_003",
+      "agent_role": "extractor",
+      "execution_path": "MODEL_BACKED",
+      "expected_outcome": "3 candidate obligations",
+      "actual_outcome": "3 candidate obligations",
+      "prompt_version": "extractor-v2",
+      "provenance": {
+        "actual_model_used": "gemini-3.6-flash",
+        "fallback_occurred": false,
+        "total_latency_ms": 7976.29862499889,
+        "attempts": [
+          {
+            "model_id": "gemini-3.6-flash",
+            "outcome": "SUCCESS",
+            "latency_ms": 7976.29862499889,
+            "sanitized_error_code": null
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "fv2_ext_004",
+      "agent_role": "extractor",
+      "execution_path": "MODEL_BACKED",
+      "expected_outcome": "1 candidate obligations",
+      "actual_outcome": "1 candidate obligations",
+      "prompt_version": "extractor-v2",
+      "provenance": {
+        "actual_model_used": "gemini-3.6-flash",
+        "fallback_occurred": false,
+        "total_latency_ms": 8274.582374986494,
+        "attempts": [
+          {
+            "model_id": "gemini-3.6-flash",
+            "outcome": "SUCCESS",
+            "latency_ms": 8274.582374986494,
+            "sanitized_error_code": null
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "fv2_ext_005",
+      "agent_role": "extractor",
+      "execution_path": "MODEL_BACKED",
+      "expected_outcome": "2 candidate obligations",
+      "actual_outcome": "2 candidate obligations",
+      "prompt_version": "extractor-v2",
+      "provenance": {
+        "actual_model_used": "gemini-3.6-flash",
+        "fallback_occurred": false,
+        "total_latency_ms": 7494.8169169947505,
+        "attempts": [
+          {
+            "model_id": "gemini-3.6-flash",
+            "outcome": "SUCCESS",
+            "latency_ms": 7494.8169169947505,
+            "sanitized_error_code": null
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "fv2_ext_006",
+      "agent_role": "extractor",
+      "execution_path": "MODEL_BACKED",
+      "expected_outcome": "0 candidate obligations",
+      "actual_outcome": "0 candidate obligations",
+      "prompt_version": "extractor-v2",
+      "provenance": {
+        "actual_model_used": "gemini-3.6-flash",
+        "fallback_occurred": false,
+        "total_latency_ms": 2571.263416990405,
+        "attempts": [
+          {
+            "model_id": "gemini-3.6-flash",
+            "outcome": "SUCCESS",
+            "latency_ms": 2571.263416990405,
+            "sanitized_error_code": null
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "fv2_ext_007",
+      "agent_role": "extractor",
+      "execution_path": "MODEL_BACKED",
+      "expected_outcome": "0 candidate obligations",
+      "actual_outcome": "0 candidate obligations",
+      "prompt_version": "extractor-v2",
+      "provenance": {
+        "actual_model_used": "gemini-3.6-flash",
+        "fallback_occurred": false,
+        "total_latency_ms": 2610.287208983209,
+        "attempts": [
+          {
+            "model_id": "gemini-3.6-flash",
+            "outcome": "SUCCESS",
+            "latency_ms": 2610.287208983209,
+            "sanitized_error_code": null
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "fv2_ext_008",
+      "agent_role": "extractor",
+      "execution_path": "MODEL_BACKED",
+      "expected_outcome": "1 candidate obligations",
+      "actual_outcome": "1 candidate obligations",
+      "prompt_version": "extractor-v2",
+      "provenance": {
+        "actual_model_used": "gemini-3.6-flash",
+        "fallback_occurred": false,
+        "total_latency_ms": 5940.53808299941,
+        "attempts": [
+          {
+            "model_id": "gemini-3.6-flash",
+            "outcome": "SUCCESS",
+            "latency_ms": 5940.53808299941,
+            "sanitized_error_code": null
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "fv2_ext_009",
+      "agent_role": "extractor",
+      "execution_path": "MODEL_BACKED",
+      "expected_outcome": "1 candidate obligations",
+      "actual_outcome": "1 candidate obligations",
+      "prompt_version": "extractor-v2",
+      "provenance": {
+        "actual_model_used": "gemini-3.6-flash",
+        "fallback_occurred": false,
+        "total_latency_ms": 6302.368624979863,
+        "attempts": [
+          {
+            "model_id": "gemini-3.6-flash",
+            "outcome": "SUCCESS",
+            "latency_ms": 6302.368624979863,
+            "sanitized_error_code": null
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "fv2_res_000",
+      "agent_role": "resolver",
+      "execution_path": "MODEL_BACKED",
+      "expected_outcome": "rec=RESOLVE, ctrl=new",
+      "actual_outcome": "rec=RESOLVE, ctrl=new",
+      "prompt_version": "resolver-v2",
+      "provenance": {
+        "actual_model_used": "gemini-3.1-pro-preview",
+        "fallback_occurred": false,
+        "total_latency_ms": 7628.37712498731,
+        "attempts": [
+          {
+            "model_id": "gemini-3.1-pro-preview",
+            "outcome": "SUCCESS",
+            "latency_ms": 7628.37712498731,
+            "sanitized_error_code": null
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "fv2_res_001",
+      "agent_role": "resolver",
+      "execution_path": "MODEL_BACKED",
+      "expected_outcome": "rec=RESOLVE, ctrl=new",
+      "actual_outcome": "rec=RESOLVE, ctrl=new",
+      "prompt_version": "resolver-v2",
+      "provenance": {
+        "actual_model_used": "gemini-3.1-pro-preview",
+        "fallback_occurred": false,
+        "total_latency_ms": 8224.508249986684,
+        "attempts": [
+          {
+            "model_id": "gemini-3.1-pro-preview",
+            "outcome": "SUCCESS",
+            "latency_ms": 8224.508249986684,
+            "sanitized_error_code": null
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "fv2_res_002",
+      "agent_role": "resolver",
+      "execution_path": "MODEL_BACKED",
+      "expected_outcome": "rec=ABSTAIN, ctrl=None",
+      "actual_outcome": "rec=ABSTAIN, ctrl=None",
+      "prompt_version": "resolver-v2",
+      "provenance": {
+        "actual_model_used": "gemini-3.1-pro-preview",
+        "fallback_occurred": false,
+        "total_latency_ms": 3918.930833984632,
+        "attempts": [
+          {
+            "model_id": "gemini-3.1-pro-preview",
+            "outcome": "SUCCESS",
+            "latency_ms": 3918.930833984632,
+            "sanitized_error_code": null
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "fv2_res_003",
+      "agent_role": "resolver",
+      "execution_path": "MODEL_BACKED",
+      "expected_outcome": "rec=CONFLICT, ctrl=None",
+      "actual_outcome": "rec=CONFLICT, ctrl=None",
+      "prompt_version": "resolver-v2",
+      "provenance": {
+        "actual_model_used": "gemini-3.1-pro-preview",
+        "fallback_occurred": false,
+        "total_latency_ms": 4166.961000009906,
+        "attempts": [
+          {
+            "model_id": "gemini-3.1-pro-preview",
+            "outcome": "SUCCESS",
+            "latency_ms": 4166.961000009906,
+            "sanitized_error_code": null
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "fv2_res_004",
+      "agent_role": "resolver",
+      "execution_path": "DETERMINISTIC_SHORT_CIRCUIT",
+      "expected_outcome": "rec=ABSTAIN, ctrl=None",
+      "actual_outcome": "rec=ABSTAIN, ctrl=None",
+      "prompt_version": "resolver-v2",
+      "provenance": null
+    },
+    {
+      "case_id": "fv2_res_005",
+      "agent_role": "resolver",
+      "execution_path": "MODEL_BACKED",
+      "expected_outcome": "rec=ABSTAIN, ctrl=None",
+      "actual_outcome": "rec=ABSTAIN, ctrl=None",
+      "prompt_version": "resolver-v2",
+      "provenance": {
+        "actual_model_used": "gemini-3.1-pro-preview",
+        "fallback_occurred": false,
+        "total_latency_ms": 6201.614457997493,
+        "attempts": [
+          {
+            "model_id": "gemini-3.1-pro-preview",
+            "outcome": "SUCCESS",
+            "latency_ms": 6201.614457997493,
+            "sanitized_error_code": null
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "fv2_stw_000",
+      "agent_role": "steward",
+      "execution_path": "MODEL_BACKED",
+      "expected_outcome": "action=PROPOSE_PATCH, op=SUBSTITUTE_TEXT, val=Sam",
+      "actual_outcome": "action=DETERMINISTIC_ABSTAIN, op=None",
+      "prompt_version": "steward-v2",
+      "provenance": {
+        "actual_model_used": "gemini-3.5-flash-lite",
+        "fallback_occurred": false,
+        "total_latency_ms": 3218.799124995712,
+        "attempts": [
+          {
+            "model_id": "gemini-3.5-flash-lite",
+            "outcome": "SUCCESS",
+            "latency_ms": 3218.799124995712,
+            "sanitized_error_code": null
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "fv2_stw_001",
+      "agent_role": "steward",
+      "execution_path": "MODEL_BACKED",
+      "expected_outcome": "action=PROPOSE_PATCH, op=REORDER, val=2",
+      "actual_outcome": "action=DETERMINISTIC_ABSTAIN, op=None",
+      "prompt_version": "steward-v2",
+      "provenance": {
+        "actual_model_used": "gemini-3.5-flash-lite",
+        "fallback_occurred": false,
+        "total_latency_ms": 1019.3210830038879,
+        "attempts": [
+          {
+            "model_id": "gemini-3.5-flash-lite",
+            "outcome": "SUCCESS",
+            "latency_ms": 1019.3210830038879,
+            "sanitized_error_code": null
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "fv2_stw_002",
+      "agent_role": "steward",
+      "execution_path": "MODEL_BACKED",
+      "expected_outcome": "action=PROPOSE_PATCH, op=REGROUP, val=SHARED",
+      "actual_outcome": "action=DETERMINISTIC_ABSTAIN, op=None",
+      "prompt_version": "steward-v2",
+      "provenance": {
+        "actual_model_used": "gemini-3.5-flash-lite",
+        "fallback_occurred": false,
+        "total_latency_ms": 1152.646917005768,
+        "attempts": [
+          {
+            "model_id": "gemini-3.5-flash-lite",
+            "outcome": "SUCCESS",
+            "latency_ms": 1152.646917005768,
+            "sanitized_error_code": null
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "fv2_stw_003",
+      "agent_role": "steward",
+      "execution_path": "MODEL_BACKED",
+      "expected_outcome": "action=PROPOSE_PATCH, op=REPOSITION, val=MAIN_TITLES",
+      "actual_outcome": "action=DETERMINISTIC_ABSTAIN, op=None",
+      "prompt_version": "steward-v2",
+      "provenance": {
+        "actual_model_used": "gemini-3.5-flash-lite",
+        "fallback_occurred": false,
+        "total_latency_ms": 987.4382909911219,
+        "attempts": [
+          {
+            "model_id": "gemini-3.5-flash-lite",
+            "outcome": "SUCCESS",
+            "latency_ms": 987.4382909911219,
+            "sanitized_error_code": null
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "fv2_stw_004",
+      "agent_role": "steward",
+      "execution_path": "DETERMINISTIC_SHORT_CIRCUIT",
+      "expected_outcome": "action=DETERMINISTIC_ABSTAIN, op=None, val=None",
+      "actual_outcome": "action=DETERMINISTIC_ABSTAIN, op=None",
+      "prompt_version": "steward-v2",
+      "provenance": null
+    },
+    {
+      "case_id": "fv2_stw_005",
+      "agent_role": "steward",
+      "execution_path": "MODEL_BACKED",
+      "expected_outcome": "action=DETERMINISTIC_ABSTAIN, op=None, val=None",
+      "actual_outcome": "action=DETERMINISTIC_ABSTAIN, op=None",
+      "prompt_version": "steward-v2",
+      "provenance": {
+        "actual_model_used": "gemini-3.5-flash-lite",
+        "fallback_occurred": false,
+        "total_latency_ms": 1032.6323330227751,
+        "attempts": [
+          {
+            "model_id": "gemini-3.5-flash-lite",
+            "outcome": "SUCCESS",
+            "latency_ms": 1032.6323330227751,
+            "sanitized_error_code": null
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "fv2_stw_006",
+      "agent_role": "steward",
+      "execution_path": "MODEL_BACKED",
+      "expected_outcome": "action=DETERMINISTIC_ABSTAIN, op=None, val=None",
+      "actual_outcome": "action=DETERMINISTIC_ABSTAIN, op=None",
+      "prompt_version": "steward-v2",
+      "provenance": {
+        "actual_model_used": "gemini-3.5-flash-lite",
+        "fallback_occurred": false,
+        "total_latency_ms": 1228.5959590226412,
+        "attempts": [
+          {
+            "model_id": "gemini-3.5-flash-lite",
+            "outcome": "SUCCESS",
+            "latency_ms": 1228.5959590226412,
+            "sanitized_error_code": null
+          }
+        ]
+      }
+    }
+  ]
+}

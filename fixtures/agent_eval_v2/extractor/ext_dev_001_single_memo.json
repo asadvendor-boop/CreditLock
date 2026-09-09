@@ -1,0 +1,23 @@
+{
+  "case_id": "ext_dev_001_single_memo",
+  "split": "DEV",
+  "synthetic_document_text": "CREDIT MEMORANDUM\nCREDIT: John Williams\nROLE: Composer\nSURFACE: END_CARDS\nQUOTE: CREDIT: John Williams",
+  "expected_obligations": [
+    {
+      "required_display_text": "John Williams",
+      "role_label": "Composer",
+      "credit_surface": "END_CARDS",
+      "card_type": "SOLO"
+    }
+  ],
+  "scored_fields": ["required_display_text", "role_label", "credit_surface"],
+  "supported_unscored_fields": ["card_type", "card_position_ordinal", "confidence"],
+  "exact_gold_source_spans": [
+    {
+      "quote": "CREDIT: John Williams",
+      "start_char": 18,
+      "end_char": 39
+    }
+  ],
+  "is_non_binding": false
+}

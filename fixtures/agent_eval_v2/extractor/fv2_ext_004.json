@@ -1,0 +1,19 @@
+{
+  "case_id": "fv2_ext_004",
+  "split": "FROZEN_CHALLENGE_V2",
+  "scenario_category": "heading-separated binding clause positive",
+  "synthetic_document_text": "DIRECTOR\n\nThe film was directed by Chris.",
+  "expected_obligations": [
+    {
+      "required_display_text": "Chris",
+      "role_label": "Director"
+    }
+  ],
+  "exact_gold_source_spans": [
+    {
+      "quote": "Chris",
+      "start_char": 35,
+      "end_char": 40
+    }
+  ]
+}

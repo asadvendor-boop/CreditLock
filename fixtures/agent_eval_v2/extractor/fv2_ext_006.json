@@ -1,0 +1,9 @@
+{
+  "case_id": "fv2_ext_006",
+  "split": "FROZEN_CHALLENGE_V2",
+  "scenario_category": "draft/non-binding negative",
+  "synthetic_document_text": "DRAFT: If we hire a director, it might be Sam.",
+  "expected_obligations": [],
+  "exact_gold_source_spans": [],
+  "is_non_binding": true
+}

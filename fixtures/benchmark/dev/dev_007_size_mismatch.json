@@ -1,0 +1,93 @@
+{
+  "case_id": "dev_007_size_mismatch",
+  "description": "Obligation requires font size at least 50% of reference element; layout evidence shows it at 40%.",
+  "obligations": [
+    {
+      "obligation_id": "obl_dev007",
+      "production_id": "prod_dev",
+      "credited_party_id": "contrib_007",
+      "required_display_text": null,
+      "role_label": "Producer",
+      "credit_surface": "MAIN_TITLES",
+      "card_type": "SOLO",
+      "card_position": null,
+      "shared_with": [],
+      "billing_group": null,
+      "minimum_relative_size": 0.5,
+      "size_reference": {"rendered_element_id": "elem_title_ref"},
+      "size_comparison_basis": "COMPUTED_FONT_SIZE_PX",
+      "minimum_visible_duration_ms": null,
+      "territories": [],
+      "media_versions": [],
+      "trigger_condition": null,
+      "governing_authority": null,
+      "source_document_id": "doc_dev007",
+      "source_document_version": 1,
+      "source_span": {"page": 1, "start_char": 10, "end_char": 50, "quote": "no less than 50% of title card size"},
+      "source_hash": "1111111111111111111111111111111111111111111111111111111111111111",
+      "agent_reported_confidence": 0.96,
+      "extraction_model_id": "synthetic-fixture-v1",
+      "prompt_version": "v1",
+      "status": "ACTIVE"
+    }
+  ],
+  "manifest": {
+    "manifest_id": "mfst_dev007",
+    "production_id": "prod_dev",
+    "delivery_version_id": "v1",
+    "entries": [
+      {
+        "rendered_element_id": "elem_007",
+        "contributor_id": "contrib_007",
+        "display_name": "Elena Moreau",
+        "role": "Producer",
+        "department": null,
+        "credit_surface": "MAIN_TITLES",
+        "group_id": null,
+        "ordinal_position": 1,
+        "shared_with": [],
+        "production_id": "prod_dev",
+        "delivery_version_id": "v1"
+      },
+      {
+        "rendered_element_id": "elem_title_ref",
+        "contributor_id": "title_ref",
+        "display_name": "THE FILM TITLE",
+        "role": "_title_reference",
+        "department": null,
+        "credit_surface": "MAIN_TITLES",
+        "group_id": null,
+        "ordinal_position": 0,
+        "shared_with": [],
+        "production_id": "prod_dev",
+        "delivery_version_id": "v1"
+      }
+    ]
+  },
+  "layout_evidence": {
+    "manifest_id": "mfst_dev007",
+    "render_profile_version": "v1",
+    "assertions": [
+      {
+        "rendered_element_id": "elem_007",
+        "visible_text": "Elena Moreau",
+        "computed_font_size_px": 16.0,
+        "bounding_box": {"x": 100, "y": 200, "w": 200, "h": 20},
+        "frame_index": 0,
+        "group_id": null
+      },
+      {
+        "rendered_element_id": "elem_title_ref",
+        "visible_text": "THE FILM TITLE",
+        "computed_font_size_px": 40.0,
+        "bounding_box": {"x": 100, "y": 100, "w": 400, "h": 50},
+        "frame_index": 0,
+        "group_id": null
+      }
+    ]
+  },
+  "visual_observations": null,
+  "expected_issues": ["ARTIFACT_SIZE_MISMATCH"],
+  "expected_gate": "BLOCKED",
+  "_note": "16.0 + 0.1 = 16.1, required = 0.5 * 40.0 = 20.0. 16.1 < 20.0 => FAIL"
+}

@@ -1,0 +1,58 @@
+{
+  "case_id": "res_challenge_004_mutually_exclusive",
+  "split": "RECORDED_CHALLENGE_V1",
+  "input_candidate_obligations": [
+    {
+      "obligation_id": "obl-res-chal-004-c1",
+      "production_id": "prod-chal-4",
+      "status": "CANDIDATE",
+      "extraction_model_id": "gemini-3.6-flash",
+      "prompt_version": "v1",
+      "credited_party_id": "contrib-dir-shared",
+      "required_display_text": "Gabriel Sterling",
+      "role_label": "Director",
+      "credit_surface": "END_CARDS",
+      "card_type": "SOLO",
+      "card_position": {
+        "kind": "ABSOLUTE",
+        "ordinal": 1
+      },
+      "source_document_id": "contract_gabriel.txt",
+      "source_document_version": 1,
+      "source_hash": "hash_gabriel",
+      "agent_reported_confidence": 0.9,
+      "source_span": {
+        "quote": "Director Credit: Gabriel Sterling shall receive solo Director credit.",
+        "start_char": 0,
+        "end_char": 69
+      }
+    },
+    {
+      "obligation_id": "obl-res-chal-004-c2",
+      "production_id": "prod-chal-4",
+      "status": "CANDIDATE",
+      "extraction_model_id": "gemini-3.6-flash",
+      "prompt_version": "v1",
+      "credited_party_id": "contrib-dir-shared",
+      "required_display_text": "Hanna Lindqvist",
+      "role_label": "Director",
+      "credit_surface": "END_CARDS",
+      "card_type": "SOLO",
+      "card_position": {
+        "kind": "ABSOLUTE",
+        "ordinal": 1
+      },
+      "source_document_id": "contract_hanna.txt",
+      "source_document_version": 1,
+      "source_hash": "hash_hanna",
+      "agent_reported_confidence": 0.9,
+      "source_span": {
+        "quote": "Director Credit: Hanna Lindqvist shall receive solo Director credit.",
+        "start_char": 0,
+        "end_char": 68
+      }
+    }
+  ],
+  "expected_recommendation": "CONFLICT",
+  "expected_controlling_id": null
+}

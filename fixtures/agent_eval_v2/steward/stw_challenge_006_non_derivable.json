@@ -1,0 +1,44 @@
+{
+  "case_id": "stw_challenge_006_non_derivable",
+  "split": "RECORDED_CHALLENGE_V1",
+  "input_issue": {
+    "issue_id": "issue-stw-chal-006",
+    "code": "MISSING_CREDIT",
+    "manifest_refs": [],
+    "obligation_id": "obl-stw-chal-6",
+    "detail": "Obligation active but completely missing from manifest entries"
+  },
+  "input_obligation": {
+    "obligation_id": "obl-stw-chal-6",
+    "production_id": "prod-stw-chal-6",
+    "status": "ACTIVE",
+    "extraction_model_id": "gemini-3.6-flash",
+    "prompt_version": "v1",
+    "required_display_text": "Isla Montgomery",
+    "role_label": "Line Producer",
+    "credit_surface": "END_CARDS",
+    "card_type": "SOLO",
+    "card_position": {
+      "kind": "ABSOLUTE",
+      "ordinal": 1
+    },
+    "source_document_id": "memo.txt",
+    "source_document_version": 1,
+    "source_hash": "h1",
+    "agent_reported_confidence": 0.9,
+    "source_span": {
+      "quote": "Isla Montgomery",
+      "start_char": 0,
+      "end_char": 15
+    }
+  },
+  "input_manifest": {
+    "manifest_id": "man-stw-chal-6",
+    "production_id": "prod-stw-chal-6",
+    "delivery_version_id": "v1",
+    "entries": []
+  },
+  "expected_action": "DETERMINISTIC_ABSTAIN",
+  "expected_patch_operation": null,
+  "expected_patch_value": null
+}

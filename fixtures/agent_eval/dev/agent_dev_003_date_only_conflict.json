@@ -1,0 +1,36 @@
+{
+  "case_id": "agent_dev_003_date_only_conflict",
+  "description": "Two conflicting memo notes with different dates but no explicit amendment or version.",
+  "synthetic_document_text": "MEMO DATED JAN 1, 2026: CREDIT: Alice Vance, ROLE: Producer.\nMEMO DATED FEB 1, 2026: CREDIT: Bob Vance, ROLE: Producer.",
+  "expected_obligation_fields": [
+    {
+      "required_display_text": "Alice Vance",
+      "role_label": "Producer"
+    },
+    {
+      "required_display_text": "Bob Vance",
+      "role_label": "Producer"
+    }
+  ],
+  "exact_gold_source_spans": [
+    {
+      "quote": "CREDIT: Alice Vance",
+      "start_char": 24,
+      "end_char": 43
+    },
+    {
+      "quote": "CREDIT: Bob Vance",
+      "start_char": 85,
+      "end_char": 102
+    }
+  ],
+  "expected_ambiguity_result": true,
+  "precedence_cases": [
+    {
+      "candidate_ids": ["obl-jan-1", "obl-feb-1"],
+      "expected_recommendation": "ABSTAIN",
+      "expected_controlling_id": null
+    }
+  ],
+  "sealed": false
+}

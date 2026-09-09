@@ -1,0 +1,27 @@
+{
+  "case_id": "ext_holdout_001_billing_block",
+  "split": "RECORDED_REGRESSION",
+  "synthetic_document_text": "DEAL MEMO\nDirector: Christopher Nolan\nBilling Block Credit Required: Produced by Emma Thomas and Christopher Nolan.",
+  "expected_obligations": [
+    {
+      "required_display_text": "Emma Thomas",
+      "role_label": "Producer",
+      "credit_surface": "BILLING_BLOCK"
+    },
+    {
+      "required_display_text": "Christopher Nolan",
+      "role_label": "Producer",
+      "credit_surface": "BILLING_BLOCK"
+    }
+  ],
+  "scored_fields": ["required_display_text", "role_label", "credit_surface"],
+  "supported_unscored_fields": ["card_type", "card_position_ordinal", "confidence"],
+  "exact_gold_source_spans": [
+    {
+      "quote": "Produced by Emma Thomas and Christopher Nolan.",
+      "start_char": 69,
+      "end_char": 115
+    }
+  ],
+  "is_non_binding": false
+}

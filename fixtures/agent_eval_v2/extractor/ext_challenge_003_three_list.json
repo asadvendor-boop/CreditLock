@@ -1,0 +1,53 @@
+{
+  "case_id": "ext_challenge_003_three_list",
+  "split": "RECORDED_CHALLENGE_V1",
+  "synthetic_document_text": "MEMORANDUM OF UNDERSTANDING\n\nAssociate Producer Credit: Sarah Jenkins, Thomas Wright, and Carlos Mendez shall receive shared Associate Producer credit on main titles.",
+  "expected_obligations": [
+    {
+      "required_display_text": "Sarah Jenkins",
+      "role_label": "Associate Producer",
+      "credit_surface": "MAIN_TITLES",
+      "card_type": "SHARED",
+      "card_position_ordinal": 1
+    },
+    {
+      "required_display_text": "Thomas Wright",
+      "role_label": "Associate Producer",
+      "credit_surface": "MAIN_TITLES",
+      "card_type": "SHARED",
+      "card_position_ordinal": 1
+    },
+    {
+      "required_display_text": "Carlos Mendez",
+      "role_label": "Associate Producer",
+      "credit_surface": "MAIN_TITLES",
+      "card_type": "SHARED",
+      "card_position_ordinal": 1
+    }
+  ],
+  "scored_fields": [
+    "required_display_text",
+    "role_label",
+    "credit_surface",
+    "card_type",
+    "card_position_ordinal"
+  ],
+  "exact_gold_source_spans": [
+    {
+      "quote": "Sarah Jenkins, Thomas Wright, and Carlos Mendez shall receive shared Associate Producer credit on main titles.",
+      "start_char": 56,
+      "end_char": 166
+    },
+    {
+      "quote": "Sarah Jenkins, Thomas Wright, and Carlos Mendez shall receive shared Associate Producer credit on main titles.",
+      "start_char": 56,
+      "end_char": 166
+    },
+    {
+      "quote": "Sarah Jenkins, Thomas Wright, and Carlos Mendez shall receive shared Associate Producer credit on main titles.",
+      "start_char": 56,
+      "end_char": 166
+    }
+  ],
+  "is_non_binding": false
+}

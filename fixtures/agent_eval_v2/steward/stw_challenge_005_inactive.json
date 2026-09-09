@@ -1,0 +1,57 @@
+{
+  "case_id": "stw_challenge_005_inactive",
+  "split": "RECORDED_CHALLENGE_V1",
+  "input_issue": {
+    "issue_id": "issue-stw-chal-005",
+    "code": "ARTIFACT_TEXT_MISMATCH",
+    "manifest_refs": [
+      "elem-chal-5"
+    ],
+    "obligation_id": "obl-stw-chal-5",
+    "detail": "Display name mismatch on inactive obligation"
+  },
+  "input_obligation": {
+    "obligation_id": "obl-stw-chal-5",
+    "production_id": "prod-stw-chal-5",
+    "status": "SUPERSEDED",
+    "extraction_model_id": "gemini-3.6-flash",
+    "prompt_version": "v1",
+    "required_display_text": "Dominic Shaw",
+    "role_label": "Executive Producer",
+    "credit_surface": "END_CARDS",
+    "card_type": "SOLO",
+    "card_position": {
+      "kind": "ABSOLUTE",
+      "ordinal": 1
+    },
+    "source_document_id": "memo_old.txt",
+    "source_document_version": 1,
+    "source_hash": "h1",
+    "agent_reported_confidence": 0.9,
+    "source_span": {
+      "quote": "Dominic Shaw",
+      "start_char": 0,
+      "end_char": 12
+    }
+  },
+  "input_manifest": {
+    "manifest_id": "man-stw-chal-5",
+    "production_id": "prod-stw-chal-5",
+    "delivery_version_id": "v1",
+    "entries": [
+      {
+        "rendered_element_id": "elem-chal-5",
+        "contributor_id": "c5",
+        "display_name": "Dom Shaw",
+        "role": "Executive Producer",
+        "credit_surface": "END_CARDS",
+        "ordinal_position": 1,
+        "production_id": "prod-stw-chal-5",
+        "delivery_version_id": "v1"
+      }
+    ]
+  },
+  "expected_action": "DETERMINISTIC_ABSTAIN",
+  "expected_patch_operation": null,
+  "expected_patch_value": null
+}

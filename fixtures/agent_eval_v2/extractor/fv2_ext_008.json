@@ -1,0 +1,19 @@
+{
+  "case_id": "fv2_ext_008",
+  "split": "FROZEN_CHALLENGE_V2",
+  "scenario_category": "unfamiliar formatting positive",
+  "synthetic_document_text": "[[[ DIRECTOR ::: SAM ]]]",
+  "expected_obligations": [
+    {
+      "required_display_text": "SAM",
+      "role_label": "Director"
+    }
+  ],
+  "exact_gold_source_spans": [
+    {
+      "quote": "SAM",
+      "start_char": 17,
+      "end_char": 20
+    }
+  ]
+}

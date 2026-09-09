@@ -1,0 +1,84 @@
+
+========================================================================
+CreditLock Hosted Judge Journey Verifier — Transcript
+========================================================================
+  Timestamp          : 2026-09-05T23:35:01.881451+00:00
+  Tested URL         : https://creditlock-851586299411.us-central1.run.app
+  Verifier commit    : edf0f69c7b88a943f011645d0f7f209dfa413c62  (local verifier source)
+  App commit (server): edf0f69c7b88a943f011645d0f7f209dfa413c62  (APP_COMMIT env in container)
+  K_REVISION (server): creditlock-00020-lqm  (Cloud Run revision)
+  Server candidates  : ['contrib_d_park_unresolved', 'contrib_david_park']
+  Status             : PASS
+
+  Step 01: [PASS] Public application loads (HTTP 200)
+           observed: HTTP 200
+  Step 02: [PASS] Deprecated token-mint endpoint unavailable (HTTP 404 or 405 or 410)
+           observed: HTTP 404
+           detail:   Endpoint must be absent or retired
+  Step 03: [PASS] Unauthenticated protected request refused (HTTP 401 or 403)
+           observed: HTTP 401
+  Step 04: [PASS] Initialize fresh demo session (HTTP 200)
+           observed: HTTP 200
+           detail:   Needed to obtain production_id and tokens for subsequent steps
+  Step 04: [PASS] Fresh unresolved production cannot be exported (HTTP 409)
+           observed: HTTP 409
+           detail:   Gate should be NEEDS_HUMAN; export must be blocked
+  Step 05: [PASS] Gemini analyzes deal memo and returns HTTP 200
+           observed: HTTP 200
+  Step 05: [PASS] Gemini returns at least one grounded candidate
+           observed: 1 extracted obligations
+  Step 06: [PASS] State endpoint accessible and returns current issues
+           observed: HTTP 200
+  Step 06: [PASS] Deterministic AMBIGUOUS_IDENTITY issue present (span-binding confirmed by server)
+           observed: AMBIGUOUS_IDENTITY present: True
+           detail:   Server grounding validation runs on every analyze call
+  Step 06: [PASS] Server returns candidate_ids for AMBIGUOUS_IDENTITY issue
+           observed: candidate_ids=['contrib_d_park_unresolved', 'contrib_david_park']
+           detail:   At least two candidates required for genuine ambiguity
+  Step 06: [PASS] contrib_david_park is in server-returned candidate set
+           observed: contrib_david_park in candidates: True
+           detail:   Server candidates: ['contrib_d_park_unresolved', 'contrib_david_park']
+  Step 07: [PASS] Reported Gemini model is in allowlist
+           observed: model_used='gemini-3.6-flash'
+           detail:   Allowed: ['gemini-3.1-pro-preview', 'gemini-3.5-flash-lite', 'gemini-3.6-flash']
+  Step 08: [PASS] Selected contributor ID is in server-returned candidate set (not fabricated)
+           observed: 'contrib_david_park' in server candidates: True
+           detail:   Server candidates: ['contrib_d_park_unresolved', 'contrib_david_park']
+  Step 08: [PASS] REVIEWER creates proposal (HTTP 201)
+           observed: HTTP 201
+  Step 08: [PASS] Proposal ID returned
+           observed: proposal_id='prop-d025607edec3'
+  Step 09: [PASS] REVIEWER cannot self-confirm proposal (HTTP 403)
+           observed: HTTP 403
+           detail:   Role separation: REVIEWER must not confirm own proposal
+  Step 10: [PASS] REVIEWER cannot export production (HTTP 403)
+           observed: HTTP 403
+  Step 11: [PASS] RELEASE_APPROVER confirms proposal (HTTP 201)
+           observed: HTTP 201
+  Step 12: [PASS] Authorized production exports successfully (HTTP 200)
+           observed: HTTP 200
+  Step 13: [PASS] Export response provides real release digest (64-char hex)
+           observed: release_digest=fd13d56e...598e
+  Step 13: [PASS] Export response provides GCS delivery-package URI (gs://...)
+           observed: delivery_package_path starts with gs://: True
+           detail:   gs://creditlock-evidence-pak-uni-scraper-4157a70c/deliveries/prod_demo_a77ca268cba0/fd13d56efe3811949563657c07de05eda282719795b3bc736ab173e10f59598e.zip
+  Step 14: [PASS] Authenticated package download succeeds (HTTP 200)
+           observed: HTTP 200
+  Step 14: [PASS] Downloaded content is a valid ZIP archive
+           observed: valid zip: True, size: 42451 bytes
+  Step 15: [PASS] Offline replay of downloaded package returns MATCH
+           observed: MATCH
+
+  Gemini model       : gemini-3.6-flash
+  GCS URI            : gs://creditlock-evidence-pak-uni-scraper-4157a70c/deliveries/prod_demo_a77ca268cba0/fd13d56efe3811949563657c07de05eda282719795b3bc736ab173e10f59598e.zip
+  Release digest     : fd13d56efe3811949563657c07de05eda282719795b3bc736ab173e10f59598e
+  Replay result      : MATCH
+
+  Limitation: This verifies the current hosted CreditLock judge journey.
+  It does not establish generic enterprise deployment readiness.
+
+  Confluent: Confluent Cloud transport is separately RECORDED_LIVE
+  through commit cba7227 and is not a runtime dependency of this
+  hosted judge journey.
+========================================================================
+

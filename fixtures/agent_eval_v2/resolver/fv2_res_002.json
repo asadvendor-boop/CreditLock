@@ -1,0 +1,59 @@
+{
+  "case_id": "fv2_res_002",
+  "split": "FROZEN_CHALLENGE_V2",
+  "scenario_category": "date/version-only difference with no supersession language",
+  "input_candidate_obligations": [
+    {
+      "obligation_id": "old",
+      "production_id": "prod1",
+      "status": "CANDIDATE",
+      "extraction_model_id": "model",
+      "prompt_version": "v1",
+      "credited_party_id": "party1",
+      "required_display_text": "Sam",
+      "role_label": "Director",
+      "agent_reported_confidence": 0.9,
+      "credit_surface": "END_CARDS",
+      "card_type": "SOLO",
+      "card_position": {
+        "kind": "ABSOLUTE",
+        "ordinal": 1
+      },
+      "source_document_id": "doc1.txt",
+      "source_document_version": 1,
+      "source_hash": "h1",
+      "source_span": {
+        "quote": "Director: Sam (2020)",
+        "start_char": 0,
+        "end_char": 20
+      }
+    },
+    {
+      "obligation_id": "new",
+      "production_id": "prod1",
+      "status": "CANDIDATE",
+      "extraction_model_id": "model",
+      "prompt_version": "v1",
+      "credited_party_id": "party1",
+      "required_display_text": "Sam",
+      "role_label": "Director",
+      "agent_reported_confidence": 0.9,
+      "credit_surface": "END_CARDS",
+      "card_type": "SOLO",
+      "card_position": {
+        "kind": "ABSOLUTE",
+        "ordinal": 1
+      },
+      "source_document_id": "doc1.txt",
+      "source_document_version": 1,
+      "source_hash": "h1",
+      "source_span": {
+        "quote": "Director: Sam (2021)",
+        "start_char": 0,
+        "end_char": 20
+      }
+    }
+  ],
+  "expected_recommendation": "ABSTAIN",
+  "expected_controlling_id": null
+}

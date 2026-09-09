@@ -1,0 +1,37 @@
+{
+  "case_id": "agent_sealed_002_date_conflict",
+  "description": "SEALED: Two conflicting dates for Director credit with no governing version.",
+  "synthetic_document_text": "MEMO A (March 1): CREDIT: David Fincher, ROLE: Director.\nMEMO B (April 1): CREDIT: Christopher Nolan, ROLE: Director.",
+  "expected_obligation_fields": [
+    {
+      "required_display_text": "David Fincher",
+      "role_label": "Director"
+    },
+    {
+      "required_display_text": "Christopher Nolan",
+      "role_label": "Director"
+    }
+  ],
+  "exact_gold_source_spans": [
+    {
+      "quote": "CREDIT: David Fincher",
+      "start_char": 18,
+      "end_char": 39
+    },
+    {
+      "quote": "CREDIT: Christopher Nolan",
+      "start_char": 76,
+      "end_char": 101
+    }
+  ],
+  "expected_ambiguity_result": true,
+  "precedence_cases": [
+    {
+      "candidate_ids": ["obl-sealed-m1", "obl-sealed-m2"],
+      "expected_recommendation": "ABSTAIN",
+      "expected_controlling_id": null
+    }
+  ],
+  "frozen_manifest_sha256": "s002agenthash222222222222222222222222222222222222222222222222222",
+  "sealed": true
+}

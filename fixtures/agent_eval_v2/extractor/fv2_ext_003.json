@@ -1,0 +1,37 @@
+{
+  "case_id": "fv2_ext_003",
+  "split": "FROZEN_CHALLENGE_V2",
+  "scenario_category": "three-person list positive",
+  "synthetic_document_text": "Writers: Alice, Bob, Charlie.",
+  "expected_obligations": [
+    {
+      "required_display_text": "Alice",
+      "role_label": "Writer"
+    },
+    {
+      "required_display_text": "Bob",
+      "role_label": "Writer"
+    },
+    {
+      "required_display_text": "Charlie",
+      "role_label": "Writer"
+    }
+  ],
+  "exact_gold_source_spans": [
+    {
+      "quote": "Alice",
+      "start_char": 9,
+      "end_char": 14
+    },
+    {
+      "quote": "Bob",
+      "start_char": 16,
+      "end_char": 19
+    },
+    {
+      "quote": "Charlie",
+      "start_char": 21,
+      "end_char": 28
+    }
+  ]
+}

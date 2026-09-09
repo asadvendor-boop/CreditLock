@@ -1,0 +1,9 @@
+{
+  "case_id": "fv2_ext_007",
+  "split": "FROZEN_CHALLENGE_V2",
+  "scenario_category": "conditional/future negative",
+  "synthetic_document_text": "We will appoint Sam as director next week.",
+  "expected_obligations": [],
+  "exact_gold_source_spans": [],
+  "is_non_binding": true
+}

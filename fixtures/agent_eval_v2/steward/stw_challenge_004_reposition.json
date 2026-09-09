@@ -1,0 +1,57 @@
+{
+  "case_id": "stw_challenge_004_reposition",
+  "split": "RECORDED_CHALLENGE_V1",
+  "input_issue": {
+    "issue_id": "issue-stw-chal-004",
+    "code": "ARTIFACT_POSITION_MISMATCH",
+    "manifest_refs": [
+      "elem-chal-4"
+    ],
+    "obligation_id": "obl-stw-chal-4",
+    "detail": "Ordinal position mismatch 2 vs 1"
+  },
+  "input_obligation": {
+    "obligation_id": "obl-stw-chal-4",
+    "production_id": "prod-stw-chal-4",
+    "status": "ACTIVE",
+    "extraction_model_id": "gemini-3.6-flash",
+    "prompt_version": "v1",
+    "required_display_text": "Chloe Dupont",
+    "role_label": "Composer",
+    "credit_surface": "END_CARDS",
+    "card_type": "SOLO",
+    "card_position": {
+      "kind": "ABSOLUTE",
+      "ordinal": 1
+    },
+    "source_document_id": "memo.txt",
+    "source_document_version": 1,
+    "source_hash": "h1",
+    "agent_reported_confidence": 0.95,
+    "source_span": {
+      "quote": "Chloe Dupont",
+      "start_char": 0,
+      "end_char": 12
+    }
+  },
+  "input_manifest": {
+    "manifest_id": "man-stw-chal-4",
+    "production_id": "prod-stw-chal-4",
+    "delivery_version_id": "v1",
+    "entries": [
+      {
+        "rendered_element_id": "elem-chal-4",
+        "contributor_id": "c4",
+        "display_name": "Chloe Dupont",
+        "role": "Composer",
+        "credit_surface": "END_CARDS",
+        "ordinal_position": 2,
+        "production_id": "prod-stw-chal-4",
+        "delivery_version_id": "v1"
+      }
+    ]
+  },
+  "expected_action": "PROPOSE_PATCH",
+  "expected_patch_operation": "REORDER",
+  "expected_patch_value": "1"
+}

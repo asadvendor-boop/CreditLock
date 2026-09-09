@@ -1,0 +1,9 @@
+{
+  "evidence_class": "TUNED_RECORDED_REGRESSION",
+  "agent_code_commit_sha": null,
+  "fixture_definition_commit_sha": null,
+  "original_fixture_set_digest": null,
+  "generated_at_utc": null,
+  "agent_prompt_template_hashes": null,
+  "metadata_status": "LEGACY_PARTIAL_METADATA: This report was generated before reproducibility metadata fields were implemented. The fixture_set_digest, git_commit_sha, generated_at_utc, and agent_prompt_template_hashes were all null in the original report. These fields cannot be retrospectively reconstructed with certainty. The original report file is preserved byte-for-byte."
+}
